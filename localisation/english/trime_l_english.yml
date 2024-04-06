@@ -26,6 +26,9 @@
 
  trime_building_temple:0 "Temple of $NAME_trime_time_lord$"
  trime_building_temple_desc:0 "Build to last. Once a request from $NAME_trime_time_lord$, now has a place for foresight and planning. "
+ tree_scar_mega_chronomancer_palace:0 "$trime_building_temple$"
+ tree_scar_mega_chronomancer_palace_DESC:0 "$trime_building_temple_desc$"
+ tree_scar_mega_chronomancer_palace_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
  trime_invade_thisguy_title:0 "Invade §Y[trime_primitive_rewind_world.GetName]§!"
  trime_invade_thisguy_desc:0 "His time is over. We shall remind him of his mortality. Invade [trime_primitive_rewind_world.GetName] and retrieve §Y$NAME_trime_time_lord$§! dead or alive. "
  trime_decoded_messages_chain_title:0 "§Y$NAME_trime_time_lord$§! Origins"
@@ -54,7 +57,7 @@
  trime_cursedworld:0 "Frozen in Time"
  trime_buildtemple_title:0 "Build the Temple of §Y$NAME_trime_time_lord$§!"
  #trime_building_temple:0 "$trime_buildtemple_title$"
- trime_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build the Temple of §Y$NAME_trime_time_lord$§! on one of our planets."
+ trime_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build a Kilostructure the Temple of §Y$NAME_trime_time_lord$§!."
 
 
  trime_stage1:0 "Waiting"
@@ -161,7 +164,7 @@
  trime_chronomancer_on_cooldown:0 "§Y$NAME_trime_time_lord$§! is resting."
  trime_speed_building:0 "$trime_button1_title$"
  trime_speed_building_decision:0 "$trime_button4_title$"
- trime_button2_deage_all_tt:0 "De-age every leader without the $trime_leader_trait_exhaustion$ trait by §Y20 years§! and grant §Y$NAME_trime_time_lord$§! double the amount. ( In Total: (20*2*DeagedLeaders-50) years.)"
+ trime_button2_deage_all_tt:0 "De-age every leader without the $trime_leader_trait_exhaustion$ trait by §Y20 years§! and grant §Y$NAME_trime_time_lord$§! half the amount."
  trime_leader_trait_exhaustion:0 "Chrono-Sickness"
  trime_leader_trait_exhaustion_desc:0 "§Y$NAME_trime_time_lord$§! took a bite out of this leader's lifespan."
  trime_button4_speed_production_decision:0 "Unlock the $trime_button4_title$ Decision granting:\nPop Upkeep: §R+150%§!\nResources from Pops: §G+200%§!\n for 10 years"

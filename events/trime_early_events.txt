@@ -10,11 +10,20 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = {
-				always = yes
+		random_list = {
+			95 = {
 			}
-			set_global_flag = trime_allowed
+			5 = {
+				if = {
+					limit = {
+						always = yes
+					}
+					set_global_flag = trime_allowed
+				}
+				random_system = {
+					spawn_trime = yes
+				}
+			}
 		}
 	}
 }
@@ -675,7 +684,6 @@ country_event = {
 		tag = hire_leader
 		#custom_tooltip = trime.11.b.custom_tooltip		# Azaryn joins
 		sound = cute_molluscoid_starfish_greetings
-		
 		#this.owner = {
 		#	add_relic = r_trime_houglass
 		#	if = {
@@ -690,11 +698,10 @@ country_event = {
 		remove_country_flag = trime_claimed2
 		remove_country_flag = trime_claimed3
 		#hidden_effect = {
-			event_target:trime_time_lord = {
-				set_owner = root
-			}
-			
-			add_relic = r_trime_houglass
+		event_target:trime_time_lord = {
+			set_owner = root
+		}
+		add_relic = r_trime_houglass
 		#}
 	}
 	option = {
@@ -725,18 +732,16 @@ country_event = {
 		#}
 	}
 	after = {
-	#	trime_endallevents = yes
-	#	remove_country_flag = trime_claimed1
-	#	remove_country_flag = trime_claimed2
-	#	remove_country_flag = trime_claimed3
-	hidden_effect = {
-		event_target:trime_country = {
-		destroy_country = yes
-		set_global_flag =  trime_stage1
-	}
-	}
-	
-	
+		#	trime_endallevents = yes
+		#	remove_country_flag = trime_claimed1
+		#	remove_country_flag = trime_claimed2
+		#	remove_country_flag = trime_claimed3
+		hidden_effect = {
+			event_target:trime_country = {
+				destroy_country = yes
+				set_global_flag = trime_stage1
+			}
+		}
 	}
 }
 

@@ -7,15 +7,6 @@
 ###########
 
 
-
-has_trime_enclave_event = {
-	has_active_event = {
-		# Custom diplomacy screens:
-		#trime.1 # Archivist Refuse to be contacted
-		
-	}
-}
-
 trime_trigger = {
     
     is_homicidal = no #sry genocidals

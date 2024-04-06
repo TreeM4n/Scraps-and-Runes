@@ -4,10 +4,6 @@
 # tr33
 #
 ###########
-
-
-
-
 @activation_cost = 3000
 @triumph_duration = 3600
 @triumph_duration_short = 1800
@@ -26,7 +22,6 @@ r_trime_houglass = {
 	ai_weight = {
 		weight = 0
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			always = yes
@@ -95,55 +90,90 @@ r_trime_houglass = {
 	}
 	score = 500
 	active_effect = {
+
+		#### alot of unused stuff here now the relic just removes leader age from all leaders
 		#add_modifier = {
 		#	modifier = "ether_drake_triumph"
 		#	days = @triumph_duration
 		#}
 		#custom_tooltip = relic_triumph_cooldown
-		if = {
-			limit = {
-				has_global_flag = trime_time_lorddied
-			}
+		#if = {
+		#	limit = {
+		#		has_global_flag = trime_time_lorddied
+		#	}
 			#remove_country_flag = trime_killedtimelord
-			custom_tooltip = trime_revivetimelord
-			hidden_effect = {
-				country_event = {
-					id = trime.108
-				}
-			}
-		}
-		else = {
-			custom_tooltip = trime_opencastmenu
-			hidden_effect = {
-				country_event = {
-					id = trime.109
-				}
+		#	custom_tooltip = trime_revivetimelord
+		#	hidden_effect = {
+		#		country_event = {
+		#			id = trime.108
+		#		}
+		#	}
+		#}
+		#else = {
+		#	custom_tooltip = trime_opencastmenu
+		#	hidden_effect = {
+		#		country_event = {
+		#			id = trime.109
+		#		}
 				#add_modifier = {
 				#	modifier = "relic_activation_cooldown"
 				#	days = @triumph_duration
 				#}
+		#	}
+		#}
+		custom_tooltip = trime_button2_title
+		custom_tooltip = trime_button2_deage_all_tt
+		hidden_effect = {
+			every_owned_leader = {
+				limit = {
+					NOR = {
+						has_trait = trime_leader_trait_exhaustion
+						has_trait = trime_leader_trait_legendary_timeskipper
+					}
+				}
+				add_age = -20
+				add_timed_trait = {
+					trait = trime_leader_trait_exhaustion
+					days = 360
+				}
+				if = {
+					limit = {
+						exists = event_target:trime_time_lord
+					}
+					event_target:trime_time_lord = {
+						add_age = 10
+					}
+					event_target:trime_time_lord = {
+						trime_setportrait = yes
+					}
+				}
 			}
+		}
+		custom_tooltip = relic_triumph_cooldown
+		add_modifier = {
+			modifier = "relic_activation_cooldown"
+			days = @triumph_duration
 		}
 	}
 	# Possible check for activation
 	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = {
+				has_modifier = relic_activation_cooldown
+			}
+		}
 		#custom_tooltip = {
-		#	fail_text = "requires_relic_no_cooldown"
+		#	fail_text = "trime_deadfr_tt"
 		#	NOT = {
-		#		has_modifier = relic_activation_cooldown
+		#		has_global_flag = trime_time_lorddiedfr
 		#	}
 		#}
-		custom_tooltip = {
-			fail_text = "trime_deadfr_tt"
-			NOT = {
-				has_global_flag = trime_time_lorddiedfr
-			}
-		}
-		custom_tooltip = {
-			fail_text = "trime_chronomancer_on_cooldown_tt"
-			NOT = {
-				has_modifier = trime_chronomancer_on_cooldown
-			}
-		}
+		#custom_tooltip = {
+		#	fail_text = "trime_chronomancer_on_cooldown_tt"
+		#	NOT = {
+		#		has_modifier = trime_chronomancer_on_cooldown
+		#	}
+		#}
 	}
 }

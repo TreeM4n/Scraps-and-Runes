@@ -5,6 +5,9 @@
 #
 ###########
 namespace = trime
+
+
+# halt random megastructure
 country_event = {
 	id = trime.100
 	title = "trime.100.name"
@@ -57,6 +60,7 @@ country_event = {
 	}
 }
 
+# instnat mega upgrade power, remove?
 country_event = {
 	id = trime.99
 	hide_window = yes
@@ -98,6 +102,7 @@ country_event = {
 	}
 }
 
+# deage leader, keep
 event = {
 	id = trime.101
 	hide_window = yes
@@ -125,7 +130,7 @@ event = {
 				add_age = -2
 			}
 			else = {
-				set_global_flag = trime_time_lorddiedfr
+				#set_global_flag = trime_time_lorddiedfr
 				root = {
 					country_event = {
 						id = trime.106
@@ -137,6 +142,7 @@ event = {
 	}
 }
 
+# hourglass spin removes leader age, remove
 event = {
 	id = trime.102
 	hide_window = yes
@@ -218,7 +224,7 @@ event = {
 	}
 }
 
-# relic lost 
+# relic lost, remove
 # scope 
 country_event = {
 	id = trime.103
@@ -257,6 +263,7 @@ country_event = {
 	}
 }
 
+# steals relic, on relic gained, remove
 country_event = {
 	id = trime.105
 	title = "trime.105.name"
@@ -286,6 +293,7 @@ country_event = {
 	}
 }
 
+# gives relic on relic gained, remove
 country_event = {
 	id = trime.104
 	title = "trime.104.name"
@@ -309,6 +317,7 @@ country_event = {
 	}
 }
 
+#notification event that he died
 country_event = {
 	id = trime.106
 	title = "trime.106.name"
@@ -329,10 +338,10 @@ country_event = {
 	option = {
 		name = trime.106.a
 		hidden_effect = {
-			set_variable = {
-				which = trime_death_age
-				value = event_target:trime_time_lord.trigger:leader_age
-			}
+			#set_variable = {
+			#	which = trime_death_age
+			#	value = event_target:trime_time_lord.trigger:leader_age
+			#}
 			#event_target:trime_time_lord = {
 			#	clone_leader = {
 			#		target = THIS
@@ -348,9 +357,12 @@ country_event = {
 				show_notification = yes
 			}
 		}
+
 	}
 }
 
+
+# instant fleet power, remove
 country_event = {
 	id = trime.107
 	hide_window = yes
@@ -370,6 +382,7 @@ country_event = {
 	}
 }
 
+# no relic cd power, remove
 country_event = {
 	id = trime.108
 	hide_window = yes
@@ -397,6 +410,7 @@ country_event = {
 	}
 }
 
+#casting power window, remove
 country_event = {
 	id = trime.109
 	title = "trime.109.name"
@@ -424,7 +438,8 @@ country_event = {
 	}
 }
 
-# return timelord  trime_death_age
+# return timelord 
+# revive? idk, wtf, where is this used?, maybe remove 
 country_event = {
 	id = trime.110
 	title = "trime.110.name"
@@ -548,6 +563,7 @@ country_event = {
 	}
 }
 
+# check if aevum was fired, remove
 country_event = {
 	id = trime.111
 	hide_window = yes
@@ -563,6 +579,7 @@ country_event = {
 	}
 }
 
+# check if died, remove
 country_event = {
 	id = trime.112
 	hide_window = yes
@@ -591,6 +608,7 @@ country_event = {
 	}
 }
 
+# random event
 leader_event = {
 	id = trime.115
 	title = trime.115.name
@@ -666,6 +684,7 @@ leader_event = {
 	}
 }
 
+# random event
 leader_event = {
 	id = trime.116
 	title = trime.116.name
@@ -741,6 +760,7 @@ leader_event = {
 	}
 }
 
+# random event
 leader_event = {
 	id = trime.117
 	title = trime.117.name
@@ -798,6 +818,7 @@ leader_event = {
 	}
 }
 
+# random event
 leader_event = {
 	id = trime.118
 	title = trime.118.name
@@ -845,6 +866,7 @@ leader_event = {
 	}
 }
 
+# random event, remove
 leader_event = {
 	id = trime.119
 	title = trime.119.name
@@ -895,6 +917,7 @@ leader_event = {
 }
 
 # Fires from on_decade_pulse_country
+# random event list
 event = {
 	id = trime.113
 	is_triggered_only = yes
@@ -909,17 +932,18 @@ event = {
 	immediate = {
 		event_target:trime_time_lord = {
 			random_list = {
-				5 = {
-					leader_event = {
-						id = trime.114
-						days = 1
-						random = 900
-					}
-				}
+				# sent fleet missing, bad design?
+				#5 = {
+				#	leader_event = {
+				#		id = trime.114
+				#		days = 1
+				#		random = 900
+				#	}
+				#}
 				# age leader
 				10 = {
 					leader_event = {
-						id = trime.115
+						id = trime.114
 						days = 1
 						random = 900
 					}
@@ -928,7 +952,7 @@ event = {
 				#5 = { leader_event = { id = paragon.40120 days = 1 random = 900 } } # production down
 				5 = {
 					leader_event = {
-						id = trime.116
+						id = trime.115
 						days = 1
 						random = 900
 					}
@@ -936,7 +960,7 @@ event = {
 				# speed growth
 				5 = {
 					leader_event = {
-						id = trime.117
+						id = trime.116
 						days = 1
 						random = 900
 					}
@@ -944,7 +968,7 @@ event = {
 				# disable megastructure
 				10 = {
 					leader_event = {
-						id = trime.118
+						id = trime.117
 						days = 1
 						random = 900
 					}
@@ -952,7 +976,7 @@ event = {
 				# situation speed
 				5 = {
 					leader_event = {
-						id = trime.119
+						id = trime.118
 						days = 1
 						random = 900
 					}
@@ -967,6 +991,7 @@ event = {
 }
 
 # age leader
+# random event
 leader_event = {
 	id = trime.114
 	title = trime.114.name

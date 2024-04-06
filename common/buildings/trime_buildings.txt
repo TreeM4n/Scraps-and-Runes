@@ -4,6 +4,9 @@
 # tr33
 #
 ###########
+
+
+#remove
 trime_building_temple = {
 	base_buildtime = 1800
 	#base_cap_amount = 1
