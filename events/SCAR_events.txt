@@ -4,7 +4,7 @@ planet_event = {
 	id = SCAR_planets.1
 	hide_window = yes
 	is_triggered_only = yes
-	triggger = {
+	trigger = {
 		exists = owner
 	}
 	immediate = {

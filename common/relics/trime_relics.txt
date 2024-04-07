@@ -20,7 +20,7 @@ r_trime_houglass = {
 		}
 	}
 	ai_weight = {
-		weight = 0
+		weight = 20
 	}
 	triggered_country_modifier = {
 		potential = {

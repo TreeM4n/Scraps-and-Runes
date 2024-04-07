@@ -2,10 +2,10 @@ Aevum
 
 - remove abilities, adjust relic and traits mechanics, done
 - look over later events, done
-- add small event to random spawn him at game start availible for everyone, done not AI tho
+- add small event to random spawn him at game start availible for everyone, done
 - remove the building and give him small megastructure instead, done
-- change the hourglass spinning mechanic a lil 
+- change the hourglass spinning mechanic a lil, no longer sucks life, no message, but change passive
 - maybe improve relic asset
 - remove the reviving part, keep reverse aging, done
-- make AI able to use him 
+- make AI able to use him, kinda done
 - later: add more options in the recruitment event chain

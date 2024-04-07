@@ -26,9 +26,9 @@
 
  trime_building_temple:0 "Temple of $NAME_trime_time_lord$"
  trime_building_temple_desc:0 "Build to last. Once a request from $NAME_trime_time_lord$, now has a place for foresight and planning. "
- tree_scar_mega_chronomancer_palace:0 "$trime_building_temple$"
- tree_scar_mega_chronomancer_palace_DESC:0 "$trime_building_temple_desc$"
- tree_scar_mega_chronomancer_palace_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
+ scar_mega_chronomancer_palace:0 "$trime_building_temple$"
+ scar_mega_chronomancer_palace_DESC:0 "$trime_building_temple_desc$"
+ scar_mega_chronomancer_palace_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
  trime_invade_thisguy_title:0 "Invade §Y[trime_primitive_rewind_world.GetName]§!"
  trime_invade_thisguy_desc:0 "His time is over. We shall remind him of his mortality. Invade [trime_primitive_rewind_world.GetName] and retrieve §Y$NAME_trime_time_lord$§! dead or alive. "
  trime_decoded_messages_chain_title:0 "§Y$NAME_trime_time_lord$§! Origins"

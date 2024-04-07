@@ -1,5 +1,5 @@
 # aevums palace
-tree_scar_mega_chronomancer_palace = {
+scar_mega_chronomancer_palace = {
 	entity = "habitat_phase_02_entity" # major orbital
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"

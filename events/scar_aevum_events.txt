@@ -43,12 +43,12 @@ ship_event = {
 	is_triggered_only = yes
 	diplomatic_title = BLANK_STRING
 	trigger = {
-		this.owner = {
-			is_ai = no
-		}
+		#this.owner = {
+		#is_ai = no
+		#}
 		from = {
 			has_planet_flag = trime_first_timer
-			has_planet_flag = trime_primitive_rewind_world
+			#has_planet_flag = trime_primitive_rewind_world
 		}
 	}
 	immediate = {
@@ -68,17 +68,18 @@ ship_event = {
 		is_dialog_only = yes
 		response_text = trime.1.a.response
 	}
-	option = {
-		# why did you send @eventtarget back in time
-		trigger = {
-			this.owner = {
-				has_country_flag = trime_send_scienctist
-			}
-		}
-		name = trime.1.b
-		is_dialog_only = yes
-		response_text = trime.1.b.reponse
-	}
+	# unable to ever happen, since the event is always after this one
+	#option = {
+	# why did you send @eventtarget back in time
+	#	trigger = {
+	#	this.owner = {
+	#		has_country_flag = trime_send_scienctist
+	#	}
+	#}
+	#name = trime.1.b
+	#is_dialog_only = yes
+	#response_text = trime.1.b.reponse
+	#}
 	option = {
 		# What is this system
 		name = trime.1.c
@@ -125,12 +126,49 @@ ship_event = {
 		}
 		#}
 	}
+	option = {
+		# ai ez cheat
+		name = trime.1.e
+		
+		trigger = {
+			this.owner = {
+				is_ai = yes
+			}
+		}
+		#response_text = trime.1.d.response
+		#is_dialog_only = yes
+		#hidden_effect = {
+		this.owner = {
+			country_event = {
+				id = trime.11
+			}
+			random_owned_starbase = {
+				solar_system = {
+					spawn_megastructure = {
+						type = scar_mega_chronomancer_palace
+					}
+				}
+			}
+
+		}
+		ai_chance = {
+			factor = 100
+		}
+		#}
+	}
 	after = {
 		hidden_effect = {
-			owner = {
-				country_event = {
-					id = trime.21
-					days = 90
+			if = {
+				limit = {
+					owner = {
+						is_ai = no
+					}
+				}
+				owner = {
+					country_event = {
+						id = trime.21
+						days = 90
+					}
 				}
 			}
 		}
@@ -703,6 +741,9 @@ country_event = {
 		}
 		add_relic = r_trime_houglass
 		#}
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
 		# DISMISS
@@ -1633,3 +1674,610 @@ country_event = {
 		}
 	}
 }
+
+
+# halt random megastructure
+country_event = {
+	id = trime.100
+	title = "trime.100.name"
+	desc = "trime.100.desc"
+	picture = GFX_evt_ringworld
+	show_sound = event_conversation
+	location = from.capital_scope
+	trigger = {
+		exists = event_target:trime_time_lord
+		#has_any_megastructure = yes
+		has_global_flag = trime_system_spawned
+	}
+	is_triggered_only = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = event_target:trime_time_lord
+	}
+	# Halts the ring world construction
+	option = {
+		name = trime.100.a
+		#custom_tooltip = trime.100.a.tooltip
+		ai_chance = {
+			factor = 10
+		}
+		random_owned_megastructure = {
+			limit = {
+				is_upgrading = yes
+			}
+			set_halted = 360
+		}
+		event_target:trime_time_lord = {
+			add_age = 36
+		}
+	}
+	option = {
+		name = trime.100.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = influence
+				value > 200
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		add_resource = {
+			influence = -200
+		}
+	}
+}
+
+# deage leader, keep
+event = {
+	id = trime.101
+	hide_window = yes
+	#location = from.capital_scope
+	trigger = {
+		exists = event_target:trime_time_lord
+		#has_any_megastructure = yes
+		has_global_flag = trime_system_spawned
+		exists = event_target:trime_time_lord.owner
+		NOT = {
+			has_global_flag = trime_time_lorddiedfr
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		event_target:trime_time_lord = {
+			if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = this.trigger:leader_age
+						#mult = 100				
+						value >= 3
+					}
+				}
+				add_age = -2
+			}
+			else = {
+				#set_global_flag = trime_time_lorddiedfr
+				root = {
+					country_event = {
+						id = trime.106
+					}
+				}
+			}
+			trime_setportrait = yes
+		}
+	}
+}
+
+
+# hourglass spin removes leader age, remove leader age aprt. spin is cool
+event = {
+	id = trime.102
+	hide_window = yes
+	#location = from.capital_scope
+	trigger = {
+		exists = event_target:trime_time_lord
+		#has_any_megastructure = yes
+		has_global_flag = trime_system_spawned
+		exists = event_target:trime_time_lord.owner
+		NOT = {
+			has_global_flag = trime_time_lorddiedfr
+		}
+	}
+	is_triggered_only = yes
+	immediate = {
+		switch = {
+			trigger = has_global_flag
+			trime_stage1 = {
+				remove_global_flag = trime_stage1
+				set_global_flag = trime_stage2
+			}
+			trime_stage2 = {
+				remove_global_flag = trime_stage2
+				set_global_flag = trime_stage3
+			}
+			trime_stage3 = {
+				remove_global_flag = trime_stage3
+				set_global_flag = trime_stage4
+			}
+			trime_stage4 = {
+				remove_global_flag = trime_stage4
+				set_global_flag = trime_stage5
+			}
+			trime_stage5 = {
+				remove_global_flag = trime_stage5
+				set_global_flag = trime_stage1
+			}
+			default = {
+				set_global_flag = trime_stage1
+			}
+		}
+		# unneeded, the relic gives age now
+		#event_target:trime_time_lord = {
+		#	if = {
+		#		limit = {
+		#			this.owner = {
+		#				has_relic = r_trime_houglass
+		#			}
+		#		}
+		#		this.owner = {
+		#			while = {
+		#				count = 3
+		#				random_owned_leader = {
+		#					limit = {
+		#						NOR = {
+		#							has_trait = trime_leader_trait_exhaustion
+		#							has_trait = trime_leader_trait_legendary_timeskipper
+		#						}
+		#					}
+		#					add_timed_trait = {
+		#						trait = trime_leader_trait_exhaustion
+		#						days = 720
+		#					}
+		#					add_age = -5
+		#					event_target:trime_time_lord = {
+		#						add_age = 10
+		#					}
+		#				}
+		#			}
+		#		}
+		#		create_message = {
+		#			type = trime_hourglass_tick
+		#			localization = this
+		#			days = 30
+		#		}
+		#	}
+		#	else = {
+		#	}
+		#}
+	}
+}
+
+#notification event that he died
+country_event = {
+	id = trime.106
+	title = "trime.106.name"
+	desc = "trime.106.desc"
+	picture = GFX_evt_zro_4
+	show_sound = par_notification_leader_death
+	location = from.capital_scope
+	trigger = {
+		#exists = event_target:trime_time_lord		
+		#has_global_flag = trime_system_spawned
+	}
+	is_triggered_only = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = event_target:trime_time_lord
+	}
+	option = {
+		name = trime.106.a
+		hidden_effect = {
+			#set_variable = {
+			#	which = trime_death_age
+			#	value = event_target:trime_time_lord.trigger:leader_age
+			#}
+			#event_target:trime_time_lord = {
+			#	clone_leader = {
+			#		target = THIS
+			#	}
+			#	last_created_leader = {
+			#		exile_leader_as = trime_time_lord_exile
+			#		save_global_event_target_as = trime_time_lord_exile
+			#	}
+			#}
+		}
+		event_target:trime_time_lord = {
+			kill_leader = {
+				show_notification = yes
+			}
+		}
+
+	}
+}
+
+
+# random event
+leader_event = {
+	id = trime.115
+	title = trime.115.name
+	desc = trime.115.desc
+	picture = GFX_evt_tradestation_interior
+	show_sound = cute_molluscoid_starfish_greetings
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+		if = {
+			limit = {
+				exists = planet
+			}
+			planet = {
+				save_event_target_as = planet_governed
+			}
+		}
+		else = {
+			owner.capital_scope = {
+				save_event_target_as = planet_governed
+			}
+		}
+	}
+	option = {
+		name = trime.115.a
+		event_target:planet_governed = {
+			add_modifier = {
+				modifier = trime_cursedworld
+				years = 5
+			}
+		}
+		this = {
+			add_age = 20
+		}
+	}
+	option = {
+		name = trime.115.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value > 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+	option = {
+		name = trime.115.c
+		allow = {
+			this = {
+				leader_age > 30
+			}
+		}
+		event_target:planet_governed = {
+			add_modifier = {
+				modifier = trime_blessedworld
+				years = 5
+			}
+		}
+		this = {
+			add_age = -20
+		}
+	}
+}
+
+# random event
+leader_event = {
+	id = trime.116
+	title = trime.116.name
+	desc = trime.116.desc
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = cute_molluscoid_starfish_greetings
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+		if = {
+			limit = {
+				exists = planet
+			}
+			planet = {
+				save_event_target_as = planet_governed
+			}
+		}
+		else = {
+			owner.capital_scope = {
+				save_event_target_as = planet_governed
+			}
+		}
+	}
+	option = {
+		name = trime.116.a
+		event_target:planet_governed = {
+			add_modifier = {
+				modifier = trime_slowgrowing
+				years = 5
+			}
+		}
+		this = {
+			add_age = 20
+		}
+	}
+	option = {
+		name = trime.116.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value > 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+	option = {
+		name = trime.116.c
+		allow = {
+			this = {
+				leader_age > 30
+			}
+		}
+		event_target:planet_governed = {
+			add_modifier = {
+				modifier = trime_speedgrowing
+				years = 5
+			}
+		}
+		this = {
+			add_age = -20
+		}
+	}
+}
+
+# random event
+leader_event = {
+	id = trime.117
+	title = trime.117.name
+	desc = trime.117.desc
+	picture = GFX_evt_ruined_system
+	show_sound = cute_molluscoid_starfish_greetings
+	is_triggered_only = yes
+	#fire_only_once = yes
+	trigger = {
+		owner = {
+			any_owned_megastructure = {
+				is_upgrading = yes
+			}
+		}
+	}
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+		owner = {
+			random_owned_megastructure = {
+				limit = {
+					is_upgrading = yes
+				}
+				save_event_target_as = trime_nomegaforu
+			}
+		}
+	}
+	option = {
+		name = trime.117.a
+		event_target:trime_nomegaforu = {
+			set_halted = 720
+		}
+		this = {
+			add_age = 100
+		}
+	}
+	option = {
+		name = trime.117.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value > 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+}
+
+# random event
+leader_event = {
+	id = trime.118
+	title = trime.118.name
+	desc = trime.118.desc
+	picture = GFX_evt_surreal_visions
+	show_sound = cute_molluscoid_starfish_greetings
+	is_triggered_only = yes
+	#fire_only_once = yes
+	trigger = {
+		owner = {
+			count_situation = {
+				count > 0
+			}
+		}
+	}
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+		owner = {
+			random_situation = {
+				save_event_target_as = trime_situationlmao
+			}
+		}
+	}
+	option = {
+		name = trime.118.a
+		event_target:trime_situationlmao = {
+			add_situation_progress = 30
+		}
+	}
+	option = {
+		# i hope this breaks a lot xd
+		name = trime.118.b
+		allow = {
+			event_target:trime_situationlmao = {
+				situation_progress > 30
+			}
+		}
+		event_target:trime_situationlmao = {
+			add_situation_progress = -30
+		}
+	}
+}
+
+# Fires from on_decade_pulse_country
+# random event list
+event = {
+	id = trime.113
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		#has_paragon_dlc = yes
+		exists = event_target:trime_time_lord
+		has_global_flag = trime_system_spawned
+		#has_relic = r_trime_houglass
+		exists = event_target:trime_time_lord.owner
+	}
+	immediate = {
+		event_target:trime_time_lord = {
+			random_list = {
+				# sent fleet missing, bad design?
+				#5 = {
+				#	leader_event = {
+				#		id = trime.114
+				#		days = 1
+				#		random = 900
+				#	}
+				#}
+				# age leader
+				10 = {
+					leader_event = {
+						id = trime.114
+						days = 1
+						random = 900
+					}
+				}
+				# production up
+				#5 = { leader_event = { id = paragon.40120 days = 1 random = 900 } } # production down
+				5 = {
+					leader_event = {
+						id = trime.115
+						days = 1
+						random = 900
+					}
+				}
+				# speed growth
+				5 = {
+					leader_event = {
+						id = trime.116
+						days = 1
+						random = 900
+					}
+				}
+				# disable megastructure
+				10 = {
+					leader_event = {
+						id = trime.117
+						days = 1
+						random = 900
+					}
+				}
+				# situation speed
+				5 = {
+					leader_event = {
+						id = trime.118
+						days = 1
+						random = 900
+					}
+				}
+				# sheep speed
+				#5 = { leader_event = { id = paragon.40120 days = 1 random = 900 } } # production up
+				160 = {
+				}
+			}
+		}
+	}
+}
+
+# age leader
+# random event
+leader_event = {
+	id = trime.114
+	title = trime.114.name
+	desc = trime.114.desc
+	picture = GFX_evt_smear_campaign
+	show_sound = event_default
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+		owner = {
+			random_owned_leader = {
+			limit = {
+				leader_age > 10
+			}
+			save_event_target_as = trime_bullyhim
+		}
+		}
+		
+	}
+	option = {
+		name = trime.114.a
+		event_target:trime_bullyhim = {
+			add_age = 40
+		}
+	}
+	option = {
+		name = trime.114.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value > 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+}
+
+
