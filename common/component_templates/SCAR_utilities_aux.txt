@@ -1,0 +1,176 @@
+####################
+# Reactor Booster #
+####################
+utility_component_template = {
+	key = "SCAR_BOOTLEG_REACTOR_BOOSTER_1"
+	size = aux
+	icon = "GFX_ship_part_reactor_booster_1"
+	icon_frame = 1
+	power = 50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 5
+		}
+	}
+	modifier = {
+		ship_hull_add = -50
+	}
+	prerequisites = { "tech_reactor_boosters_1" }
+	component_set = "SCAR_reactor_booster"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+####################
+# Shield Recharger #
+####################
+
+utility_component_template = {
+	key = "SCAR_SHIELD_MEGA_BOOSTER"
+	size = aux
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			exotic_gases = 1
+		}
+	}
+
+	prerequisites = { "tech_shield_rechargers_1" }
+	component_set = "SCAR_shield_booster"
+
+	modifier = {
+		ship_shield_mult = 0.25
+		ship_hull_add = -100
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_energy
+			is_country_type = default
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = exotic_gases }
+		}
+	}
+}
+
+#############################
+# Auxiliary Fire-control	#
+#############################
+
+utility_component_template = {
+	key = "SCAR_MANNED_FIRE_CONTROL_1"
+	size = aux
+	icon = "GFX_ship_part_aura_detection_scrambler"
+	icon_frame = 1
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+		}
+	}
+
+	ship_modifier = {
+		ship_accuracy_add = 3
+	}
+
+	prerequisites = { tech_auxiliary_fire_control }
+	component_set = "SCAR_manned_fire_control"
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3.0
+			is_preferred_weapons = weapon_type_kinetic
+		}
+	}
+}
+
+############
+# HARDENERS
+############
+
+utility_component_template = {
+	key = "SCAR_SHIELD_OPTIMIZER_1"
+	size = aux
+	icon = "GFX_ship_part_aura_shield_recharger"
+	icon_frame = 1
+	power = -25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 30
+		}
+	}
+
+	prerequisites = { "tech_shield_hardeners_2" }
+	component_set = "SCAR_shield_optimizer"
+
+	ship_modifier = {
+		ship_shield_hardening_add = 0.25
+		ship_shield_mult = -0.05
+		ship_shield_regen_add_static = 25
+	}
+
+	ai_weight = {
+		weight = 10
+
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_zro }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SCAR_SUPERCHARGED_ARMOR_1"
+	size = aux
+	icon = "GFX_ship_part_armor_hardener_2"
+	icon_frame = 1
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 30
+		}
+	}
+
+	prerequisites = { "tech_armor_hardeners_2" }
+	component_set = "SCAR_supercharged_armor"
+
+	ship_modifier = {
+		ship_armor_hardening_add = 0.25
+		ship_shield_mult = -0.25
+		ship_armor_mult = 0.25
+	}
+
+	ai_weight = {
+		weight = 10
+
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_living_metal }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}

@@ -1,0 +1,85 @@
+# Icons set here are the ones shown in component editor list.
+#plasma
+component_set = {
+	key = "SCAR_plasma_sputtershot_1"
+	icon = "GFX_ship_part_scourge_missile_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_EMP_BEAM_1"
+	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_asteroid_shoota_1"
+	icon = "GFX_ship_part_world_cracker"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_gatling_shoota_1"
+	icon = "GFX_ship_part_archaeo_mass_driver"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "PSIONIC_SWARMER_MISSILE_1"
+	icon = "GFX_ship_part_bifunctional_design"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_boarding_torps"
+	icon = "GFX_ship_part_aura_battlefield_repairs"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_strange_beam"
+	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_reactor_booster"
+	icon = "GFX_ship_part_reactor_booster_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_shield_booster"
+	icon = "GFX_ship_part_shield_recharger"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_manned_fire_control"
+	icon = "GFX_ship_part_aura_detection_scrambler"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_shield_optimizer"
+	icon = "GFX_ship_part_aura_shield_recharger"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_supercharged_armor"
+	icon = "GFX_ship_part_armor_hardener_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_repeater_PD"
+	icon = "GFX_ship_part_archaeo_point_defence"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_mega_nuke"
+	icon = "GFX_ship_part_wormhole"
+	icon_frame = 1
+}

@@ -1,0 +1,93 @@
+entity = {
+	name = "plasma_sputtershot_entity"
+	cull_radius = 1
+	#pdxmesh = "arthropoid_01_missile_mesh"
+	
+	
+	default_state = idle
+	state = { name = "idle" #animation = "idle"
+		event = { time = 0 particle = "small_plasma_thrower_idle_particle" keep_particle = yes }
+		event = { time = 0 particle = "scourge_missile_idle_flame_particle" keep_particle = yes }
+	}
+	state = { name = "stop"
+		looping = no
+		state_time = 2.0
+		#animation = "miss"
+		#start_event = { time = 0 node = exhaust particle = "small_missile_idle_particle" keep_particle = yes }
+		start_event = { trigger_once = yes time = 0 node = exhaust particle = "scourge_missile_idle_flame_particle" keep_particle = yes }
+	}
+	scale = 1.25
+}
+
+entity = {
+	name = "asteroid_shoota_entity"
+	cull_radius = 1
+	pdxmesh = "asteroid_ship_mesh"
+	
+	default_state = idle
+	state = { name = "idle" #animation = "idle"
+		#event = { time = 0 particle = "small_plasma_thrower_idle_particle" keep_particle = yes }
+		#event = { time = 0 particle = "scourge_missile_idle_flame_particle" keep_particle = yes }
+	}
+	state = { name = "stop"
+		looping = no
+		state_time = 2.0
+		#animation = "miss"
+		#start_event = { time = 0 node = exhaust particle = "small_missile_idle_particle" keep_particle = yes }
+		start_event = { trigger_once = yes time = 0 node = exhaust particle = "scourge_missile_idle_flame_particle" keep_particle = yes }
+	}
+	scale = 0.1
+}
+
+entity = {
+	name = "psionic_swarmer_missiles_entity"
+	pdxmesh = "swarmer_missile_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"		animation = "start"		looping = no	next_state = "loop"
+	}
+	
+	scale = 0.005
+	
+	
+	attach = { missile_01 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_02 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_03 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_04 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_05 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_06 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_07 = "shroud_creature_clouds_01_entity" }
+	attach = { missile_08 = "shroud_creature_clouds_01_entity" }
+}
+
+entity = {
+	name = "boarding_torpedo_entity"
+	pdxmesh = "swarmer_missile_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"		animation = "start"		looping = no	next_state = "loop"
+	}
+	
+	attach = { missile_01 = "probe_entity" }
+	attach = { missile_02 = "probe_entity" }
+	attach = { missile_03 = "probe_entity" }
+	attach = { missile_04 = "probe_entity" }
+	attach = { missile_05 = "probe_entity" }
+	attach = { missile_06 = "probe_entity" }
+	attach = { missile_07 = "probe_entity" }
+	attach = { missile_08 = "probe_entity" }
+	scale = 2
+}
+
+entity = {
+	name = "mega_nuke_entity"
+	cull_radius = 1
+	#pdxmesh = "arthropoid_01_missile_mesh"
+	
+	
+	default_state = idle
+	state = { name = "idle" #animation = "idle"
+		event = { time = 0 particle = "small_plasma_thrower_idle_particle" keep_particle = yes }
+	}
+	scale = 5
+}

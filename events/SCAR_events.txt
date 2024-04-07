@@ -1,0 +1,18 @@
+namespace = SCAR_planets
+#change planet assets
+planet_event = {
+	id = SCAR_planets.1
+	hide_window = yes
+	is_triggered_only = yes
+	triggger = {
+		exists = owner
+	}
+	immediate = {
+		set_planet_entity = {
+			entity = "treasure_planet_01_entity"
+			atmosphere_color		= hsv { 0.75 0.10 0.60 }		#DONE
+			atmosphere_intensity	= 1.0
+			atmosphere_width		= 0.5
+		}
+	}
+}

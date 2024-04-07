@@ -1,0 +1,60 @@
+# ##################################################
+#
+# Radial Effect / Aura components
+#
+# ##################################################
+
+### Variables
+
+@shipAuraRange = 80
+@stationSmallAuraRange = 70
+@stationMediumAuraRange = 90
+@stationLargeAuraRange = 110
+
+# #################
+# Nomadic Auras
+# #################
+
+#Defensive
+utility_component_template = {
+	key = "SCAR_SHIP_AURA"
+	size = medium
+	icon = "GFX_ship_part_aura_inspiring_presence"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { SCAR_scavenger_ship }
+	component_set = "ship_aura_components"
+
+	friendly_aura = {
+		name = "aura_inspiring_presence"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_inspiring_presence
+			priority = 100
+		}
+
+		modifier = {
+			ship_anomaly_generation_chance_mult = 1
+			ship_anomaly_research_speed_mult = 1
+			ship_archaeological_site_excavation_speed_mult = 1
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}

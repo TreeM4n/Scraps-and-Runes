@@ -1,0 +1,43 @@
+objectTypes = {
+	pdxmesh = {
+		name = "SCAR_bow_stern_parts_mesh"
+		file = "gfx/models/ships/SCAR_bow_stern_parts.mesh"
+		scale = 1
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "SCAR_mid_parts_mesh"
+		file = "gfx/models/ships/SCAR_mid_parts.mesh"
+		scale = 1
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "SCAR_frame_parts_mesh"
+		file = "gfx/models/ships/SCAR_frame_parts.mesh"
+		scale = 1
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+}
+
+objectTypes = {
+	pdxmesh = {
+		name = "SCAR_thrusters_parts_mesh"
+		file = "gfx/models/ships/SCAR_thrusters_parts.mesh"
+		scale = 1
+		meshsettings = {
+			shader = "PdxMeshShip"
+		}
+	}
+}
