@@ -1,4 +1,4 @@
- SCAR_scavenger_ship = {
+ SCAR_scavenger = {
 	formation_priority = @juggernaut_formation_priority
 	max_speed = 50
 	acceleration = 0.2

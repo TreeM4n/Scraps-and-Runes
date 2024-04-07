@@ -1,8 +1,7 @@
 ship_section_template = {
 	key = "SCAR_scavenger_ship_mid"
-	ship_size = SCAR_scavenger_ship
+	ship_size = SCAR_scavenger
 	fits_on_slot = "core"
-	#graphical_culture = no
 	entity = "SCAR_scavenger_entity"
 	icon = "GFX_ship_part_core_mid"
 	component_slot = {
