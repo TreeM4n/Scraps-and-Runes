@@ -129,7 +129,6 @@ ship_event = {
 	option = {
 		# ai ez cheat
 		name = trime.1.e
-		
 		trigger = {
 			this.owner = {
 				is_ai = yes
@@ -144,12 +143,20 @@ ship_event = {
 			}
 			random_owned_starbase = {
 				solar_system = {
+					random_system_planet = {
+						limit = {
+							is_star = yes
+						}
+						save_event_target_as = trime_system_star
+					}
 					spawn_megastructure = {
 						type = scar_mega_chronomancer_palace
+						planet = event_target:trime_system_star
+						orbit_angle = 225
+						orbit_distance = 30
 					}
 				}
 			}
-
 		}
 		ai_chance = {
 			factor = 100
@@ -1675,7 +1682,6 @@ country_event = {
 	}
 }
 
-
 # halt random megastructure
 country_event = {
 	id = trime.100
@@ -1768,7 +1774,6 @@ event = {
 		}
 	}
 }
-
 
 # hourglass spin removes leader age, remove leader age aprt. spin is cool
 event = {
@@ -1893,10 +1898,8 @@ country_event = {
 				show_notification = yes
 			}
 		}
-
 	}
 }
-
 
 # random event
 leader_event = {
@@ -2248,13 +2251,12 @@ leader_event = {
 	immediate = {
 		owner = {
 			random_owned_leader = {
-			limit = {
-				leader_age > 10
+				limit = {
+					leader_age > 10
+				}
+				save_event_target_as = trime_bullyhim
 			}
-			save_event_target_as = trime_bullyhim
 		}
-		}
-		
 	}
 	option = {
 		name = trime.114.a
@@ -2279,5 +2281,3 @@ leader_event = {
 		}
 	}
 }
-
-
