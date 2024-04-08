@@ -23,7 +23,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = 0
 
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "ship_aura_components"
 
 	friendly_aura = {

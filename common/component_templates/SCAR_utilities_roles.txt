@@ -47,7 +47,7 @@ utility_component_template = {
 	ship_behavior = "artillery"
 
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	upgrades_to = "SCAR_COMPUTER_ARTILLERY_BASIC"
 	ai_tags = { artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
@@ -74,7 +74,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_1" }
@@ -105,7 +105,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_2" }
@@ -136,7 +136,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_3" }
@@ -178,7 +178,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -208,7 +208,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "artillery"
 	prerequisites = { "tech_precognition_interface" }
@@ -242,7 +242,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_1" }
@@ -276,7 +276,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_2" }
@@ -310,7 +310,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_3" }
@@ -355,7 +355,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -388,7 +388,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_science_ship }
-	size_restriction = { SCAR_scavenger_ship }
+	size_restriction = { SCAR_scavenger }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_precognition_interface" }

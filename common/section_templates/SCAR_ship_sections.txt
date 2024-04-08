@@ -34,6 +34,7 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "root"
 	}
+	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"

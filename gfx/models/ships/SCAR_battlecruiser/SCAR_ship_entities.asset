@@ -44,35 +44,35 @@ entity = {
 	
 	locator = { name = "part1" 	position = { 0 0 0 } }
 	
-	scale = 0.2
+	scale = 0.5
 	cull_radius = 10
 }
 
 ## normal turret
 entity = {
-	name = "mem_ttw_01_large_turret_entity"
+	name = "SCAR_scavenger_01_large_turret_entity"
 	pdxmesh = "SCAR_battlecruiser_turret_mesh"
 }
 
 entity = {
-	name = "mem_ttw_01_large_laser_gun_entity"
-	pdxmesh = "SCAR_battlecruiser_turret_mesh"
-	scale = 1.0
-}
-
-entity = {
-	name = "mem_ttw_01_large_kinetic_gun_entity"
+	name = "SCAR_scavenger_01_large_laser_gun_entity"
 	pdxmesh = "SCAR_battlecruiser_turret_mesh"
 	scale = 1.0
 }
 
 entity = {
-	name = "mem_ttw_01_turret_small_entity"
+	name = "SCAR_scavenger_01_large_kinetic_gun_entity"
+	pdxmesh = "SCAR_battlecruiser_turret_mesh"
+	scale = 1.0
+}
+
+entity = {
+	name = "SCAR_scavenger_01_turret_small_entity"
 	pdxmesh = "SCAR_battlecruiser_turret_pd_mesh"
 }
 
 entity = {
-	name = "mem_ttw_01_turret_point_defence_entity"
+	name = "SCAR_scavenger_01_turret_point_defence_entity"
 	pdxmesh = "SCAR_battlecruiser_turret_pd_mesh"
 	scale = 1.0
 }
