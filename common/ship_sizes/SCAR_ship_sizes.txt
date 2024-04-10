@@ -80,16 +80,14 @@
 
 
 	num_target_locators = 0
-	can_have_federation_design = no
-	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	is_designable = no
 	icon = ship_size_science
 
 	default_behavior = carrier
 	ship_roles = { carrier artillery }
 
 	class = shipclass_military
-	construction_type = starbase_shipyard
+	#construction_type = starbase_shipyard
 
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
