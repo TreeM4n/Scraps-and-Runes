@@ -417,3 +417,74 @@ entity = {
 		}
 	}
 }
+
+entity = {
+	name = "SCAR_matter_decompressor_entity"
+	pdxmesh = "matter_decompressor_01_stage_3_mesh"
+	
+		meshsettings = {
+			name = "body3Shape"
+			index = 0
+			texture_diffuse = "arthropoid_01_matter_decompressor_diffuse.dds"
+			texture_normal = "arthropoid_01_matter_decompressor_normal.dds"
+			texture_specular = "arthropoid_01_matter_decompressor_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" 
+		
+		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
+	
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
+	}
+	scale = 0.2
+}
+
+entity = {
+	name = "SCAR_strategic_coordination_center_entity"
+	pdxmesh = "strategic_coordination_center_01_stage_1_mesh"
+	
+		meshsettings = {
+			name = "body1Shape"
+			index = 0
+			texture_diffuse = "avian_01_strategic_coordination_center_diffuse.dds"
+			texture_normal = "avian_01_strategic_coordination_center_normal.dds"
+			texture_specular = "avian_01_strategic_coordination_center_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
+
+		start_event = { trigger_once = yes sound = { soundeffect = "sfx_strategic_coordination_center_hum" } }
+	}
+	scale = 0.15
+}
+
+entity = { #use this for the full model
+	name = "SCAR_archaeology_guild_entity"
+	pdxmesh = "orbital_ring_tier_03_mesh"
+	locator = { name = "pos1"	position = { 0 0 0 } rotation = { 0 -90 0 } }
+	scale = 2.0
+	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
+	attach = { "part2" 			= "avian_01_orbital_ring_section_entity" }
+	attach = { "part3" 			= "avian_01_orbital_ring_section_entity" }
+	attach = { "part4" 			= "avian_01_orbital_ring_section_entity" }
+	attach = { "hub1" 			= "SCAR_strategic_coordination_center_entity" }
+	attach = { "hub2" 			= "SCAR_strategic_coordination_center_entity" }
+	attach = { "hub3" 			= "SCAR_strategic_coordination_center_entity" }
+	attach = { "hub4" 			= "SCAR_strategic_coordination_center_entity" }
+	attach = { "pos1" 			= "SCAR_matter_decompressor_entity" }
+
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_megastructure_orbital_ring_03_idle" } }
+	}
+}
