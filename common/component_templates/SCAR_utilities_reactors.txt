@@ -2,21 +2,21 @@
 #############
 #	POWER	#
 #############
-@destroyer_power_1 = 400
-@destroyer_power_2 = 600
-@destroyer_power_3 = 800
-@destroyer_power_4 = 1000
-@destroyer_power_5 = 1200
-@destroyer_power_6 = 1400
+@SCAR_power_1 = 400
+@SCAR_power_2 = 600
+@SCAR_power_3 = 800
+@SCAR_power_4 = 1000
+@SCAR_power_5 = 1200
+@SCAR_power_6 = 1400
 #############
 #	COST	#
 #############
-@destroyer_cost_1 = 20
-@destroyer_cost_2 = 26
-@destroyer_cost_3 = 34
-@destroyer_cost_4 = 44
-@destroyer_cost_5 = 56
-@destroyer_cost_6 = 74
+@SCAR_cost_1 = 20
+@SCAR_cost_2 = 26
+@SCAR_cost_3 = 34
+@SCAR_cost_4 = 44
+@SCAR_cost_5 = 56
+@SCAR_cost_6 = 74
 #############
 # REACTORS #
 #############
@@ -29,11 +29,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_1"
 	icon_frame = 1
-	power = @destroyer_power_1
+	power = @SCAR_power_1
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_1
+			alloys = @SCAR_cost_1
 		}
 		upkeep = {
 			energy = 0.20
@@ -58,11 +58,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_2"
 	icon_frame = 1
-	power = @destroyer_power_2
+	power = @SCAR_power_2
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_2
+			alloys = @SCAR_cost_2
 		}
 		upkeep = {
 			energy = 0.26
@@ -87,11 +87,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_3"
 	icon_frame = 1
-	power = @destroyer_power_3
+	power = @SCAR_power_3
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_3
+			alloys = @SCAR_cost_3
 		}
 		upkeep = {
 			energy = 0.34
@@ -116,11 +116,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_4"
 	icon_frame = 1
-	power = @destroyer_power_4
+	power = @SCAR_power_4
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_4
+			alloys = @SCAR_cost_4
 		}
 		upkeep = {
 			energy = 0.44
@@ -145,11 +145,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_5"
 	icon_frame = 1
-	power = @destroyer_power_5
+	power = @SCAR_power_5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_5
+			alloys = @SCAR_cost_5
 		}
 		upkeep = {
 			energy = 0.57
@@ -174,11 +174,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
-	power = @destroyer_power_6
+	power = @SCAR_power_6
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost_6
+			alloys = @SCAR_cost_6
 			sr_dark_matter = 2
 		}
 		upkeep = {
@@ -190,6 +190,41 @@ utility_component_template = {
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
 	size_restriction = { SCAR_scavenger }
+
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+#BoB reactors
+utility_component_template = {
+	key = "SCAR_Bob_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = 2500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @SCAR_cost_6
+			sr_dark_matter = 2
+		}
+		upkeep = {
+			energy = 0.74
+			alloys = 0.074
+		}
+	}
+
+	prerequisites = { "" }
+	component_set = "power_core"
+	size_restriction = { SCAR_dreadnought }
 
 	ai_weight = {
 		weight = 6

@@ -408,3 +408,36 @@ utility_component_template = {
 		}
 	}
 }
+
+utility_component_template = {
+	key = "SCAR_Bob_COMPUTER_CARRIER_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	size_restriction = { SCAR_dreadnought }
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	prerequisites = { "" }
+	ai_tags = { carrier }
+	ai_tag_weight = 0
+
+	ship_modifier = {
+		ship_engagement_range_mult = 0.75
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+		modifier = {
+			factor = 5
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+	}
+}

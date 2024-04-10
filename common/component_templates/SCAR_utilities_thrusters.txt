@@ -12,17 +12,17 @@
 @power_4 = -25
 @power_5 = -30
 
-@destroyer_power_1 = -20
-@destroyer_power_2 = -30
-@destroyer_power_3 = -40
-@destroyer_power_4 = -50
-@destroyer_power_5 = -60
+@SCAR_power_1 = -20
+@SCAR_power_2 = -30
+@SCAR_power_3 = -40
+@SCAR_power_4 = -50
+@SCAR_power_5 = -60
 
-@destroyer_cost1 = 6
-@destroyer_cost2 = 12
-@destroyer_cost3 = 18
-@destroyer_cost4 = 24
-@destroyer_cost5 = 30
+@SCAR_cost1 = 6
+@SCAR_cost2 = 12
+@SCAR_cost3 = 18
+@SCAR_cost4 = 24
+@SCAR_cost5 = 30
 
 
 #############
@@ -35,11 +35,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_1"
 	icon_frame = 1
-	power = @destroyer_power_1
+	power = @SCAR_power_1
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost1
+			alloys = @SCAR_cost1
 		}
 	}
 
@@ -61,11 +61,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_2"
 	icon_frame = 1
-	power = @destroyer_power_2
+	power = @SCAR_power_2
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost2
+			alloys = @SCAR_cost2
 		}
 	}
 
@@ -89,11 +89,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_3"
 	icon_frame = 1
-	power = @destroyer_power_3
+	power = @SCAR_power_3
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost3
+			alloys = @SCAR_cost3
 		}
 	}
 	modifier = {
@@ -116,11 +116,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_4"
 	icon_frame = 1
-	power = @destroyer_power_4
+	power = @SCAR_power_4
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost4
+			alloys = @SCAR_cost4
 		}
 	}
 	modifier = {
@@ -143,11 +143,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_5"
 	icon_frame = 1
-	power = @destroyer_power_5
+	power = @SCAR_power_5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @destroyer_cost4
+			alloys = @SCAR_cost4
 			sr_dark_matter = 2
 		}
 	}
@@ -159,6 +159,41 @@ utility_component_template = {
 	prerequisites = { "tech_dark_matter_propulsion" }
 	component_set = "thruster_components"
 	size_restriction = { SCAR_scavenger }
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+#Bob thrusters
+utility_component_template = {
+	key = "SCAR_Bob_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @SCAR_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @SCAR_cost4
+			sr_dark_matter = 2
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.5
+		ship_evasion_add = 16
+	}
+
+	prerequisites = { "" }
+	component_set = "thruster_components"
+	size_restriction = { SCAR_dreadnought }
 
 	ai_weight = {
 		weight = 5
