@@ -472,7 +472,7 @@ entity = { #use this for the full model
 	name = "SCAR_archaeology_guild_entity"
 	pdxmesh = "orbital_ring_tier_03_mesh"
 	locator = { name = "pos1"	position = { 0 0 0 } rotation = { 0 -90 0 } }
-	scale = 2.0
+	scale = 4.0
 	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
 	attach = { "part2" 			= "avian_01_orbital_ring_section_entity" }
 	attach = { "part3" 			= "avian_01_orbital_ring_section_entity" }
