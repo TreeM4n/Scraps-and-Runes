@@ -142,10 +142,8 @@ r_trime_houglass = {
 					}
 					event_target:trime_time_lord = {
 						add_age = 10
-					}
-					event_target:trime_time_lord = {
 						trime_setportrait = yes
-					}
+					}					
 				}
 			}
 		}

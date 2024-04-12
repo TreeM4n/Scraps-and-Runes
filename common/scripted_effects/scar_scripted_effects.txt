@@ -1,0 +1,17 @@
+#TODO: add all tech from vanilla and this mod, check if already have it and else just give progress
+scar_give_random_archeotech = {
+	add_resource = {
+		unity = 250
+	}
+}
+
+scar_give_defeat_reward = {
+	while = {
+		count = 3
+		scar_give_random_archeotech = yes
+	}
+	steal_relic = {
+		target = event_target:scar_stealer_country
+		relic = ALL
+	}
+}

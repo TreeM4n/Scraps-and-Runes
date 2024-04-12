@@ -1,0 +1,70 @@
+# steal relic project
+special_project = {
+	key = "scar_pirate_steal_relic_project"
+	#cost = 1000
+	days_to_research = 180
+	tech_department = physics_technology
+	picture = GFX_evt_intelligence_report
+	timelimit = 1800
+	#event_chain = trime_decoded_messages_chain
+	event_scope = country_event
+	requirements = {
+		#shipclass_science_ship = 1
+		leader = commander
+		#skill > 2
+	}
+	abort_trigger = {
+	}
+	on_success = {
+		hidden_effect = {
+			target.owner = {
+				country_event = {
+					id = scar.104
+				}
+			}
+		}
+	}
+	#on_fail = {
+	#	country_event = { id = preftl_espionage.1020 }
+	#}
+}
+
+# find pirate home system
+special_project = {
+	key = "scar_find_pirates_system"
+	cost = 2000
+	#days_to_research = 180
+	tech_department = engineering_technology
+	picture = GFX_evt_intelligence_report
+	#timelimit = 1800
+	#event_chain = trime_decoded_messages_chain
+	event_scope = country_event
+
+	abort_trigger = {
+	}
+	on_success = {
+		
+	hidden_effect = {
+		set_global_flag = scar_treasure_island_spawned
+		random_owned_starbase = {
+			solar_system = {
+				spawn_system = {
+					initializer = scar_treasure_island
+				}
+			}
+		}
+		country_event = {
+			id = scar.108
+		}
+		every_country = {
+			limit = {
+				has_special_project = scar_find_pirates_system
+			}
+			abort_special_project = {
+				type = scar_find_pirates_system
+			}
+		}
+	}
+	}
+
+}

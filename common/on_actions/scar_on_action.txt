@@ -8,6 +8,7 @@
 on_game_start = {
 	events = {
 		trime.0 # flag allowed + random spawn
+		scar.199 # create stealer of relics
 	}
 }
 
@@ -120,6 +121,17 @@ on_five_year_pulse = {
 	}
 }
 
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+		scar.105 # first relic stealer fleet got destroyed
+	}	
+}
+
+
 # This = Country
 on_relic_lost = {
 	events = {
@@ -131,6 +143,10 @@ on_relic_lost = {
 on_relic_received = {
 	events = {
 		#trime.103 # steal relic back event
+	}
+	random_events = {
+		5 = scar.100
+		95 = 0
 	}
 }
 

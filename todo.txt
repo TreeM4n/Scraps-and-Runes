@@ -9,3 +9,10 @@ Aevum
 - remove the reviving part, keep reverse aging, done
 - make AI able to use him, kinda done
 - later: add more options in the recruitment event chain
+- testing !
+
+Relic stealer
+
+- make all scripted effects for rewards
+- make a system proper initializer
+- testing !

@@ -1,5 +1,5 @@
 ship_design = {
-	name = "Bobbington"
+	name = "scar_Bobbington"
 	ship_size = SCAR_dreadnought
 	section = {
 		template = "EVENT_REAPER_SECTION"
