@@ -7,17 +7,18 @@ special_project = {
 	picture = GFX_evt_intelligence_report
 	timelimit = 1800
 	#event_chain = trime_decoded_messages_chain
-	event_scope = country_event
+	event_scope = ship_event
 	requirements = {
 		#shipclass_science_ship = 1
-		leader = commander
+		#leader = commander
 		#skill > 2
+		shipclass_military = 1
 	}
 	abort_trigger = {
 	}
 	on_success = {
 		hidden_effect = {
-			target.owner = {
+			event_target:scar_stealer_country_target_planet.owner = {
 				country_event = {
 					id = scar.104
 				}
@@ -39,32 +40,29 @@ special_project = {
 	#timelimit = 1800
 	#event_chain = trime_decoded_messages_chain
 	event_scope = country_event
-
 	abort_trigger = {
 	}
 	on_success = {
-		
-	hidden_effect = {
-		set_global_flag = scar_treasure_island_spawned
-		random_owned_starbase = {
-			solar_system = {
-				spawn_system = {
-					initializer = scar_treasure_island
+		hidden_effect = {
+			set_global_flag = scar_treasure_island_spawned
+			random_owned_starbase = {
+				solar_system = {
+					spawn_system = {
+						initializer = scar_treasure_island
+					}
+				}
+			}
+			country_event = {
+				id = scar.108
+			}
+			every_country = {
+				limit = {
+					has_special_project = scar_find_pirates_system
+				}
+				abort_special_project = {
+					type = scar_find_pirates_system
 				}
 			}
 		}
-		country_event = {
-			id = scar.108
-		}
-		every_country = {
-			limit = {
-				has_special_project = scar_find_pirates_system
-			}
-			abort_special_project = {
-				type = scar_find_pirates_system
-			}
-		}
 	}
-	}
-
 }
