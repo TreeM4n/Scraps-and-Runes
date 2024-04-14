@@ -1,10 +1,11 @@
 # aevums palace
 scar_mega_chronomancer_palace = {
-	entity = "habitat_phase_02_entity" # major orbital
+	entity = "habitat_phase_01_entity" # major orbital
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
+	scales_with_planet = yes
 	build_time = 1800
 	resources = {
 		category = megastructures

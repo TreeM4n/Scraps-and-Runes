@@ -28,6 +28,152 @@ event = {
 	}
 }
 
+# test setup event
+country_event = {
+	id = trime.999
+	title = trime.1.name
+	desc = trime.1.desc
+	show_sound = event_conversation
+	location = event_target:trime_primitive_rewind_world
+	is_triggered_only = yes
+	diplomatic_title = BLANK_STRING
+	trigger = {
+		event_target:trime_primitive_rewind_world = {
+			has_planet_flag = trime_first_timer
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = trime_system_spawned
+				}
+			}
+			capital_scope = {
+				solar_system = {
+					spawn_trime = yes
+				}
+			}
+		}
+		event_target:trime_primitive_rewind_world = {
+			remove_planet_flag = trime_first_timer
+		}
+	}
+	diplomatic = yes
+	picture_event_data = {
+		portrait = GFX_trime_time_lord
+		room = pre_ftl_victorian_room
+		planet_background = pc_continental
+	}
+	option = {
+		# who are you		
+		name = trime.1.a
+		is_dialog_only = yes
+		response_text = trime.1.a.response
+	}
+	option = {
+		# What is this system
+		name = trime.1.c
+		response_text = trime.1.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		# do his bidding make a light show in orbit
+		name = trime.1.d
+		#response_text = trime.1.d.response
+		#is_dialog_only = yes
+		#hidden_effect = {
+		enable_special_project = {
+			name = trime_make_lightshow
+			owner = this
+			location = event_target:trime_primitive_rewind_world
+		}
+		hidden_effect = {
+			this = {
+				country_event = {
+					id = trime.3
+					days = 30
+				}
+			}
+		}
+		#}
+	}
+	option = {
+		# hell nah invade him
+		name = trime.1.e
+		allow = {
+			this = {
+				has_policy_flag = interference_aggressive
+			}
+		}
+		#response_text = trime.1.d.response
+		#is_dialog_only = yes
+		#hidden_effect = {
+		this = {
+			begin_event_chain = {
+				event_chain = trime_invade_thisguy
+				target = event_target:trime_primitive_rewind_world
+			}
+		}
+		#}
+	}
+	option = {
+		# ai ez cheat
+		name = trime.1.e
+		trigger = {
+			#this = {
+			#	is_ai = yes
+			#}
+		}
+		#response_text = trime.1.d.response
+		#is_dialog_only = yes
+		#hidden_effect = {
+		this = {
+			country_event = {
+				id = trime.11
+			}
+			random_owned_starbase = {
+				solar_system = {
+					random_system_planet = {
+						limit = {
+							is_star = yes
+						}
+						save_event_target_as = trime_system_star
+					}
+					spawn_megastructure = {
+						type = scar_mega_chronomancer_palace
+						planet = event_target:trime_system_star
+						orbit_angle = 225
+						orbit_distance = 30
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		#}
+	}
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					this = {
+						is_ai = no
+					}
+				}
+				this = {
+					country_event = {
+						id = trime.21
+						days = 90
+					}
+				}
+			}
+		}
+	}
+	#found weird signal
+}
+
 # this = ship | from = tplanet
 ship_event = {
 	id = trime.1
