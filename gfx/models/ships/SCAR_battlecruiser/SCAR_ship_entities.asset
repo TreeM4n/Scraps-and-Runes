@@ -232,13 +232,82 @@ entity = {
 	scale = 1.0
 }
 
+#entity = {
+#	name = "SCAR_ship_art_part_entity_medium"
+#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
+#	
+#		meshsettings = {
+#			name = "polySurface13Shape"
+#			index = 0
+#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
+#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
+#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
+#			shader = "PdxMeshShip"
+#		}
+#	
+#	default_state = "idle"
+#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
+#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
+#
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
+#	}
+#	scale = 0.1
+#}
+#
+#entity = {
+#	name = "SCAR_ship_art_part_entity_small"
+#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
+#	
+#		meshsettings = {
+#			name = "polySurface13Shape"
+#			index = 0
+#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
+#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
+#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
+#			shader = "PdxMeshShip"
+#		}
+#	
+#	default_state = "idle"
+#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
+#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
+#
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
+#	}
+#	scale = 0.05
+#}
+#
+#entity = {
+#	name = "SCAR_ship_art_part_entity_large"
+#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
+#	
+#		meshsettings = {
+#			name = "polySurface13Shape"
+#			index = 0
+#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
+#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
+#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
+#			shader = "PdxMeshShip"
+#		}
+#	
+#	default_state = "idle"
+#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
+#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
+#
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
+#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
+#	}
+#	scale = 0.16
+#}
+
 entity = { #use this entity to get the full model
 	name = "SCAR_dreadnought_entity"
 	pdxmesh = "mammalian_01_military_station_large_mesh"
 
 	locator = { name = "root"	position = { 0 0 0} }
-	locator = { name = "bow"	position = { 0 1 -26} }
-	locator = { name = "mid1"	position = { 0 1 -19.5} }
+	locator = { name = "bow"	position = { 0 1 -29.5} }
+	locator = { name = "mid1"	position = { 0 1 -23} }
 	locator = { name = "mid2"	position = { 0 1 -6.3} }
 	locator = { name = "stern"	position = { 0 2 0} }
 	locator = { name = "thrust1"	position = { -6.5 0 4 } rotation = { 0 0 -90 } }
@@ -322,6 +391,10 @@ entity = {
 		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
 	}
 	state = { name = "death" state_time = 5 }
+
+	attach = { "medium_gun_01" 		= "mammalian_01_medium_kinetic_gun_entity" }
+	attach = { "small_gun_01" 			= "mammalian_01_small_kinetic_gun_entity" }
+	attach = { "small_gun_02" 			= "mammalian_01_small_kinetic_gun_entity" }
 }
 
 entity = {
@@ -336,6 +409,9 @@ entity = {
 		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
 	}
 	state = { name = "death" state_time = 5 }
+
+	attach = { "small_gun_01" 			= "mammalian_01_small_kinetic_gun_entity" }
+	attach = { "small_gun_02" 			= "mammalian_01_small_kinetic_gun_entity" }
 	scale = 1.3
 }
 
@@ -353,6 +429,9 @@ entity = {
 		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
 	}
 	state = { name = "death" state_time = 5 }
+
+	attach = { "large_gun_01" 			= "mammalian_01_large_kinetic_gun_entity" }
+	attach = { "medium_gun_01" 			= "mammalian_01_medium_kinetic_gun_entity" }
 	scale = 1.3
 }
 
