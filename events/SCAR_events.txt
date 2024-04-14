@@ -158,7 +158,7 @@ country_event = {
 	trigger = {
 		exists = this
 		exists = event_target:scar_stealer_country
-		mid_game_years_passed >= 0
+		#mid_game_years_passed >= 0
 		NOT = {
 			has_global_flag = scar_defeated_relic_stealer
 		}
