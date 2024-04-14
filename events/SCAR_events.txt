@@ -1,5 +1,5 @@
 namespace = scar
-#change planet assets, used in system init
+#change planet assets, unused
 planet_event = {
 	id = scar.1
 	hide_window = yes
@@ -33,9 +33,9 @@ event = {
 	}
 	immediate = {
 		create_country = {
-			name = "NAME_scar_stealer_of_relics"
+			name = "NAME_Unknown"
 			type = global_event
-			auto_delete = no
+			#auto_delete = yes
 			flag = {
 				icon = {
 					category = "special"
@@ -58,7 +58,7 @@ event = {
 		}
 		event_target:scar_stealer_country = {
 			create_species = {
-				name = "NAME_scar_stealer_of_relics"
+				name = "NAME_Unknown"
 				class = RANDOM
 				portrait = RANDOM
 				namelist = "PRT1"
@@ -91,15 +91,10 @@ event = {
 				set_age = 64
 				immortal = yes
 				effect = {
+					save_event_target_as = scar_stealer_of_relics
 					exile_leader_as = scar_stealer_of_relics
-					save_global_event_target_as = scar_stealer_of_relics
-					set_owner = event_target:scar_stealer_country
 				}
 			}
-		}
-		every_playable_country = {
-			establish_communications_no_message = event_target:scar_stealer_country
-			set_hostile = event_target:scar_stealer_country
 		}
 	}
 	after = {
@@ -113,43 +108,6 @@ event = {
 }
 
 # This = Country
-#dummy event to test
-country_event = {
-	id = scar.99
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		exists = this
-		exists = event_target:scar_stealer_country
-		#mid_game_years_passed >= 0
-		NOT = {
-			has_global_flag = scar_defeated_relic_stealer
-		}
-		NOT = {
-			has_global_flag = scar_stealer_currently_raiding
-		}
-		NOT = {
-			is_same_value = event_target:scar_stealer_country
-		}
-	}
-	immediate = {
-		country_event = {
-			id = scar.101
-		}
-		#create_fallen_empire_fleet = yes
-		#last_created_fleet = {
-		#	set_owner = this
-		#}
-		every_owned_fleet = {
-			create_pirate_ships_7 = yes
-			create_pirate_ships_7 = yes
-			create_pirate_ships_7 = yes			
-		}
-		add_relic = r_celestial_tear
-	}
-}
-
-# This = Country
 #on_relic_received, 5% that stealer of relics spawns and attacks
 country_event = {
 	id = scar.100
@@ -158,7 +116,7 @@ country_event = {
 	trigger = {
 		exists = this
 		exists = event_target:scar_stealer_country
-		#mid_game_years_passed >= 0
+		mid_game_years_passed >= 0
 		NOT = {
 			has_global_flag = scar_defeated_relic_stealer
 		}
@@ -178,17 +136,10 @@ country_event = {
 	id = scar.101
 	title = scar.101.name
 	desc = scar.101.desc
-	picture = GFX_evt_communication_event
-	show_sound = event_air_raid_siren
+	picture = GFX_evt_clocks
+	show_sound = event_encrypted_comms
 	#location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
-	diplomatic_title = BLANK_STRING
-	diplomatic = yes
-	picture_event_data = {
-		portrait = event_target:scar_stealer_of_relics
-		room = enclave_trader_room
-		#planet_background = pc_city
-	}
 	immediate = {
 	}
 	option = {
@@ -196,26 +147,8 @@ country_event = {
 		name = scar.101.a
 		event_target:scar_stealer_country = {
 			steal_relic = {
-				target = root
+				target = THIS
 				relic = RANDOM
-			}
-		}
-		if = {
-			limit = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-			add_resource = {
-				minor_artifacts = 1000
-			}
-		}
-		else = {
-			add_monthly_resource_mult = {
-				resource = society_research
-				value = 24
-			}
-			add_monthly_resource_mult = {
-				resource = alloys
-				value = 12
 			}
 		}
 		#scar_give_random_archeotech = yes 
@@ -228,7 +161,6 @@ country_event = {
 			influence = 100
 		}
 		hidden_effect = {
-			set_global_flag = scar_stealer_currently_raiding
 			country_event = {
 				# spawn fleet and make them really mad
 				id = scar.102
@@ -253,16 +185,11 @@ country_event = {
 		exists = this
 	}
 	immediate = {
-		root.capital_scope = {
-			save_event_target_as = scar_stealer_country_target_planet
-		}
 		event_target:scar_stealer_country = {
 			enable_special_project = {
 				name = scar_pirate_steal_relic_project
 				location = root.capital_scope
-				owner = this
 			}
-			set_hostile = root
 			create_fleet = {
 				name = "NAME_scar_big_pirate_fleet"
 				settings = {
@@ -286,7 +213,7 @@ country_event = {
 						special_project = scar_pirate_steal_relic_project
 						target = root.capital_scope
 					}
-					#set_event_locked = yes
+					set_event_locked = yes
 					set_fleet_flag = scar_big_pirate_fleet
 				}
 			}
@@ -299,8 +226,8 @@ country_event = {
 	id = scar.103
 	title = scar.103.name
 	desc = scar.103.desc
-	picture = GFX_evt_pirate_armada
-	show_sound = event_sensor_ping
+	picture = GFX_evt_clocks
+	show_sound = event_encrypted_comms
 	location = this.capital_scope.solar_system
 	is_triggered_only = yes
 	immediate = {
@@ -317,27 +244,18 @@ country_event = {
 	id = scar.104
 	title = scar.104.name
 	desc = scar.104.desc
-	picture = GFX_evt_pirates_attacking_cargo
-	show_sound = event_ship_explosion
+	picture = GFX_evt_clocks
+	show_sound = event_encrypted_comms
 	location = this.capital_scope.solar_system
 	is_triggered_only = yes
 	immediate = {
-		remove_global_flag = scar_stealer_currently_raiding
 	}
 	option = {
 		name = CURSES
 	}
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = scar_treasure_island_spawned
-				}
-			}
-			enable_special_project = {
-				name = scar_find_pirates_system
-				owner = this
-			}
+		enable_special_project = {
+			name = scar_find_pirates_system
 		}
 		event_target:scar_stealer_country = {
 			steal_relic = {
@@ -348,12 +266,10 @@ country_event = {
 		hidden_effect = {
 			event_target:scar_stealer_country = {
 				every_owned_fleet = {
-					delete_fleet = this
+					destroy_fleet = this
 				}
 				if = {
-					limit = {
-						has_global_flag = scar_treasure_island_spawned
-					}
+					limit = { has_global_flag = scar_treasure_island_spawned }
 					event_target:scar_stealer_country = {
 						create_fleet = {
 							name = "NAME_scar_dreadnought_fleet"
@@ -366,11 +282,13 @@ country_event = {
 								create_ship = {
 									name = scar_Bobbington
 									design = scar_Bobbington
+			
 									#scar_Bobbington
 								}
+								
 								set_location = {
 									target = event_target:scar_treasure_island
-									distance = 100
+									distance = 500
 									angle = 45
 									direction = in_system
 								}
@@ -378,10 +296,10 @@ country_event = {
 								set_aggro_range = 600
 								set_aggro_range_measure_from = self
 								set_fleet_bombardment_stance = armageddon
+								
 								set_fleet_flag = scar_dreadnought_fleet
 							}
 						}
-						set_leader = event_target:scar_stealer_of_relics
 					}
 				}
 			}
@@ -400,7 +318,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = this
-		fromfromfrom = {
+		fromfrom = {
 			OR = {
 				has_fleet_flag = scar_big_pirate_fleet
 				has_fleet_flag = scar_dreadnought_fleet
@@ -410,7 +328,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				fromfromfrom = {
+				fromfrom = {
 					has_fleet_flag = scar_big_pirate_fleet
 				}
 			}
@@ -423,7 +341,6 @@ country_event = {
 		}
 		else = {
 			this = {
-				remove_global_flag = scar_stealer_currently_raiding
 				set_global_flag = scar_defeated_relic_stealer
 				country_event = {
 					id = scar.107
@@ -442,25 +359,14 @@ country_event = {
 	show_sound = event_encrypted_comms
 	location = this.capital_scope.solar_system
 	is_triggered_only = yes
-	diplomatic_title = BLANK_STRING
-	diplomatic = yes
-	picture_event_data = {
-		portrait = event_target:scar_stealer_of_relics
-		room = enclave_trader_room
-		#planet_background = pc_city
-	}
 	trigger = {
 		exists = event_target:scar_stealer_country
 	}
 	immediate = {
-		root.capital_scope = {
-			save_event_target_as = scar_stealer_country_target_planet
-		}
 		event_target:scar_stealer_country = {
 			enable_special_project = {
 				name = scar_pirate_steal_relic_project
 				location = root.capital_scope
-				owner = this
 			}
 			create_fleet = {
 				name = "NAME_scar_medium_pirate_fleet"
@@ -485,7 +391,7 @@ country_event = {
 						special_project = scar_pirate_steal_relic_project
 						target = root.capital_scope
 					}
-					#set_event_locked = yes
+					set_event_locked = yes
 					#set_fleet_flag = scar_big_pirate_fleet
 				}
 			}
@@ -512,7 +418,7 @@ country_event = {
 						special_project = scar_pirate_steal_relic_project
 						target = root.capital_scope
 					}
-					#set_event_locked = yes
+					set_event_locked = yes
 					#set_fleet_flag = scar_big_pirate_fleet
 				}
 			}
@@ -527,8 +433,10 @@ country_event = {
 					create_ship = {
 						name = scar_Bobbington
 						design = scar_Bobbington
+
 						#scar_Bobbington
 					}
+					
 					set_location = {
 						target = root.capital_scope
 						distance = 500
@@ -543,7 +451,7 @@ country_event = {
 						special_project = scar_pirate_steal_relic_project
 						target = root.capital_scope
 					}
-					#set_event_locked = yes
+					set_event_locked = yes
 					set_fleet_flag = scar_dreadnought_fleet
 				}
 			}
@@ -555,22 +463,25 @@ country_event = {
 	}
 }
 
+
 # on dreadnaught defeat
 country_event = {
 	id = scar.107
 	title = scar.107.name
 	desc = scar.107.desc
-	picture = GFX_evt_debris
-	show_sound = event_space_battle
+	picture = GFX_evt_clocks
+	show_sound = event_encrypted_comms
 	#location = this.capital_scope.solar_system
 	is_triggered_only = yes
 	immediate = {
+		
 	}
 	option = {
 		#yippie defeated pirates
 		name = scar.107.a
 	}
 	after = {
+		
 		hidden_effect = {
 			event_target:scar_stealer_country = {
 				destroy_country = yes
@@ -584,14 +495,16 @@ country_event = {
 	id = scar.108
 	title = scar.108.name
 	desc = scar.108.desc
-	picture = GFX_evt_treasure_pile
-	show_sound = event_finding_loot
+	picture = GFX_evt_clocks
+	show_sound = event_encrypted_comms
 	location = event_target:scar_treasure_island
 	is_triggered_only = yes
 	immediate = {
+		
 	}
 	option = {
 		#yippie found system
 		name = scar.108.a
 	}
+	
 }

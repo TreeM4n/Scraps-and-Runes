@@ -16,7 +16,4 @@ Relic stealer
 - make all scripted effects for rewards
 - make a system proper initializer
 - assign the relic stealer leader to every dreadnaught fleet and some events 
-- locs and images, done
-- add more options
-- maybe not delete every fleet?
 - testing !

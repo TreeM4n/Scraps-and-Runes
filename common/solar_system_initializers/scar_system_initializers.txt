@@ -36,9 +36,6 @@ scar_treasure_island = {
 		has_ring = no
 		init_effect = {
 			prevent_anomaly = yes
-			planet_event = {
-				id = scar.1
-			}
 		}
 		moon = {
 			name = "RANDOM"
