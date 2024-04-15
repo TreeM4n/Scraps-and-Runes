@@ -71,7 +71,7 @@ utility_component_template = {
 #############################
 
 utility_component_template = {
-	key = "SCAR_MANNED_FIRE_CONTROL_1"
+	key = "SCAR_MANNED_FIRE_CONTROL"
 	size = aux
 	icon = "GFX_ship_part_aura_detection_scrambler"
 	icon_frame = 1
@@ -89,6 +89,37 @@ utility_component_template = {
 
 	prerequisites = { tech_auxiliary_fire_control }
 	component_set = "SCAR_manned_fire_control"
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3.0
+			is_preferred_weapons = weapon_type_kinetic
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SCAR_INTEGRATED_FIRE_CONTROL"
+	size = aux
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+		}
+	}
+
+	ship_modifier = {
+		ship_accuracy_add = 15
+		ship_fire_rate_mult = 0.1
+		ship_experience_gain_mult = 1
+	}
+
+	prerequisites = { tech_auxiliary_fire_control }
+	component_set = "SCAR_integrated_fire_control"
 
 	ai_weight = {
 		weight = 10
@@ -167,6 +198,42 @@ utility_component_template = {
 		modifier = {
 			factor = 0.0
 			no_resource_for_component = { RESOURCE = sr_living_metal }
+		}
+		modifier = {
+			factor = 0.0
+			is_ai = yes
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SCAR_REGENEERATIVE_BIOSTEEL"
+	size = aux
+	icon = "GFX_ship_part_aura_strike_craft"
+	icon_frame = 1
+	power = -50
+	resources = {
+		category = ship_components
+		cost = {
+			food = 300
+		}
+	}
+
+	prerequisites = { "tech_armor_hardeners_2" }
+	component_set = "SCAR_regenerative_biosteel"
+
+	ship_modifier = {
+		ship_armor_mult = 0.1
+		ship_armor_regen_add_perc = 0.1
+		hip_hull_regen_add_perc = 0.1
+	}
+
+	ai_weight = {
+		weight = 10
+
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = food }
 		}
 		modifier = {
 			factor = 0.0

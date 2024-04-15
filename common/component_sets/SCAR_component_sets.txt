@@ -85,13 +85,13 @@ component_set = {
 }
 
 component_set = {
-	key = "SCAR_baol_armor"
+	key = "SCAR_regenerative_biosteel"
 	icon = "GFX_ship_part_aura_strike_craft"
 	icon_frame = 1
 }
 
 component_set = {
-	key = "SCAR_vultaum_fire_control"
+	key = "SCAR_integrated_fire_control"
 	icon = "GFX_ship_part_computer_line_sapient"
 	icon_frame = 1
 }

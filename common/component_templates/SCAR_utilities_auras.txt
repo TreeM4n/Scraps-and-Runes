@@ -27,12 +27,12 @@ utility_component_template = {
 	component_set = "ship_aura_components"
 
 	friendly_aura = {
-		name = "aura_inspiring_presence"
+		name = "SCAR_inspiring_presence"
 		system_wide = yes
 		apply_on = ships
 
 		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = friendly_inspiring_presence
+			id = SCAR_inspiring_presence
 			priority = 100
 		}
 
@@ -40,6 +40,48 @@ utility_component_template = {
 			ship_anomaly_generation_chance_mult = 1
 			ship_anomaly_research_speed_mult = 1
 			ship_archaeological_site_excavation_speed_mult = 1
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+utility_component_template = {
+	key = "SCAR_PSI_STORM_SHIP_AURA"
+	size = medium
+	icon = "GFX_ship_part_aura_inspiring_presence"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { juggernaut }
+	component_set = "ship_aura_components"
+
+	hostile_aura = {
+		name = "SCAR_aura_psi_storm"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = SCAR_psi_storm
+			priority = 100
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.25
+			ship_shield_mult = -0.35
 		}
 
 		graphics = {
