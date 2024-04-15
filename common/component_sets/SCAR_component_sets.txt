@@ -83,3 +83,22 @@ component_set = {
 	icon = "GFX_ship_part_wormhole"
 	icon_frame = 1
 }
+
+component_set = {
+	key = "SCAR_baol_armor"
+	icon = "GFX_ship_part_aura_strike_craft"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_vultaum_fire_control"
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SCAR_nanite_swarm"
+	icon = "GFX_ship_part_aura_nanobot"
+	icon_frame = 1
+}
+
