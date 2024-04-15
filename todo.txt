@@ -20,3 +20,25 @@ Relic stealer
 - add more options
 - maybe not delete every fleet?
 - testing !
+
+Current components
+
+- bootleg reactor U, common
+- shield recharger U, common, ?
+- manned fire control U, bionic
+- shield hardener U, psionic
+- armor hardener U, synthetic
+- bio plasma W, bionic
+- emp beam W, synthetic
+- astorid shoota W, common
+- gatling cannon W, common, ?
+- psionic swarmer missile W, psionic
+- boarding torpedos W, synthetic, ?
+- disintegration ray W, nanite
+- PD W, common
+- mega nuke W, common
+- nanite swarm W, nanite
+
+Planned components
+
+- archeotech cloaking U, common
