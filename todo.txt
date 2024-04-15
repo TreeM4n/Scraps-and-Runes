@@ -42,3 +42,7 @@ Current components
 Planned components
 
 - archeotech cloaking U, common
+
+NEW components
+- regenerative biosteel
+- integrated fire control
