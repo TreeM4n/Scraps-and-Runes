@@ -60,14 +60,14 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "SCAR_PSI_STORM_SHIP_AURA"
+	key = "SCAR_STATION_PSI_STORM_AURA"
 	size = medium
-	icon = "GFX_ship_part_aura_inspiring_presence"
+	icon = "GFX_ship_part_aura_shield_dampener"
 	icon_frame = 1
 	power = 0
+	hidden = yes
 
-	size_restriction = { juggernaut }
-	component_set = "ship_aura_components"
+	component_set = "station_medium_aura_components"
 
 	hostile_aura = {
 		name = "SCAR_aura_psi_storm"
@@ -75,13 +75,40 @@ utility_component_template = {
 		apply_on = ships
 
 		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = SCAR_psi_storm
+			id = SCAR_enemy_storm
 			priority = 100
 		}
 
 		modifier = {
-			ship_speed_reduction = 0.25
-			ship_shield_mult = -0.35
+			ship_speed_reduction = 0.5
+			ship_fire_rate_mult = -0.5
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	friendly_aura = {
+		name = "SCAR_aura_psi_storm"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = SCAR_friendly_storm
+			priority = 100
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+			ship_fire_rate_mult = -0.5
 		}
 
 		graphics = {
