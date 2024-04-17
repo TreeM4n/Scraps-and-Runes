@@ -20,5 +20,5 @@ Planned components
 
 Components
 
-- Make and add proper GFX, some locs and ai weights
+- Make and add proper GFX, some locs and ai weights, missing GFX: asteorid shoota,
 - Utilies miss an effect for archeoengineer AP

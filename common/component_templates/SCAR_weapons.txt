@@ -14,7 +14,7 @@ weapon_component_template = {
 	type = instant
 	power = -25
 
-	icon = "GFX_ship_part_scourge_missile_1"
+	icon = "GFX_scar_sputter_plasma"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 	#power = -10
@@ -56,7 +56,7 @@ weapon_component_template = {
 	type = instant
 	power = -30
 
-	icon = "GFX_ship_part_scourge_missile_1"
+	icon = "GFX_scar_sputter_plasma"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
@@ -99,7 +99,7 @@ weapon_component_template = {
 	type = instant
 	power = -36
 
-	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon = "GFX_scar_emp_beam"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
@@ -137,7 +137,7 @@ weapon_component_template = {
 	size = large
 	type = instant
 	power = -48
-	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon = "GFX_scar_emp_beam"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
@@ -173,6 +173,7 @@ weapon_component_template = {
 }
 
 ##################################asteroid shoota########################################
+#TODO: icon
 weapon_component_template = {
 	key = "LARGE_SCAR_asteroid_shoota_1"
 	size = large
@@ -338,7 +339,7 @@ weapon_component_template = {
 	size = medium
 	power = -17
 
-	icon = "GFX_ship_part_bifunctional_design"
+	icon = "GFX_scar_psionic_swarmer_missile"
 	icon_frame = 1
 	type = missile
 
@@ -437,7 +438,7 @@ weapon_component_template = {
 	type = instant
 	power = -20
 
-	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon = "GFX_scar_strange_beam"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 	power = -10
@@ -477,7 +478,7 @@ weapon_component_template = {
 	type = instant
 	power = -34
 
-	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon = "GFX_scar_strange_beam"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
@@ -515,7 +516,7 @@ weapon_component_template = {
 	size = large
 	type = instant
 	power = -48
-	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon = "GFX_scar_strange_beam"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
@@ -555,7 +556,7 @@ weapon_component_template = {
 	key = "SCAR_repeater_PD_1"
 	size = point_defence
 
-	icon = "GFX_ship_part_point_defense_3"
+	icon = "GFX_scar_point_defense"
 	icon_frame = 1
 
 	prerequisites = { "scar_tech_point_defence" }
@@ -586,17 +587,17 @@ weapon_component_template = {
 }
 
 ### Mega Nuke
-# TODO: change projectile to the WORMS spike thingy
+
 weapon_component_template = {
 	key = "XL_SCAR_nuke_1"
 	size = extra_large
 	type = instant
-	icon = "GFX_ship_part_wormhole"
+	icon = "GFX_scar_mega_nuke"
 	icon_frame = 1
 	entity = "invisible_turret_entity"
 	prerequisites = { "scar_tech_mega_nuke" }
 	component_set = "SCAR_mega_nuke"
-	projectile_gfx = "mega_nuke"
+	projectile_gfx = "dimensional_horror_spike_weapon"
 	tags = { weapon_type_kinetic weapon_role_artillery weapon_archaeotech}
 	ai_tags = { weapon_role_anti_armor }
 	resources = {
@@ -673,7 +674,7 @@ strike_craft_component_template = {
 
 	ship_behavior = "swarm"
 
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_scar_nanite_strike_craft"
 	icon_frame = 1
 	component_set = "SCAR_nanite_swarm"
 	prerequisites = { "scar_tech_nanite_swarm" }

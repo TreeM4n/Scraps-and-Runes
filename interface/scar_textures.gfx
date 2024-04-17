@@ -1,0 +1,79 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_scar_emp_beam"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_emp_beam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_scar_hull_regen"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_hull_regen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_scar_integrated_fire_control"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_integrated_fire_control.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_scar_mega_nuke"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_mega_nuke.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_scar_nanite_repair"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_nanite_repair_system.dds"
+	}
+
+		
+	spriteType = {
+		name = "GFX_scar_nanite_strike_craft"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_nanite_strike_scraft.dds"
+	}
+
+			
+	spriteType = {
+		name = "GFX_scar_strange_beam"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_null_strange_beam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_scar_point_defense"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_point_defense.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_scar_psionic_shield_hardener"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_psionic_shield_hardener.dds"
+	}
+
+		
+	spriteType = {
+		name = "GFX_scar_psionic_swarmer_missile"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_psionic_swarmer_missile.dds"
+	}
+			
+	spriteType = {
+		name = "GFX_scar_reactor_booster_bootleg"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_reactor_booster_bootleg.dds"
+	}
+				
+	spriteType = {
+		name = "GFX_scar_robot_armor_hardener"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_robot_armor_hardener.dds"
+	}
+					
+	spriteType = {
+		name = "GFX_scar_shield_booster"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_shield_booster.dds"
+	}
+
+						
+	spriteType = {
+		name = "GFX_scar_sputter_plasma"
+		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_sputter_plasma.dds"
+	}
+
+
+
+}
