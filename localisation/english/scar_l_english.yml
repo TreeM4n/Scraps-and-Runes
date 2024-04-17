@@ -7,7 +7,7 @@
  SCAR_EMP_BEAM_1_DESC:0 "EMP have been a long time favorite for dealing with energy. This ancient weoapon uses different wave lenghts to break enemy shields in an instant."
 
  SCAR_asteroid_shoota_1:0 "Ancient Asteroid Silo"
- SCAR_gatling_shoota_1:0 "By launching multiple asteroids at the enemy this weapons hopes to keep the enemy point-defense busy."
+ SCAR_asteroid_shoota_1_DESC:0 "By launching multiple asteroids at the enemy this weapons hopes to keep the enemy point-defense busy."
 
  SCAR_PSIONIC_SWARMER_MISSILE:0 "Ancient Psionic Swarmer Missiles"
 SCAR_PSIONIC_SWARMER_MISSILE_DESC:0 "Causes disruptions not just at armor and shields this missile also terrorizes the crew with unpleasant thoughts."
