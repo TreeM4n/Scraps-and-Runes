@@ -12,23 +12,24 @@ weapon_component_template = {
 	key = "SMALL_SCAR_sputter_plasma_1"
 	size = small
 	type = instant
-	power = -10
+	power = -25
 
 	icon = "GFX_ship_part_scourge_missile_1"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
-	power = -10
+	#power = -10
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_plasma_sputtershot" }
 	component_set = "SCAR_plasma_sputtershot_1"
 	projectile_gfx = "plasma_scattershot"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_archaeotech }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 2
+			minor_artifacts = 10
+			alloys = 20
 		}
 		upkeep = {
 			energy = @s_t1_upkeep_energy
@@ -37,15 +38,15 @@ weapon_component_template = {
 	total_fire_time = 20
 	damage = { min = 0 max = 70 }
 	range = 40
-	tracking = 0.20
+	tracking = 0.35
 	accuracy = 0.9
 	hull_damage = 1.5
 	shield_damage = 0.5
-	shield_penetration = 0.25
-	armor_damage = 1.5
-	armor_penetration = 0.25
+	#shield_penetration = 0.25
+	#armor_damage = 1.5
+	armor_penetration = 1
 	ai_weight = {
-		weight = 1
+		weight = 0
 	}
 }
 
@@ -53,16 +54,17 @@ weapon_component_template = {
 	key = "MEDIUM_SCAR_sputter_plasma_1"
 	size = medium
 	type = instant
-	power = -17
+	power = -30
 
 	icon = "GFX_ship_part_scourge_missile_1"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_plasma_sputtershot" }
+	
 	component_set = "SCAR_plasma_sputtershot_1"
 	projectile_gfx = "plasma_scattershot"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_archaeotech }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
@@ -75,136 +77,58 @@ weapon_component_template = {
 		}
 	}
 	damage = { min = 0 max = 100 }
-	range = 40
-	tracking = 0.20
-	accuracy = 0.9
-	hull_damage = 1.5
-	shield_damage = 0.5
-	shield_penetration = 0.25
-	armor_damage = 1.5
-	armor_penetration = 0.25
-	total_fire_time = 20
-	ai_weight = {
-		weight = 1
-	}
-}
-
-weapon_component_template = {
-	key = "LARGE_SCAR_sputter_plasma_1"
-	size = large
-	type = instant
-	power = -24
-	icon = "GFX_ship_part_scourge_missile_1"
-	icon_frame = 1
-	#color = { 0.1 1.0 0.1 1 }
-
-	prerequisites = { "tech_mass_drivers_1" }
-	component_set = "SCAR_plasma_sputtershot_1"
-	projectile_gfx = "plasma_scattershot"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_anti_armor }
-	ai_tag_weight = 0
-	resources = {
-		category = ship_components
-		cost = {
-			minor_artifacts = 5
-		}
-		upkeep = {
-			energy = @l_t1_upkeep_energy
-		}
-	}
-	damage = { min = 0 max = 200 }
 	range = 60
-	tracking = 0.20
+	tracking = 0.35
 	accuracy = 0.9
 	hull_damage = 1.5
 	shield_damage = 0.5
-	shield_penetration = 0.25
-	armor_damage = 1.5
-	armor_penetration = 0.25
+	#shield_penetration = 0.25
+	#armor_damage = 1.5
+	armor_penetration = 1
 	total_fire_time = 20
 	ai_weight = {
-		weight = 1
-		modifier = {
-				}			
-		}
+		weight = 0
+	}
 }
+
 
 #####################################EMP BEAM############################################
-weapon_component_template = {
-	key = "SMALL_SCAR_EMP_beam_1"
-	size = small
-	type = instant
-	power = -20
-
-	icon = "GFX_ship_part_space_cloud_weapon_1"
-	icon_frame = 1
-	#color = { 0.1 1.0 0.1 1 }
-	power = -10
-
-	prerequisites = { "tech_mass_drivers_1" }
-	component_set = "SCAR_EMP_BEAM_1"
-	projectile_gfx = "scrapper_lightning"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_anti_armor }
-	ai_tag_weight = 0
-	resources = {
-		category = ship_components
-		cost = {
-			minor_artifacts = 2
-		}
-		upkeep = {
-			energy = @s_t1_upkeep_energy
-		}
-	}
-	total_fire_time = 30
-	damage = { min = 20 max = 30 }
-	range = 40
-	tracking = 0.20
-	accuracy = 1
-	hull_damage = 5
-	shield_damage = 0
-	armor_penetration = 10
-	ai_weight = {
-		weight = 1
-	}
-}
-
 weapon_component_template = {
 	key = "MEDIUM_SCAR_EMP_beam_1"
 	size = medium
 	type = instant
-	power = -34
+	power = -36
 
 	icon = "GFX_ship_part_space_cloud_weapon_1"
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_emp_beam" }
 	component_set = "SCAR_EMP_BEAM_1"
 	projectile_gfx = "scrapper_lightning"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_anti_armor }
+	tags = { weapon_type_energy weapon_archaeotech }
+	ai_tags = {  }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 3
+			minor_artifacts = 7
+			alloys = 40
 		}
 		upkeep = {
 			energy = @m_t1_upkeep_energy
 		}
 	}
-	damage = { min = 40 max = 60 }
+	damage = { min = 40 max = 70 }
 	range = 40
-	tracking = 0.20
+	tracking = 0.60
 	accuracy = 1
-	hull_damage = 5
-	shield_damage = 0
-	armor_penetration = 10
+	#hull_damage = 5
+	shield_damage = 3
+	#armor_penetration = 10
 	total_fire_time = 30
 	ai_weight = {
-		weight = 1
+		weight = 0
 	}
 }
 
@@ -217,31 +141,32 @@ weapon_component_template = {
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_emp_beam" }
 	component_set = "SCAR_EMP_BEAM_1"
 	projectile_gfx = "scrapper_lightning"
-	tags = { weapon_type_energy }
-	ai_tags = { weapon_role_anti_armor }
+	tags = { weapon_type_energy weapon_archaeotech }
+	ai_tags = {  }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 4
+			minor_artifacts = 12
+			alloys = 70
 		}
 		upkeep = {
 			energy = @l_t1_upkeep_energy
 		}
 	}
-	damage = { min = 60 max = 90 }
-	range = 60
-	tracking = 0.20
+	damage = { min = 60 max = 100 }	
+	range = 40
+	tracking = 0.60
 	accuracy = 1
-	hull_damage = 5
-	shield_damage = 0
-	armor_penetration = 10
+	#hull_damage = 5
+	shield_damage = 3
+	#armor_penetration = 10
 	total_fire_time = 30
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
 				}			
 		}
@@ -257,10 +182,10 @@ weapon_component_template = {
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_asteroid_shoota" }
 	component_set = "SCAR_asteroid_shoota_1"
 	projectile_gfx = "asteroid_shoota"
-	tags = { weapon_type_kinetic }
+	tags = { weapon_type_kinetic weapon_archaeotech}
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
@@ -290,6 +215,7 @@ weapon_component_template = {
 }
 
 ##################################gatling cannon#########################################
+# TODO: purpose?
 weapon_component_template = {
 	key = "SMALL_SCAR_gatling_cannon_1"
 	size = small
@@ -410,22 +336,23 @@ weapon_component_template = {
 weapon_component_template = {
 	key = "SCAR_PSIONIC_SWARMER_MISSILE"
 	size = medium
-	power = -10
+	power = -17
 
 	icon = "GFX_ship_part_bifunctional_design"
 	icon_frame = 1
 	type = missile
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_psionic_missile" }
 	component_set = "PSIONIC_SWARMER_MISSILE_1"
 	projectile_gfx = "psionic_swarmer_missiles"
-	tags = { weapon_type_explosive }
+	tags = { weapon_type_explosive weapon_archaeotech}
 	ai_tags = { weapon_role_artillery artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 2
+			minor_artifacts = 10
+			alloys = 35
 		}
 		upkeep = {
 			energy = @m_t5_upkeep_energy
@@ -436,16 +363,17 @@ weapon_component_template = {
 	range = 120
 	tracking = 0.3
 	accuracy = 0.9
-	hull_damage = 1.5
-	shield_damage = 1.5
+	#hull_damage = 1.5
+	#shield_damage = 1.5
 	armor_damage = 1.5
-	total_fire_time = 50
+	shield_penetration = 1
+	total_fire_time = 20
 	missile_speed = 120
 	missile_evasion = 0.3
 	missile_shield = 30
 	missile_armor = 0
 	missile_health = 10
-	missile_retarget_range = 30
+	missile_retarget_range = 120
 
 	ai_weight = {
 		weight = 0
@@ -453,6 +381,7 @@ weapon_component_template = {
 }
 
 ################################boarding torpedoes###########################################
+# TODO: purpose?
 weapon_component_template = {
 	key = "SCAR_Boarding_torpedo_1"
 	size = torpedo
@@ -513,16 +442,17 @@ weapon_component_template = {
 	#color = { 0.1 1.0 0.1 1 }
 	power = -10
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_disintegration_ray" }
 	component_set = "SCAR_strange_beam"
 	projectile_gfx = "SCAR_psionic_beam"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_archaeotech }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 2
+			minor_artifacts = 8
+			alloys = 20
 		}
 		upkeep = {
 			energy = @s_t1_upkeep_energy
@@ -533,9 +463,9 @@ weapon_component_template = {
 	range = 40
 	tracking = 0.20
 	accuracy = 0.9
-	hull_damage = 0.1
-	shield_damage = 0.1
-	armor_damage = 10
+	hull_damage = 0.5
+	shield_damage = 0.5
+	armor_damage = 4
 	ai_weight = {
 		weight = 1
 	}
@@ -551,28 +481,29 @@ weapon_component_template = {
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_disintegration_ray" }
 	component_set = "SCAR_strange_beam"
 	projectile_gfx = "SCAR_psionic_beam"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_archaeotech }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 3
+			minor_artifacts = 10
+			alloys = 35
 		}
 		upkeep = {
 			energy = @m_t1_upkeep_energy
 		}
 	}
-	damage = { min = 15 max = 22 }
+	damage = { min = 12 max = 20 }
 	range = 40
 	tracking = 0.20
 	accuracy = 0.9
-	hull_damage = 0.1
-	shield_damage = 0.1
-	armor_damage = 10
+	hull_damage = 0.5
+	shield_damage = 0.5
+	armor_damage = 4
 	total_fire_time = 10
 	ai_weight = {
 		weight = 1
@@ -588,28 +519,29 @@ weapon_component_template = {
 	icon_frame = 1
 	#color = { 0.1 1.0 0.1 1 }
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_disintegration_ray" }
 	component_set = "SCAR_strange_beam"
 	projectile_gfx = "SCAR_psionic_beam"
-	tags = { weapon_type_energy }
+	tags = { weapon_type_energy weapon_archaeotech }
 	ai_tags = { weapon_role_anti_armor }
 	ai_tag_weight = 0
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 5
+			minor_artifacts = 12
+			alloys = 70
 		}
 		upkeep = {
 			energy = @l_t1_upkeep_energy
 		}
 	}
-	damage = { min = 20 max = 30 }
+	damage = { min = 15 max = 25 }
 	range = 60
 	tracking = 0.20
 	accuracy = 0.9
-	hull_damage = 0.1
-	shield_damage = 0.1
-	armor_damage = 10
+	hull_damage = 0.5
+	shield_damage = 0.5
+	armor_damage = 4
 	total_fire_time = 10
 	ai_weight = {
 		weight = 1
@@ -626,16 +558,16 @@ weapon_component_template = {
 	icon = "GFX_ship_part_point_defense_3"
 	icon_frame = 1
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_point_defence" }
 	component_set = "SCAR_repeater_PD"
 	type = point_defence
 	projectile_gfx = "repeater_cannon"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
+	tags = { weapon_type_point_defense weapon_type_kinetic weapon_archaeotech }
 	ai_tags = { weapon_role_point_defense }
 	resources = {
 		category = ship_components
 		cost = {
-			minor_artifacts = 5
+			minor_artifacts = 12
 		}
 		upkeep = {
 			energy = 1
@@ -643,17 +575,18 @@ weapon_component_template = {
 		}
 	}
 	power = -15
-	damage = { min = 10 max = 20 }
-	hull_damage = 1.5
+	damage = { min = 8 max = 18 }
+	#hull_damage = 1.5
 	shield_damage = 1.5
 	armor_damage = 1.5
 	total_fire_time = 5
-	range = 50
-	accuracy = 0.8
+	range = 60
+	accuracy = 0.7
 	tracking = 0.2
 }
 
 ### Mega Nuke
+# TODO: change projectile to the WORMS spike thingy
 weapon_component_template = {
 	key = "XL_SCAR_nuke_1"
 	size = extra_large
@@ -661,15 +594,15 @@ weapon_component_template = {
 	icon = "GFX_ship_part_wormhole"
 	icon_frame = 1
 	entity = "invisible_turret_entity"
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_mega_nuke" }
 	component_set = "SCAR_mega_nuke"
 	projectile_gfx = "mega_nuke"
-	tags = { weapon_type_kinetic weapon_role_artillery }
+	tags = { weapon_type_kinetic weapon_role_artillery weapon_archaeotech}
 	ai_tags = { weapon_role_anti_armor }
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = 100
+			alloys = 250
 			minor_artifacts = 50
 		}
 		upkeep = {
@@ -677,7 +610,7 @@ weapon_component_template = {
 			alloys = 3
 		}
 	}
-	power = -250
+	power = -350
 	damage = { min = 2000 max = 4000 }
 	hull_damage = 2
 	shield_damage = 2
@@ -688,7 +621,7 @@ weapon_component_template = {
 	range = 200
 	accuracy = 1 
 	tracking = 1
-	firing_arc = 5.0
+	#firing_arc = 5.0 #intended
 	min_range = 10.0
 	use_ship_kill_target = no
 }
@@ -699,14 +632,15 @@ strike_craft_component_template = {
 	size = LARGE
 	entity = "SCAR_nanite_swarm_entity"
 
-	weapon_type = point_defence
+	weapon_type = instant
 	projectile_gfx = "SCAR_psionic_beam"
 
-	power = @power4
+	power = -56
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @l_t5_cost
+			nanites = 12
+			minor_artifacts = 15
 		}
 		upkeep = {
 			energy = @l_t5_upkeep_energy
@@ -725,9 +659,9 @@ strike_craft_component_template = {
 	accuracy = 1.00
 	tracking = 1.00
 
-	health = 20
+	health = 40
 	armor = 0
-	shield = 20
+	shield = 0
 	evasion = 0.80
 
 	speed = 1000
@@ -742,7 +676,7 @@ strike_craft_component_template = {
 	icon = "GFX_ship_part_aura_nanobot"
 	icon_frame = 1
 	component_set = "SCAR_nanite_swarm"
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_nanite_swarm" }
 
 	tags = { weapon_type_strike_craft }
 	ai_tags = { weapon_role_point_defense }

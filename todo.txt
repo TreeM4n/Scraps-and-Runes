@@ -1,12 +1,6 @@
 Aevum
 
-- remove abilities, adjust relic and traits mechanics, done
-- look over later events, done
-- add small event to random spawn him at game start availible for everyone, done
-- remove the building and give him small megastructure instead, done
-- change the hourglass spinning mechanic a lil, no longer sucks life, no message, but change passive
 - maybe improve relic asset
-- remove the reviving part, keep reverse aging, done
 - make AI able to use him, kinda done
 - later: add more options in the recruitment event chain
 - testing !
@@ -16,33 +10,15 @@ Relic stealer
 - make all scripted effects for rewards
 - make a system proper initializer
 - assign the relic stealer leader to every dreadnaught fleet and some events 
-- locs and images, done
 - add more options
 - maybe not delete every fleet?
 - testing !
-
-Current components
-
-- bootleg reactor U, common
-- shield recharger U, common, ?
-- manned fire control U, bionic
-- shield hardener U, psionic
-- armor hardener U, synthetic
-- bio plasma W, bionic
-- emp beam W, synthetic
-- astorid shoota W, common
-- gatling cannon W, common, ?
-- psionic swarmer missile W, psionic
-- boarding torpedos W, synthetic, ?
-- disintegration ray W, nanite
-- PD W, common
-- mega nuke W, common
-- nanite swarm W, nanite
 
 Planned components
 
 - archeotech cloaking U, common
 
-NEW components
-- regenerative biosteel
-- integrated fire control
+Components
+
+- Make and add proper GFX, some locs and ai weights
+- Utilies miss an effect for archeoengineer AP

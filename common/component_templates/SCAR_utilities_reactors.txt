@@ -209,6 +209,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
+	hidden = yes
 	power = 2500
 	resources = {
 		category = ship_components
@@ -222,7 +223,7 @@ utility_component_template = {
 		}
 	}
 
-	prerequisites = { "" }
+	prerequisites = {  }
 	component_set = "power_core"
 	size_restriction = { SCAR_dreadnought }
 

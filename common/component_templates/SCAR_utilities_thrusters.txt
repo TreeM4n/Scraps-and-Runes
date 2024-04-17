@@ -178,6 +178,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_5"
 	icon_frame = 1
+	hidden = yes
 	power = @SCAR_power_5
 	resources = {
 		category = ship_components
@@ -191,7 +192,7 @@ utility_component_template = {
 		ship_evasion_add = 16
 	}
 
-	prerequisites = { "" }
+	prerequisites = { }
 	component_set = "thruster_components"
 	size_restriction = { SCAR_dreadnought }
 
