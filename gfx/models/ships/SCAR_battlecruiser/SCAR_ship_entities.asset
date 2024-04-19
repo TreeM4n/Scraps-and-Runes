@@ -154,83 +154,14 @@ entity = {
 	scale = 1.0
 }
 
-#entity = {
-#	name = "SCAR_ship_art_part_entity_medium"
-#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
-#	
-#		meshsettings = {
-#			name = "polySurface13Shape"
-#			index = 0
-#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
-#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
-#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
-#			shader = "PdxMeshShip"
-#		}
-#	
-#	default_state = "idle"
-#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
-#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
-#
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
-#	}
-#	scale = 0.1
-#}
-#
-#entity = {
-#	name = "SCAR_ship_art_part_entity_small"
-#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
-#	
-#		meshsettings = {
-#			name = "polySurface13Shape"
-#			index = 0
-#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
-#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
-#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
-#			shader = "PdxMeshShip"
-#		}
-#	
-#	default_state = "idle"
-#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
-#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
-#
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
-#	}
-#	scale = 0.05
-#}
-#
-#entity = {
-#	name = "SCAR_ship_art_part_entity_large"
-#	pdxmesh = "mega_art_institution_01_stage_2_mesh"
-#	
-#		meshsettings = {
-#			name = "polySurface13Shape"
-#			index = 0
-#			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
-#			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
-#			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
-#			shader = "PdxMeshShip"
-#		}
-#	
-#	default_state = "idle"
-#	state = { name = "idle" animation = "idle" animation_speed = 0.7 
-#		#start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
-#
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
-#		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
-#	}
-#	scale = 0.16
-#}
-
 entity = { #use this entity to get the full model
 	name = "SCAR_dreadnought_entity"
 	pdxmesh = "mammalian_01_military_station_large_mesh"
 
 	locator = { name = "root"	position = { 0 0 0} }
-	locator = { name = "bow"	position = { 0 1 -29.5} }
-	locator = { name = "mid1"	position = { 0 1 -23} }
-	locator = { name = "mid2"	position = { 0 1 -6.3} }
+	locator = { name = "bow"	position = { 0 1 -28.5} }
+	locator = { name = "mid1"	position = { 0 1 -22} }
+	locator = { name = "mid2"	position = { 0 1 -7.3} }
 	locator = { name = "stern"	position = { 0 2 0} }
 	locator = { name = "thrust1"	position = { -6.5 0 4 } rotation = { 0 0 -90 } }
 	locator = { name = "thrust2"	position = { 6.5 0 4 } rotation = { 0 0 90 } }
@@ -256,9 +187,9 @@ entity = { #use this entity to get the full model
 
 		event = { time = 4.9 particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
 	}
-	scale = 1.2
+	scale = 1.0
 	game_data = {
-		size = @military_station_large
+		size = 1.0
 		emissive_recolor_crunch = 5.0
 	}
 	attach = { "bow" 			= "SCAR_battleship_bow_XL1_entity" }
