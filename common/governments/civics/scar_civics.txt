@@ -1,0 +1,95 @@
+scar_civic_grail_knights = {
+	modification = no
+	playable = {
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		#authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_militarist
+				value = ethic_spiritualist
+				value = ethic_authoritarian
+			}
+		}
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	
+	description = "scar_civic_grail_knights_tooltip_effects"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		ship_armor_mult = 0.15
+		ship_speed_mult = 0.1
+		#ship_fire_rate_mult = 0.33
+		#army_damage_mult = 0.33
+		#starbase_shipyard_build_cost_mult = -0.15
+		#country_naval_cap_mult = 0.33
+	}	
+}
+scar_civic_happy_grail_knights = {
+	modification = no
+	playable = {
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		always = no
+		
+	}
+	possible = {
+		
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_grail_knights_tooltip_effects_cash_out"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		ship_armor_mult = 0.15
+		ship_speed_mult = 0.1
+		planet_metallurgists_unity_produces_add = 0.5
+		pop_happiness = 0.1
+	}
+	
+}
+
+scar_civic_archeotech_guild = {
+	modification = no
+	playable = {
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		
+	}
+	possible = {
+		
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_archeotech_guild_tooltip_effects"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		ship_archaeological_site_excavation_speed_mult = 0.5		
+	}
+	
+}

@@ -1,0 +1,15 @@
+###########
+# trime_scripted_triggers
+# made by:
+# tr33
+#
+###########
+trime_trigger = {
+	is_homicidal = no	#sry genocidals
+}
+
+scar_is_archeoguild = {
+	OR = {
+		has_valid_civic = scar_civic_archeotech_guild
+	}
+}

@@ -9,6 +9,8 @@ on_game_start = {
 	events = {
 		trime.0 # flag allowed + random spawn
 		scar.199 # create stealer of relics
+		scar.203 # set value of grail knights just in case
+		scar.204 # spawn archeoguild
 	}
 }
 
@@ -40,8 +42,11 @@ on_entering_system_first_time = {
 on_planet_attackers_win = {
 	events = {
 		trime.6 # invaded his planet
-	}
+		scar.200 # additional theft chance for grail knights
+	}	
 }
+
+
 
 # Executed as a leader has died
 # This = Country
@@ -143,6 +148,7 @@ on_relic_lost = {
 on_relic_received = {
 	events = {
 		#trime.103 # steal relic back event
+		scar.201
 	}
 	random_events = {
 		5 = scar.100
@@ -166,6 +172,11 @@ on_entering_war = {
 	}
 }
 
-
+on_arch_site_finished = {
+	events = {
+		scar.205 # archeotech for guild
+	}
+	
+}
 
 

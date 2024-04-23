@@ -1,0 +1,45 @@
+
+scar_councilor_grail_knights = {
+	leader_class = { commander }
+	is_leader_possible = {
+		leader_class = commander
+	}
+	civic = scar_civic_grail_knights
+	modifier = {
+		#citizen_pop_political_power = 0.02
+		country_war_exhaustion_mult = -0.015
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+scar_councilor_happy_grail_knights = {
+	leader_class = { commander }
+	is_leader_possible = {
+		leader_class = commander
+	}
+	civic = scar_civic_happy_grail_knights
+	modifier = {
+		#citizen_pop_political_power = 0.02
+		#country_war_exhaustion_mult = -0.015
+		ship_home_territory_fire_rate_mult = 0.05
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}
+
+scar_councilor_archeotech_guild = {
+	leader_class = { scientist }
+	is_leader_possible = {
+		leader_class = scientist
+	}
+	civic = scar_civic_archeotech_guild
+	modifier = {
+		category_archaeostudies_research_speed_mult = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}

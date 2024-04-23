@@ -1,5 +1,20 @@
 ﻿l_english:
 
+############# things that my auto generate produces but i dont want #############
+# remove later
+
+ START_SCREEN_MEM_FROM_THE_ASHES:0 "REPLACE_ME"
+ START_SCREEN_MEM_FAINTHEARTED:0 "REPLACE_ME"
+ START_SCREEN_MEM_CEASELESS_GAZE:0 "REPLACE_ME"
+ station_medium_aura_components:0 "REPLACE_ME"
+ PSIONIC_SWARMER_MISSILE_1:0 "REPLACE_ME"
+ d_artifacts_research_1_desc:0 "REPLACE_ME"
+ d_artifacts_research_2_desc:0 "REPLACE_ME"
+ d_artifacts_research_3_desc:0 "REPLACE_ME"
+
+############################
+
+
  SCAR_plasma_sputtershot_1:0 "Ancient Plasma Sputtershot"
  SCAR_plasma_sputtershot_1_DESC:0 "This ancient weapon bypasses armor with ease and deals heavy damage to hulls. Sadly shield seems to be unaffected."
 
@@ -51,13 +66,58 @@ SCAR_repeater_PD_DESC:0 "While not so accurate as other point defence this versi
 
  SCAR_STATION_PSI_STORM_AURA:0 "Ancient Time Displacer"
 SCAR_STATION_PSI_STORM_AURA_DESC:0 "It seems like this device can locally, alter the flow of time. We should be careful around such technology."
- station_medium_aura_components:0 "REPLACE_ME"
+
+
  SCAR_MANNED_FIRE_CONTROL:0 "REPLACE_ME"
 
  SCAR_REGENEERATIVE_BIOSTEEL:0 "REPLACE_ME"
 
  SCAR_nanite_swarms:0 "Ancient Nanite Swarm"
  SCAR_nanite_swarms_DESC:0 "Durable strike craft to engage enemy ships in close range and destroy large parts of their armor."
+
+ scar_tech_nanite_swarm:0 "$SCAR_nanite_swarms$"
+ scar_tech_nanite_swarm_desc:0 "Research for $SCAR_nanite_swarms_DESC$"
+ scar_tech_mega_nuke:0 "REPLACE_ME"
+ scar_tech_mega_nuke_desc:0 "REPLACE_ME"
+ scar_tech_point_defence:0 "REPLACE_ME"
+ scar_tech_point_defence_desc:0 "REPLACE_ME"
+ scar_tech_disintegration_ray:0 "REPLACE_ME"
+ scar_tech_disintegration_ray_desc:0 "REPLACE_ME"
+ scar_tech_psionic_missile:0 "REPLACE_ME"
+ scar_tech_psionic_missile_desc:0 "REPLACE_ME"
+ scar_tech_asteroid_shoota:0 "REPLACE_ME"
+ scar_tech_asteroid_shoota_desc:0 "REPLACE_ME"
+ scar_tech_emp_beam:0 "REPLACE_ME"
+ scar_tech_emp_beam_desc:0 "REPLACE_ME"
+ scar_tech_plasma_sputtershot:0 "REPLACE_ME"
+ scar_tech_plasma_sputtershot_desc:0 "REPLACE_ME"
+
+ SCAR_gatling_shoota_1:0 "REPLACE_ME"
+ 
+ SCAR_regenerative_biosteel:0 "REPLACE_ME"
+ SCAR_nanite_swarm:0 "REPLACE_ME"
+ SCAR_SCIENCE_CLOAKING_PSI:0 "REPLACE_ME"
+ station_medium_aura_components:0 "REPLACE_ME"
+ SCAR_INTEGRATED_FIRE_CONTROL:0 "REPLACE_ME"
+ SCAR_Bob_REACTOR:0 "REPLACE_ME"
+ SCAR_dreadnought:0 "REPLACE_ME"
+ SCAR_dreadnought_plural:0 "REPLACE_ME"
+ SCAR_Bob_COMPUTER_CARRIER_PRECOG:0 "REPLACE_ME"
+ SCAR_Bob_SHIP_THRUSTER_5:0 "REPLACE_ME"
+ SMALL_SCAR_sputter_plasma_1:0 "REPLACE_ME"
+ MEDIUM_SCAR_sputter_plasma_1:0 "REPLACE_ME"
+ MEDIUM_SCAR_EMP_beam_1:0 "REPLACE_ME"
+ LARGE_SCAR_EMP_beam_1:0 "REPLACE_ME"
+ LARGE_SCAR_asteroid_shoota_1:0 "REPLACE_ME"
+ SMALL_SCAR_gatling_cannon_1:0 "REPLACE_ME"
+ MEDIUM_SCAR_atling_cannon_1:0 "REPLACE_ME"
+ LARGE_SCAR_gatling_cannon_1:0 "REPLACE_ME"
+ SCAR_Boarding_torpedo_1:0 "REPLACE_ME"
+ SMALL_SCAR_strange_beam_1:0 "REPLACE_ME"
+ MEDIUM_SCAR_strange_beam_1:0 "REPLACE_ME"
+ LARGE_SCAR_strange_beam_1:0 "REPLACE_ME"
+ SCAR_repeater_PD_1:0 "REPLACE_ME"
+ XL_SCAR_nuke_1:0 "REPLACE_ME"
 
  SCAR_scavenger_ship_mid:0 "REPLACE_ME"
  scar_treasure_island:0 "Treasure Island"
@@ -84,3 +144,30 @@ scar_find_pirates_system_DESC:0 "The relic thieves have gone cold, but some trac
  NAME_scar_stealer_of_relics:0 "Collector of Ancient Relics"
  NAME_scar_dreadnought_fleet:0 "Pirates Dreadnought"
  NAME_scar_big_pirate_fleet:0 "Pirate Fleet"
+
+ scar_civic_grail_knights:0 "REPLACE_ME"
+ scar_civic_grail_knights_desc:0 "REPLACE_ME"
+ scar_civic_grail_knights_tooltip_effects:0 "REPLACE_ME"
+ scar_civic_happy_grail_knights:0 "REPLACE_ME"
+ scar_civic_happy_grail_knights_desc:0 "REPLACE_ME"
+ scar_civic_grail_knights_tooltip_effects_cash_out:0 "REPLACE_ME"
+ scar_civic_archeotech_guild:0 "REPLACE_ME"
+ scar_civic_archeotech_guild_desc:0 "REPLACE_ME"
+ scar_civic_archeotech_guild_tooltip_effects:0 "REPLACE_ME"
+ scar_councilor_grail_knights:0 "REPLACE_ME"
+ scar_councilor_grail_knights_desc:0 "REPLACE_ME"
+ scar_councilor_happy_grail_knights:0 "REPLACE_ME"
+ scar_councilor_happy_grail_knights_desc:0 "REPLACE_ME"
+ scar_councilor_archeotech_guild:0 "REPLACE_ME"
+ scar_councilor_archeotech_guild_desc:0 "REPLACE_ME"
+ scar_mega_archeological_guild:0 "REPLACE_ME"
+ scar_mega_archeological_guild_DESC:0 "REPLACE_ME"
+ scar_mega_archeological_guild_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
+ scar_requires_archaeological_site:0 "REPLACE_ME"
+
+ scar.201.name:0 "REPLACE_ME"
+ scar.201.desc:0 "REPLACE_ME"
+ scar.201.a:0 "REPLACE_ME"
+ scar_grail_knights_tooltip_no_cashed_out_effects:0 "REPLACE_ME"
+ scar.201.b:0 "REPLACE_ME"
+ scar_grail_knights_tooltip_cashed_out_effects:0 "REPLACE_ME"

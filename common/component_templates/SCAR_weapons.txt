@@ -216,7 +216,7 @@ weapon_component_template = {
 }
 
 ##################################gatling cannon#########################################
-# TODO: purpose?
+#TODO: purpose?
 weapon_component_template = {
 	key = "SMALL_SCAR_gatling_cannon_1"
 	size = small
@@ -382,7 +382,7 @@ weapon_component_template = {
 }
 
 ################################boarding torpedoes###########################################
-# TODO: purpose?
+#TODO: kmaikazi torps with bonus damge to large ships
 weapon_component_template = {
 	key = "SCAR_Boarding_torpedo_1"
 	size = torpedo

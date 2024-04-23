@@ -221,7 +221,7 @@ entity = { #use this entity to get the full model
 }
 
 entity = { #use this entity to get the full model
-	name = "SCAR_dreadnought_entity_stage_0"
+	name = "SCAR_dreadnought_entity"
 	pdxmesh = "mammalian_01_military_station_large_mesh"
 
 	locator = { name = "root"	position = { 0 0 0} }

@@ -143,7 +143,7 @@ country_event = {
 		every_owned_fleet = {
 			create_pirate_ships_7 = yes
 			create_pirate_ships_7 = yes
-			create_pirate_ships_7 = yes			
+			create_pirate_ships_7 = yes
 		}
 		add_relic = r_celestial_tear
 	}
@@ -593,5 +593,237 @@ country_event = {
 	option = {
 		#yippie found system
 		name = scar.108.a
+	}
+}
+
+############################### civic events ##################################
+# Relic Acquired (HIDDEN), additional chance for grail knights
+country_event = {
+	id = scar.200
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		root = {
+			and = {
+				has_valid_civic = scar_civic_grail_knights
+				NOT = {
+					has_country_flag = scar_grail_knights_cashed_out
+				}
+			}
+		}
+		From = {
+			is_country_type = default
+			num_owned_relics > 0
+		}
+		FromFrom = {
+			is_capital = yes
+		}
+		any_war = {
+			any_attacker = {
+				is_same_value = root
+			}
+			any_defender = {
+				is_same_value = from
+			}
+			NOT = {
+				using_war_goal = {
+					type = wg_take_galatron
+					owner = attacker
+				}
+			}
+		}
+	}
+	immediate = {
+		FromFrom = {
+			save_event_target_as = planet
+		}
+		From = {
+			save_event_target_as = victim
+		}
+		random_list = {
+			100 = {
+			}
+			5 = {
+				modifier = {
+					factor = 15
+					has_valid_civic = civic_barbaric_despoilers
+				}
+				modifier = {
+					factor = 6.67					# 50% chance of success
+					any_war = {
+						any_attacker = {
+							is_same_value = root
+						}
+						any_defender = {
+							is_same_value = from
+						}
+						using_war_goal = {
+							type = wg_plunder
+							owner = attacker
+						}
+					}
+				}
+				country_event = {
+					id = ancrel.6500
+				}
+			}
+		}
+	}
+}
+
+# This = Country
+# grail knights cash out
+country_event = {
+	id = scar.201
+	title = scar.201.name
+	desc = scar.201.desc
+	picture = GFX_evt_debris
+	show_sound = event_space_battle
+	#location = this.capital_scope.solar_system
+	is_triggered_only = yes
+	trigger = {
+		has_valid_civic = scar_civic_grail_knights
+		NOT = {
+			has_country_flag = scar_grail_knights_cashed_out
+		}
+	}
+	immediate = {
+	}
+	option = {
+		#dont cash out
+		name = scar.201.a
+		custom_tooltip = scar_grail_knights_tooltip_no_cashed_out_effects		# bigger reward
+		hidden_effect = {
+			change_variable = {
+				which = this.scar_grail_knights_cash_out
+				value = 2
+			}
+		}
+	}
+	option = {
+		#cash out
+		name = scar.201.b
+		custom_tooltip = scar_grail_knights_tooltip_cashed_out_effects		# no stealing anymore, less damge/ firerate, unity from metallurgits , happiness
+		force_remove_civic = scar_civic_grail_knights
+		force_add_civic = scar_civic_happy_grail_knights
+		add_monthly_resource_mult_if_produced = {
+			resource = unity
+			value = this.scar_grail_knights_cash_out
+		}
+		add_monthly_resource_mult_if_produced = {
+			resource = physics_research
+			value = this.scar_grail_knights_cash_out
+		}
+		add_monthly_resource_mult_if_produced = {
+			resource = society_research
+			value = this.scar_grail_knights_cash_out
+		}
+		add_monthly_resource_mult_if_produced = {
+			resource = engineering_research
+			value = this.scar_grail_knights_cash_out
+		}
+		hidden_effect = {
+			clear_variable = scar_grail_knights_cash_out
+			set_country_flag = scar_grail_knights_cashed_out
+		}
+	}
+}
+
+# grail knights value, just in case
+event = {
+	id = scar.203
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		#has_valid_civic = scar_civic_grail_knights
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				has_valid_civic = scar_civic_grail_knights
+			}
+			set_variable = {
+				which = scar_grail_knights_cash_out
+				value = 1
+			}
+		}
+	}
+}
+
+# spawn archeo guild in orbit
+event = {
+	id = scar.204
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		#scar_is_archeoguild = yes
+		#has_valid_civic = scar_civic_archeotech_guild
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				scar_is_archeoguild = yes
+			}
+			capital_scope = {
+				solar_system = {
+					spawn_megastructure = {
+						type = scar_mega_archeological_guild
+						planet = owner.capital_star
+						orbit_angle = 225
+						orbit_distance = 150
+					}
+					while = {
+						count = 5
+						random_system_planet = {
+							limit = {
+								colonizable_planet = no
+								is_terraforming_candidate = no
+								OR = {
+									has_deposit_for = shipclass_research_station
+									has_deposit = no
+								}
+							}
+							random_list = {
+								4 = {
+									add_deposit = d_artifacts_research_1
+								}
+								2 = {
+									add_deposit = d_artifacts_research_2
+								}
+								1 = {
+									add_deposit = d_artifacts_research_3
+								}
+							}
+						}
+					}
+				}
+			}
+			set_country_flag = scar_mega_archeological_guild_build
+
+			give_technology = {
+				tech = scar_tech_unlock_archeoguild
+				message = no
+			}
+			
+
+		}
+	}
+}
+
+# archeoguild  civic dug up smt
+country_event = {
+	id = scar.205
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		scar_is_archeoguild = yes
+		#has_valid_civic = scar_civic_archeotech_guild
+	}
+	immediate = {
+		scar_give_random_archeotech = yes
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = 4
+		}
 	}
 }

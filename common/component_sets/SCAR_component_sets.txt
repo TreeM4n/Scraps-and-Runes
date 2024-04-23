@@ -2,19 +2,19 @@
 #plasma
 component_set = {
 	key = "SCAR_plasma_sputtershot_1"
-	icon = "GFX_ship_part_scourge_missile_1"
+	icon = "GFX_scar_sputter_plasma"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_EMP_BEAM_1"
-	icon = "GFX_ship_part_space_cloud_weapon_1"
+	icon = "GFX_scar_emp_beam"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_asteroid_shoota_1"
-	icon = "GFX_ship_part_world_cracker"
+	icon = "GFX_ship_part_world_cracker" #TODO
 	icon_frame = 1
 }
 
@@ -26,7 +26,7 @@ component_set = {
 
 component_set = {
 	key = "PSIONIC_SWARMER_MISSILE_1"
-	icon = "GFX_ship_part_bifunctional_design"
+	icon = "GFX_scar_psionic_swarmer_missile"
 	icon_frame = 1
 }
 
@@ -38,19 +38,19 @@ component_set = {
 
 component_set = {
 	key = "SCAR_strange_beam"
-	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon = "GFX_scar_strange_beam"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_reactor_booster"
-	icon = "GFX_ship_part_reactor_booster_1"
+	icon = "GFX_scar_reactor_booster_bootleg"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_shield_booster"
-	icon = "GFX_ship_part_shield_recharger"
+	icon = "GFX_scar_shield_booster"
 	icon_frame = 1
 }
 
@@ -62,43 +62,43 @@ component_set = {
 
 component_set = {
 	key = "SCAR_shield_optimizer"
-	icon = "GFX_ship_part_aura_shield_recharger"
+	icon = "GFX_scar_psionic_shield_hardener"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_supercharged_armor"
-	icon = "GFX_ship_part_armor_hardener_2"
+	icon = "GFX_scar_robot_armor_hardener"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_repeater_PD"
-	icon = "GFX_ship_part_archaeo_point_defence"
+	icon = "GFX_scar_point_defense"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_mega_nuke"
-	icon = "GFX_ship_part_wormhole"
+	icon = "GFX_scar_mega_nuke"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_regenerative_biosteel"
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_scar_hull_regen"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_integrated_fire_control"
-	icon = "GFX_ship_part_computer_line_sapient"
+	icon = "GFX_scar_integrated_fire_control"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "SCAR_nanite_swarm"
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_scar_nanite_strike_craft"
 	icon_frame = 1
 }
 

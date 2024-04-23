@@ -22,11 +22,11 @@ ship_design = {
 		}
 		component = {
 			slot = "SMALL_GUN_01"
-			template = "SMALL_SCAR_EMP_beam_1"
+			template = "SMALL_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "SMALL_GUN_02"
-			template = "SMALL_SCAR_EMP_beam_1"
+			template = "SMALL_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "SMALL_GUN_03"
@@ -38,19 +38,19 @@ ship_design = {
 		}
 		component = {
 			slot = "LARGE_GUN_01"
-			template = "LARGE_SCAR_sputter_plasma_1"
+			template = "LARGE_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "LARGE_GUN_02"
-			template = "LARGE_SCAR_sputter_plasma_1"
+			template = "LARGE_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "LARGE_GUN_03"
-			template = "LARGE_SCAR_sputter_plasma_1"
+			template = "LARGE_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "LARGE_GUN_04"
-			template = "LARGE_SCAR_sputter_plasma_1"
+			template = "LARGE_SCAR_gatling_cannon_1"
 		}
 		component = {
 			slot = "LARGE_GUN_05"
