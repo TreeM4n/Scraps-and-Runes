@@ -98,3 +98,29 @@ trime_leader_trait_exhaustion = {
 	randomized = no
 	notify_on_gained = no
 }
+
+scar_trait_robot_ancient_design = {
+	cost = 0
+	allowed_archetypes = {
+		ROBOT
+	}
+	opposites = {
+	}
+	species_potential_add = {
+		exists = from
+		from = {
+			has_valid_civic = scar_civic_ancient_automata
+		}
+	}
+	species_potential_remove = {
+		exists = from
+		
+	}
+	modifier = {
+		planet_jobs_minor_artifacts_produces_mult = 0.2
+		planet_pop_assembly_mult = -0.1
+	}
+	slave_cost = {
+		energy = 500
+	}
+}

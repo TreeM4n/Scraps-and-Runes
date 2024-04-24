@@ -12,6 +12,8 @@ scar_tech_unlock_archeoguild= {
 		has_ancrel = yes
 	}
 
+	
+
 	weight_modifier = {
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers

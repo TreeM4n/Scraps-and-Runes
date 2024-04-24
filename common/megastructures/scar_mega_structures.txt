@@ -21,6 +21,9 @@ scar_mega_chronomancer_palace = {
 			energy = 5
 		}
 		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
 			minor_artifacts = 2
 		}
 	}
@@ -134,9 +137,10 @@ scar_mega_chronomancer_palace = {
 # archeological guild
 scar_mega_archeological_guild = {
 	entity = "SCAR_archaeology_guild_entity"	# thx, WanM
+	#portrait = "" #TODO
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
-	place_entity_on_planet_plane = yes
+	place_entity_on_planet_plane = no
 	entity_offset = {
 		x = -27
 		y = -27
@@ -187,14 +191,12 @@ scar_mega_archeological_guild = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = {
-				text = "scar_requires_no_archeo_guild"
-				owner = {
+			fail_text = scar_requires_no_archeo_guild
+			from = {
 					NOT = {
 						has_country_flag = scar_mega_archeological_guild_build
 					}
 				}
-			}
 		}
 		#custom_tooltip = {
 		#	fail_text = "requires_capital_system"
@@ -220,7 +222,17 @@ scar_mega_archeological_guild = {
 			}
 			custom_tooltip = {
 				fail_text = "scar_requires_archaeological_site"
-				exists = archaeological_site
+				OR = {
+					has_deposit = d_artifacts_research_1
+					has_deposit = d_artifacts_research_2
+					has_deposit = d_artifacts_research_3
+					has_deposit = d_artifacts_mining_1
+					has_deposit = d_artifacts_mining_2
+					has_deposit = d_artifacts_mining_3
+					has_deposit = d_artifacts_planet_1
+					has_deposit = d_artifacts_planet_2
+					has_deposit = d_artifacts_planet_3
+				}
 			}
 			#custom_tooltip = {
 			#	fail_text = "requires_not_minor_planetary_body"
@@ -240,7 +252,7 @@ scar_mega_archeological_guild = {
 			#custom_tooltip = {
 			#	fail_text = "requires_not_ring_world"
 			#	is_ringworld = no
-			#}
+			#}	
 		}
 	}
 	# root = system

@@ -677,8 +677,8 @@ country_event = {
 	id = scar.201
 	title = scar.201.name
 	desc = scar.201.desc
-	picture = GFX_evt_debris
-	show_sound = event_space_battle
+	picture = GFX_evt_ancient_artifact
+	show_sound = event_lootbox_galatron
 	#location = this.capital_scope.solar_system
 	is_triggered_only = yes
 	trigger = {
@@ -704,21 +704,21 @@ country_event = {
 		#cash out
 		name = scar.201.b
 		custom_tooltip = scar_grail_knights_tooltip_cashed_out_effects		# no stealing anymore, less damge/ firerate, unity from metallurgits , happiness
-		force_remove_civic = scar_civic_grail_knights
-		force_add_civic = scar_civic_happy_grail_knights
-		add_monthly_resource_mult_if_produced = {
+		#force_remove_civic = scar_civic_grail_knights
+		#force_add_civic = scar_civic_happy_grail_knights
+		add_monthly_resource_mult = {
 			resource = unity
 			value = this.scar_grail_knights_cash_out
 		}
-		add_monthly_resource_mult_if_produced = {
+		add_monthly_resource_mult = {
 			resource = physics_research
 			value = this.scar_grail_knights_cash_out
 		}
-		add_monthly_resource_mult_if_produced = {
+		add_monthly_resource_mult = {
 			resource = society_research
 			value = this.scar_grail_knights_cash_out
 		}
-		add_monthly_resource_mult_if_produced = {
+		add_monthly_resource_mult = {
 			resource = engineering_research
 			value = this.scar_grail_knights_cash_out
 		}

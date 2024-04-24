@@ -1,0 +1,73 @@
+scar_building_archeo_obelisks = {
+	base_buildtime = @b2_time
+	can_build = yes
+	category = resource
+	#allow = {
+	#	exists = owner
+	#	owner = {
+	#		has_valid_civic = scar_civic_archeo_obelisk
+	#	}
+	#}
+	potential = {
+		exists = owner
+		owner = {
+			scar_is_obelisk_empire = yes
+		}
+	}
+	#destroy_trigger = {
+	#	NOR = {
+	#		exists = owner
+	#		owner = {
+	#			has_valid_civic = scar_civic_archeo_obelisk
+	#		}
+	#	}
+	#}
+	planet_modifier = {
+		#planet_farmers_food_produces_add = 2
+	}
+	#
+	#inline_script = {
+	#	script = jobs/farmers_add
+	#	FARMER_AMOUNT = 2
+	#	ANGLER_AMOUNT = 2
+	#}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			minor_artifacts = 100
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = minor_artifacts
+						value > 10
+					}
+				}
+			}
+			minor_artifacts = 0.2
+			multiplier = this.trigger:num_pops
+		}
+		produces = {
+			trigger = {
+				owner = {
+					resource_stockpile_compare = {
+						resource = minor_artifacts
+						value > 10
+					}
+				}
+			}
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			multiplier = this.trigger:num_pops
+		}
+	}
+	on_built = {
+		#TODO: place giant obelisk in orbit event
+	}
+	on_destroy = {
+		#TODO: destroy giant obelisk in orbit event
+	}
+}

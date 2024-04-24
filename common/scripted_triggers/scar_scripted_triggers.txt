@@ -11,5 +11,15 @@ trime_trigger = {
 scar_is_archeoguild = {
 	OR = {
 		has_valid_civic = scar_civic_archeotech_guild
+		has_valid_civic = scar_civic_archeotech_guild_machine
+		has_valid_civic = scar_civic_archeotech_guild_hive
+	}
+}
+
+scar_is_obelisk_empire = {
+	OR = {
+		has_valid_civic = scar_civic_archeo_obelisk
+		#has_valid_civic = scar_civic_archeo_obelisk_machine
+		#has_valid_civic = scar_civic_archeo_obelisk_hive
 	}
 }

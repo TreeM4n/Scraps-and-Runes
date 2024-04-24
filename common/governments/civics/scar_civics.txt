@@ -26,18 +26,36 @@ scar_civic_grail_knights = {
 	random_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	
 	description = "scar_civic_grail_knights_tooltip_effects"
 	#negative_description = "BLOCKS_COUNCILOR_STATE"
 	modifier = {
-		ship_armor_mult = 0.15
+		#ship_armor_mult = 0.15
 		ship_speed_mult = 0.1
-		#ship_fire_rate_mult = 0.33
+		ship_fire_rate_mult = 0.15
+		country_unity_produces_mult = -0.1
 		#army_damage_mult = 0.33
 		#starbase_shipyard_build_cost_mult = -0.15
 		#country_naval_cap_mult = 0.33
-	}	
+	}
+	swap_type = {
+		
+		trigger = { 
+			has_country_flag = scar_grail_knights_cashed_out
+		}
+		name = "scar_civic_happy_grail_knights"
+		#description = "scar_councilor_happy_grail_knights_desc"
+		
+		modifier = {
+			ship_fire_rate_mult = -0.15
+			country_unity_produces_mult = 0.1
+			ship_armor_mult = 0.15
+			#ship_speed_mult = 0.1
+			planet_metallurgists_unity_produces_add = 0.5
+			pop_happiness = 0.1
+		}
+	}
 }
+
 scar_civic_happy_grail_knights = {
 	modification = no
 	playable = {
@@ -47,16 +65,18 @@ scar_civic_happy_grail_knights = {
 		#host_has_dlc = "Utopia" 
 	}
 	potential = {
+
+		#has_country_flag = scar_grail_knights_cashed_out
 		always = no
-		
 	}
 	possible = {
-		
+		#has_country_flag = scar_grail_knights_cashed_out
+		always = no
 	}
 	random_weight = {
 		base = @ai_civic_default_base_weight
 	}
-	description = "scar_civic_grail_knights_tooltip_effects_cash_out"
+	#description = "scar_civic_grail_knights_tooltip_effects_cash_out"
 	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
 	#negative_description = "BLOCKS_COUNCILOR_STATE"
 	modifier = {
@@ -65,22 +85,29 @@ scar_civic_happy_grail_knights = {
 		planet_metallurgists_unity_produces_add = 0.5
 		pop_happiness = 0.1
 	}
-	
+	pickable_at_start = no
 }
 
 scar_civic_archeotech_guild = {
 	modification = no
 	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
 		#host_has_dlc = "Utopia"
 	}
 	ai_playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
 		#host_has_dlc = "Utopia" 
 	}
 	potential = {
-		
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		#authority = { NOT = { value = auth_corporate } }
 	}
 	possible = {
-		
+		always = yes
 	}
 	random_weight = {
 		base = @ai_civic_default_base_weight
@@ -89,7 +116,144 @@ scar_civic_archeotech_guild = {
 	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
 	#negative_description = "BLOCKS_COUNCILOR_STATE"
 	modifier = {
-		ship_archaeological_site_excavation_speed_mult = 0.5		
+		ship_archaeological_site_excavation_speed_mult = 0.5
+		ship_archaeological_site_clues_add = 1
+	}
+}
+
+scar_civic_archeotech_guild_machine = {
+	modification = no
+	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	possible = {
+		always = yes
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_archeotech_guild_tooltip_effects"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		ship_archaeological_site_excavation_speed_mult = 0.5
+		#ship_archaeological_site_clues_add = 1
+		planet_miners_unity_produces_add = 0.5
+		planet_miners_minor_artifacts_produces_add = 0.02
+	}
+}
+
+scar_civic_archeotech_guild_hive = {
+	modification = no
+	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		authority = {
+			value = auth_hive_mind
+		}
+	}
+	possible = {
+		always = yes
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_archeotech_guild_tooltip_effects"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		ship_archaeological_site_excavation_speed_mult = 0.3
+		country_scientist_cap_add = 1
+		leader_scientists_cost_mult = -0.2
+		leader_scientists_unity_upkeep_mult = -0.2
+		
+	}
+}
+
+scar_civic_ancient_automata = {
+	modification = yes
+	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	possible = {
+		always = yes
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_ancient_automata_tooltip_effects"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		#category_archaeostudies_draw_chance_mult = 0.5
+		category_archaeostudies_research_speed_mult = 0.2
+		country_base_minor_artifacts_produces_add = 10
+		starbase_shipyard_build_alloys_cost_mult = 0.05		
+		weapon_archaeotech_weapon_fire_rate_mult = 0.2
+	}
+	traits = {
+		trait = scar_trait_robot_ancient_design
+	}
+}
+
+
+scar_civic_archeo_obelisk = {
+	modification = yes
+	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia"
+	}
+	ai_playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		#host_has_dlc = "Utopia" 
+	}
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		#authority = { NOT = { value = auth_corporate } }
+	}
+	possible = {
+		always = yes
+	}
+	random_weight = {
+		base = @ai_civic_default_base_weight
+	}
+	description = "scar_civic_archeo_obelisk_tooltip_effects"
+	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
+	#negative_description = "BLOCKS_COUNCILOR_STATE"
+	modifier = {
+		planet_buildings_upkeep_mult = -0.15
 	}
 	
 }
+
+

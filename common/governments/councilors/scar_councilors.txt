@@ -38,6 +38,7 @@ scar_councilor_archeotech_guild = {
 	civic = scar_civic_archeotech_guild
 	modifier = {
 		category_archaeostudies_research_speed_mult = 0.02
+		category_archaeostudies_draw_chance_mult = 0.02
 	}
 	ai_hiring_weight = {
 		inline_script = councilor_leader_weights
