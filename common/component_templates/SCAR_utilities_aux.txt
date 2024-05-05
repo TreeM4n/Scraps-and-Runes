@@ -24,6 +24,7 @@ utility_component_template = {
 	prerequisites = {
 		"tech_reactor_boosters_1"
 	}
+	
 	upgrades_to = "REACTOR_BOOSTER_3" # is worse than reactor 3
 	component_set = "SCAR_reactor_booster"
 	ai_weight = {

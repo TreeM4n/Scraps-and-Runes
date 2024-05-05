@@ -1,0 +1,28 @@
+scar_origin_runesmiths = {
+	#TODO gfx
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_common_ground.dds"
+	picture = GFX_origin_common_ground
+	max_once_global = yes
+	playable = {
+		host_has_dlc = "Ancient Relics Story Pack"
+	}
+	possible = {
+		ethics = {
+		}
+		civics = {
+		}
+	}
+	description = "scar_origin_runesmiths_effects"
+	flags = {
+		custom_start_screen
+	}
+	traits = {
+	}
+	modifier = {
+		country_resource_max_minor_artifacts_add = 5000
+	}
+	random_weight = {
+		base = 5
+	}
+}

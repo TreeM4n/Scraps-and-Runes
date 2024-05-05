@@ -22,6 +22,8 @@ utility_component_template = {
 
 	component_set = "station_medium_aura_components"
 
+	
+
 	hostile_aura = {
 		name = "SCAR_aura_psi_storm"
 		system_wide = yes

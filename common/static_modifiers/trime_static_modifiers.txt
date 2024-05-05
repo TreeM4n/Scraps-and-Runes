@@ -62,3 +62,9 @@ trime_ship_frozen = {
 	ship_fire_rate_mult = -0.5
 	
 }
+
+scar_no_runist_faction = {
+
+	faction_approval = 0.05
+}
+

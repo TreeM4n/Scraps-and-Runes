@@ -708,7 +708,7 @@ country_event = {
 		#force_add_civic = scar_civic_happy_grail_knights
 		add_monthly_resource_mult = {
 			resource = unity
-			value = this.scar_grail_knights_cash_out
+			value = scar_grail_knights_cash_out
 		}
 		add_monthly_resource_mult = {
 			resource = physics_research
@@ -799,13 +799,10 @@ event = {
 				}
 			}
 			set_country_flag = scar_mega_archeological_guild_build
-
 			give_technology = {
 				tech = scar_tech_unlock_archeoguild
 				message = no
 			}
-			
-
 		}
 	}
 }
@@ -824,6 +821,297 @@ country_event = {
 		add_monthly_resource_mult = {
 			resource = society_research
 			value = 4
+		}
+	}
+}
+
+################################ origin events ###########################
+
+#TODO: fix faction not spawning, building is not upgradeable 
+
+
+# relic world for origin setup
+event = {
+	id = scar.300
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		#has_origin = 
+		#has_valid_civic = scar_civic_archeotech_guild
+	}
+	immediate = {
+		every_playable_country = {
+			limit = {
+				has_origin = scar_origin_runesmiths
+			}
+			capital_star = {
+				solar_system = {
+					spawn_planet = {
+						class = "pc_relic"
+						location = prev
+						orbit_distance = 210
+						orbit_angle_offset = 30
+						size = 6
+						init_effect = {
+							set_name = "scar_NAME_relic_outpost"
+							#set_planet_entity = {
+							#	entity = "ringworld_tech_entity_01_entity"
+							#	graphical_culture = fromfrom
+							#}
+							set_surveyed = {
+								surveyed = yes
+								surveyor = prevprevprev
+							}
+							set_all_comms_surveyed = yes
+							start_colony = {
+								owner = prevprevprev
+							}
+							set_planet_flag = scar_relic_world_outpost
+							save_global_event_target_as = scar_relic_world_outpost
+						}
+					}
+				}
+			}
+			country_event = {
+				id = scar.301
+				days = 1800
+			}
+		}
+	}
+}
+
+# notify owner of relic world that something was found
+country_event = {
+	id = scar.301
+	title = scar.301.name
+	desc = scar.301.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		#relic forge + wanna repair it
+		name = scar.301.a
+		event_target:scar_relic_world_outpost = {
+			add_building = scar_building_outpost_forge
+		}
+		start_situation = {
+			type = scar_repair_forge
+		}
+	}
+	option = {
+		#relic forge, ignore repairs
+		name = scar.301.b
+		event_target:scar_relic_world_outpost = {
+			add_building = scar_building_outpost_forge
+		}
+		ai_chance = {
+			weight = 0
+		}
+	}
+}
+
+# notify owner of relic world that something was found
+country_event = {
+	id = scar.301
+	title = scar.301.name
+	desc = scar.301.desc
+	trigger = {
+		exists = event_target:scar_relic_world_outpost
+	}
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		#relic forge + wanna repair it
+		name = scar.301.a
+		event_target:scar_relic_world_outpost = {
+			add_building = scar_building_outpost_forge
+		}
+		start_situation = {
+			type = scar_repair_forge
+		}
+	}
+	option = {
+		#relic forge, ignore repairs
+		name = scar.301.b
+		event_target:scar_relic_world_outpost = {
+			add_building = scar_building_outpost_forge
+		}
+		ai_chance = {
+			weight = 0
+		}
+	}
+}
+
+# first stage complete
+country_event = {
+	id = scar.302
+	title = scar.302.name
+	desc = scar.302.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:scar_relic_world_outpost
+	}
+	immediate = {
+	}
+	option = {
+		#bigger planet
+		name = scar.302.a
+		event_target:scar_relic_world_outpost = {
+			change_planet_size = 4
+		}
+	}
+	option = {
+		#specialist output
+		name = scar.302.b
+		custom_tooltip = scar.302.b.tt
+		event_target:scar_relic_world_outpost = {
+			set_planet_flag = scar_relic_world_outpost_specialist_output
+		}
+		ai_chance = {
+			weight = 100
+		}
+	}
+}
+
+# second stage complete
+country_event = {
+	id = scar.303
+	title = scar.303.name
+	desc = scar.303.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	trigger = {
+		exists = event_target:scar_relic_world_outpost
+	}
+	immediate = {
+	}
+	option = {
+		#component cost
+		name = scar.303.a
+		custom_tooltip = scar.303.a.tt
+		hidden_effect = {
+			event_target:scar_relic_world_outpost = {
+				set_planet_flag = scar_relic_world_outpost_macomponent_cost
+			}
+		}
+	}
+	option = {
+		#research speed
+		name = scar.303.b
+		custom_tooltip = scar.303.b.tt
+		hidden_effect = {
+			event_target:scar_relic_world_outpost = {
+				set_planet_flag = scar_relic_world_outpost_research_speed
+			}
+		}
+		ai_chance = {
+			weight = 100
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				NOT = {
+					has_technology = tech_archaeostudies
+				}
+			}
+			custom_tooltip = scar.303.after.tt			# you need archeotech to progress
+			add_research_option = tech_archaeostudies
+			random_situation = {
+				limit = {
+					is_situation_type = scar_repair_forge
+				}
+				set_situation_locked = yes
+			}
+		}
+	}
+}
+
+# unlock the situation if owner has archeostudies, only applies after entering stage 3
+situation_event = {
+	id = scar.305
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_technology = tech_archaeostudies
+		}
+	}
+	immediate = {
+		set_situation_locked = no
+	}
+}
+
+# third stage complete
+#TODO: add potential for edicts
+country_event = {
+	id = scar.304
+	title = scar.304.name
+	desc = scar.304.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	trigger = {
+		#exists = event_target:scar_relic_world_outpost
+	}
+	immediate = {
+	}
+	option = {
+		#rune edicts
+		name = scar.304.a
+		custom_tooltip = scar.304.a.tt
+	}
+	option = {
+		#scrapper edicts
+		name = scar.304.b
+		custom_tooltip = scar.304.b.tt
+	}
+}
+
+# completed repairs
+country_event = {
+	id = scar.306
+	title = scar.306.name
+	desc = scar.306.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_mysterious_signal
+	location = event_target:scar_relic_world_outpost
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+	immediate = {
+	}
+	option = {
+		#faction
+		name = scar.306.a
+		custom_tooltip = scar.306.a.tt
+		enable_faction_of_type = scar_runist
+		
+		hidden_effect = {
+			set_country_flag = scar_runist_faction_enabled
+		}
+	}
+	option = {
+		#faction
+		name = scar.306.b
+		add_modifier = {
+			modifier = scar_no_runist_faction
 		}
 	}
 }
