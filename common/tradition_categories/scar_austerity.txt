@@ -1,0 +1,25 @@
+tradition_scar_austerity = {
+	tree_template = "tree_21_12"
+	adoption_bonus = "tr_scar_austerity_adopt"
+	finish_bonus = "tr_scar_austerity_finish"
+
+	potential = {
+		has_ascension_perk = ap_archaeoengineers
+		NOR = {
+			has_origin = origin_fallen_empire	#TODO Replace with our origin
+			has_tradition = tr_scar_avarice_adopt
+		}
+	}
+
+	traditions = {
+		"tr_scar_austerity_1"
+		"tr_scar_austerity_2"
+		"tr_scar_austerity_3"
+		"tr_scar_austerity_4"
+		"tr_scar_austerity_5"
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
