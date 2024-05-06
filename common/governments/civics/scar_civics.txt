@@ -218,7 +218,7 @@ scar_civic_ancient_automata = {
 		councilor_gestalt_legion_exp_gain = @gestalt_civic_node_xp_rate
 	}
 	traits = {
-		trait = scar_trait_robot_ancient_design
+		#trait = scar_trait_robot_ancient_design #TODO: trait is for robots not machines
 	}
 }
 
