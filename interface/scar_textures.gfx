@@ -74,6 +74,78 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/ship_parts/scar_ship_part_sputter_plasma.dds"
 	}
 
+	#Tradition Backgrounds
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_scar_avarice"
+		texturefile = "gfx/interface/tiles/tradition_category_tile_avarice.dds"
+	}
 
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_scar_avarice"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_avarice.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
 
+	spriteType = {
+		name = "GFX_tr_scar_avarice_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_avarice_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_avarice_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_avarice_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_avarice_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_scar_austerity"
+		texturefile = "gfx/interface/tiles/tradition_category_tile_austerity.dds"
+	}
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_scar_austerity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_austerity.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_austerity_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_austerity_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_austerity_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_austerity_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_scar_austerity_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+	}
 }

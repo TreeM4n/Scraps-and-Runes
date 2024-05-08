@@ -382,7 +382,7 @@ weapon_component_template = {
 }
 
 ################################boarding torpedoes###########################################
-#TODO: kmaikazi torps with bonus damge to large ships
+
 weapon_component_template = {
 	key = "SCAR_Boarding_torpedo_1"
 	size = torpedo
@@ -394,10 +394,10 @@ weapon_component_template = {
 
 	firing_arc = 25.0
 
-	prerequisites = { "tech_mass_drivers_1" }
+	prerequisites = { "scar_tech_boarding_torpedo" }
 	component_set = "SCAR_boarding_torps"
 	projectile_gfx = "boarding_torpedo"
-	tags = { weapon_type_explosive g_slot }
+	tags = { weapon_type_explosive g_slot weapon_archaeotech }
 	ai_tags = { explosive explosive_stealth }
 	resources = {
 		category = ship_components
@@ -412,20 +412,22 @@ weapon_component_template = {
 
 	damage = { min = 300 max = 400 }
 	range = 80
-	tracking = 0.1
+	tracking = 0.7
 	accuracy = 0.9
-	hull_damage = 6
-	shield_damage = 1
-	shield_penetration = 10
-	armor_penetration = 0.25
-	armor_damage = 1
+	hull_damage = 2
+	#shield_damage = 1
+	#shield_penetration = 10
+	#armor_penetration = 0.25
+	#armor_damage = 1
 	total_fire_time = 200
-	missile_speed = 50
-	missile_evasion = 0.5
-	missile_shield = 0
+	missile_speed = 87
+	missile_evasion = 0.6
+	missile_shield = 15
 	missile_armor = 15
 	missile_health = 20
-	missile_retarget_range = 30
+	missile_retarget_range = 70
+	#size_damage_factor = 2 #TODO. this thwors error in my IDE, look if it works tho
+	
 
 	ai_weight = {
 		weight = 0

@@ -1,0 +1,194 @@
+###########
+# trime_situations
+# made by:
+# tr33
+#
+###########
+trime_sit_wait_20years = {
+	picture = GFX_evt_deficit
+	category = neutral
+	#fail_icon = GFX_situation_outcome_meh
+	#fail_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	on_start = {
+	}
+	on_abort = {
+	}
+	start_value = 0
+	on_monthly = {
+		#random_events = {
+		#80 = 0
+		#20 = origin.4170	# Payback | MSI helping you
+		#}
+	}
+	stages = {
+		trime_stage1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 220
+			modifier = {
+				#pop_happiness = -0.1
+			}
+		}
+		trime_stage2 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 240
+			modifier = {
+				#pop_happiness = -0.1
+			}
+			on_first_enter = {
+				hidden_effect = {
+					situation_event = {
+						id = trime.9
+					}
+				}
+			}
+		}
+	}
+	on_progress_complete = {
+		custom_tooltip = trime_hmm_okletswait
+		hidden_effect = {
+			situation_event = {
+				id = trime.10
+			}
+		}
+	}
+	monthly_progress = {
+		base = 1
+	}
+	approach = {
+		name = trime_letswait_approach
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		#modifier = {
+		#}
+		on_select = {
+			custom_tooltip = trime_empty
+		}
+		ai_weight = {
+			base = 1
+		}
+		default = yes
+	}
+}
+
+# TODO: finsih this properly
+scar_repair_forge = {
+	picture = GFX_evt_deficit
+	category = positive
+	#fail_icon = GFX_situation_outcome_meh
+	#fail_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	on_start = {
+	}
+	on_abort = {
+	}
+	start_value = 0	
+	stages = {
+		scar_repair_forge_stage1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 250
+			modifier = {
+			}
+		}
+		scar_repair_forge_stage2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 500
+			modifier = {
+			}
+			on_first_enter = {
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = scar.302
+						}
+						set_country_flag = scar_repair_forge_stage1
+					}
+				}
+			}
+		}
+		scar_repair_forge_stage3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 750
+			modifier = {
+			}
+			on_first_enter = {
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = scar.303
+						}
+						set_country_flag = scar_repair_forge_stage1
+					}
+				}
+			}
+		}
+		scar_repair_forge_stage4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 1000
+			modifier = {
+			}
+			on_first_enter = {
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = scar.304
+						}
+					}
+				}
+			}
+		}
+	}
+	on_monthly = {
+		events = {
+			scar.305
+		}
+	}
+	on_progress_complete = {
+		custom_tooltip = scar_situation_repair_finished_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = scar.306 # faction
+				}
+			}
+		}
+	}
+	monthly_progress = {
+		base = 1
+		modifier = {
+			# if you dont own the forge you cant repair it
+			mult = 0
+			desc = situation_scar_situation_repair_no_forge_here
+
+			exists = event_target:scar_relic_world_outpost
+
+			event_target:scar_relic_world_outpost = {
+				owner = {
+					is_same_value = root.owner
+				}
+			}
+		}
+	}
+	approach = {
+		name = trime_letswait_approach
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		#modifier = {
+		#}
+		on_select = {
+			custom_tooltip = trime_empty
+		}
+		ai_weight = {
+			base = 1
+		}
+		default = yes
+	}
+}

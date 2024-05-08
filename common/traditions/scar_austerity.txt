@@ -1,0 +1,71 @@
+tr_scar_austerity_adopt = {
+	#TODO
+		#gain minor artifacts every time you research anomalies, invade planets or research debris - via on_action event?
+		#new agenda (not sure, maybe more resources from debris?)
+	#DONE
+		#Blocks Avarice tradition tree
+		#requires archeoengineering AP
+	possible = {
+		has_ascension_perk = ap_archaeoengineers
+	}
+	unlocks_agenda = agenda_psionic_supremacy			#TODO New Agenda
+	custom_tooltip = tr_scar_austerity_adopt_tooltip
+}
+
+tr_scar_austerity_finish = {
+	#TODO
+		#access to ascension specific content (don't know how to do this with the tooltip, refers to several components/buildings/megastructures and so on in the mod, most are already done and just need the right prerequisites)
+	custom_tooltip = tr_scar_austerity_finish_tooltip
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+tr_scar_austerity_1 = {
+	#DONE
+		#-% job upkeep
+	modifier = {
+		planet_jobs_upkeep_mult = -0.05
+	}
+}
+
+tr_scar_austerity_2 = {
+	#DONE
+		# -% minor artifact cost of buildings and ships
+	modifier = {
+		country_minor_artifacts_cost_mult = -0.1
+	}
+}
+
+tr_scar_austerity_3 = {
+	#TODO
+		#a special building, planet unique, it replaces 2 miner jobs with 2 scrapper jobs per mining district (no vanilla exist here afaik), scrappers have in vanilla some mineral and alloy output, I'm not sure if the following is possible: on relic worlds with the building scrappers provide minor artifacts instead of alloys (maybe -100% alloys and +0,1 minor artifacts from miners)
+	possible = {
+		has_tradition = tr_scar_austerity_1
+		has_tradition = tr_scar_austerity_2
+	}
+	custom_tooltip = tr_scar_austerity_3_desc
+	modifier = {
+		country_minor_artifacts_cost_mult = -0.1
+	}
+}
+
+tr_scar_austerity_4 = {
+	#TODO
+		#2 new edicts: +% miner output for relic upkeep, -% minor artifact ship build cost
+	possible = {
+		has_tradition = tr_scar_austerity_3
+	}
+	custom_tooltip = tr_scar_austerity_4_desc
+}
+
+tr_scar_austerity_5 = {
+	#DONE
+		#+ minor artifact stockpile
+	possible = {
+		has_tradition = tr_scar_austerity_3
+	}
+	modifier = {
+		country_resource_max_minor_artifacts_add = 2000
+	}
+}

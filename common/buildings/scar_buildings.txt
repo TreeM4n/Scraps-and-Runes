@@ -2,6 +2,7 @@ scar_building_archeo_obelisks = {
 	base_buildtime = @b2_time
 	can_build = yes
 	category = resource
+	base_cap_amount = 1
 	#allow = {
 	#	exists = owner
 	#	owner = {
@@ -69,5 +70,162 @@ scar_building_archeo_obelisks = {
 	}
 	on_destroy = {
 		#TODO: destroy giant obelisk in orbit event
+	}
+}
+
+# ruins of the forge
+scar_building_outpost_forge = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = resource
+	planet_modifier = {
+		planet_max_buildings_add = 1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			#minor_artifacts = 100
+		}
+		upkeep = {
+			energy = 8
+			minerals = 10
+		}
+		produces = {
+			minor_artifacts = 5
+		}
+	}
+	upgrades = {
+		scar_building_outpost_forge_1
+	}
+}
+
+# 1. tier of the forge
+scar_building_outpost_forge_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = resource
+	potential = {
+		owner = {
+			has_country_flag = scar_repair_forge_stage1
+		}
+	}
+	allow = {
+		owner = {
+			has_country_flag = scar_repair_forge_stage1
+		}
+	}
+
+	planet_modifier = {
+		planet_max_buildings_add = 1
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_specialist_output
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		planet_jobs_complex_drone_produces_mult = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_specialist_output
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		planet_jobs_specialist_produces_mult = 0.1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minor_artifacts = 200
+			minerals = 900
+		}
+		upkeep = {
+			energy = 16
+			minerals = 20
+		}
+		produces = {
+			minor_artifacts = 8
+			alloys = 5
+		}
+	}
+	upgrades = {
+		scar_building_outpost_forge_2
+	}
+}
+
+
+# 2. tier of the forge
+scar_building_outpost_forge_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = resource
+	potential = {
+		owner = {
+			has_country_flag = scar_repair_forge_stage2
+		}
+	}
+	allow = {
+		owner = {
+			has_country_flag = scar_repair_forge_stage2
+		}
+	}
+	planet_modifier = {
+		planet_max_buildings_add = 1
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_specialist_output
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+		planet_jobs_complex_drone_produces_mult = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_specialist_output
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+		planet_jobs_specialist_produces_mult = 0.1
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_macomponent_cost
+			
+		}
+		ships_minor_artifacts_cost_mult = -0.2
+	}
+	triggered_country_modifier = {
+		potential = {
+			has_planet_flag = scar_relic_world_outpost_research_speed
+			
+		}
+		all_technology_research_speed = 0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minor_artifacts = 500
+			minerals = 1200
+		}
+		upkeep = {
+			energy = 24
+			minerals = 40
+		}
+		produces = {
+			minor_artifacts = 12
+			alloys = 20
+		}
 	}
 }
