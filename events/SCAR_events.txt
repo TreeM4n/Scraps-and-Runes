@@ -826,11 +826,20 @@ country_event = {
 }
 
 ################################ origin events ###########################
-
 #TODO: fix faction not spawning, building is not upgradeable 
+# cheat event
+situation_event = {
+	id = scar.399
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		this = {
+			add_situation_progress = 1000
+			
+		}
+	}
+}
 
-
-# relic world for origin setup
 event = {
 	id = scar.300
 	hide_window = yes
@@ -848,9 +857,9 @@ event = {
 				solar_system = {
 					spawn_planet = {
 						class = "pc_relic"
-						location = prev
-						orbit_distance = 210
-						orbit_angle_offset = 30
+						location = prevprev
+						orbit_distance = 420
+						#orbit_angle_offset = 30
 						size = 6
 						init_effect = {
 							set_name = "scar_NAME_relic_outpost"
@@ -885,7 +894,7 @@ country_event = {
 	id = scar.301
 	title = scar.301.name
 	desc = scar.301.desc
-	picture = GFX_evt_city_ruins
+	picture = GFX_evt_ancient_alien_temple
 	show_sound = event_mysterious_signal
 	location = event_target:scar_relic_world_outpost
 	is_triggered_only = yes
@@ -902,7 +911,7 @@ country_event = {
 		}
 	}
 	option = {
-		#relic forge, ignore repairs
+		#relic forge, ignore repairs, TODO: situation which deconstructs the forge and gives stuff for it
 		name = scar.301.b
 		event_target:scar_relic_world_outpost = {
 			add_building = scar_building_outpost_forge
@@ -913,49 +922,14 @@ country_event = {
 	}
 }
 
-# notify owner of relic world that something was found
-country_event = {
-	id = scar.301
-	title = scar.301.name
-	desc = scar.301.desc
-	trigger = {
-		exists = event_target:scar_relic_world_outpost
-	}
-	picture = GFX_evt_city_ruins
-	show_sound = event_mysterious_signal
-	location = event_target:scar_relic_world_outpost
-	is_triggered_only = yes
-	immediate = {
-	}
-	option = {
-		#relic forge + wanna repair it
-		name = scar.301.a
-		event_target:scar_relic_world_outpost = {
-			add_building = scar_building_outpost_forge
-		}
-		start_situation = {
-			type = scar_repair_forge
-		}
-	}
-	option = {
-		#relic forge, ignore repairs
-		name = scar.301.b
-		event_target:scar_relic_world_outpost = {
-			add_building = scar_building_outpost_forge
-		}
-		ai_chance = {
-			weight = 0
-		}
-	}
-}
 
 # first stage complete
 country_event = {
 	id = scar.302
 	title = scar.302.name
 	desc = scar.302.desc
-	picture = GFX_evt_city_ruins
-	show_sound = event_mysterious_signal
+	picture = GFX_evt_collapsing_roof
+	show_sound = event_construction
 	location = event_target:scar_relic_world_outpost
 	is_triggered_only = yes
 	trigger = {
@@ -988,8 +962,8 @@ country_event = {
 	id = scar.303
 	title = scar.303.name
 	desc = scar.303.desc
-	picture = GFX_evt_city_ruins
-	show_sound = event_mysterious_signal
+	picture = GFX_evt_crusher_droid
+	show_sound = event_construction
 	location = event_target:scar_relic_world_outpost
 	is_triggered_only = yes
 	trigger = {
@@ -1060,8 +1034,8 @@ country_event = {
 	id = scar.304
 	title = scar.304.name
 	desc = scar.304.desc
-	picture = GFX_evt_city_ruins
-	show_sound = event_mysterious_signal
+	picture = GFX_evt_astral_rift_genesis_2
+	show_sound = event_administrative_work
 	location = event_target:scar_relic_world_outpost
 	is_triggered_only = yes
 	trigger = {
@@ -1101,17 +1075,24 @@ country_event = {
 		#faction
 		name = scar.306.a
 		custom_tooltip = scar.306.a.tt
-		enable_faction_of_type = scar_runist
-		
 		hidden_effect = {
 			set_country_flag = scar_runist_faction_enabled
 		}
+		enable_faction_of_type = scar_runist
 	}
 	option = {
 		#faction
 		name = scar.306.b
 		add_modifier = {
 			modifier = scar_no_runist_faction
+		}
+	}
+	after = {
+		random_situation = {
+			limit = {
+				is_situation_type = scar_repair_forge
+			}
+			destroy_situation = this
 		}
 	}
 }

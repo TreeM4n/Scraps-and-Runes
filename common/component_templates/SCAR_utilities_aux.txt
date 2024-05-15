@@ -22,7 +22,7 @@ utility_component_template = {
 		ship_hull_mult = -0.05
 	}
 	prerequisites = {
-		"tech_reactor_boosters_1"
+		"tech_reactor_boosters_1" "tech_archaeostudies"
 	}
 	
 	upgrades_to = "REACTOR_BOOSTER_3" # is worse than reactor 3
@@ -50,7 +50,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_shield_rechargers_1"
+		"tech_shield_rechargers_1" "tech_archaeostudies"
 	}
 	valid_for_country = {
 		has_ascension_perk = ap_archaeoengineers
@@ -100,7 +100,7 @@ utility_component_template = {
 		ship_accuracy_add = 3
 	}
 	prerequisites = {
-		tech_auxiliary_fire_control
+		"tech_auxiliary_fire_control" "tech_archaeostudies"
 	}
 	component_set = "SCAR_manned_fire_control"
 	ai_weight = {
@@ -137,7 +137,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		tech_auxiliary_fire_control
+		tech_auxiliary_fire_control "tech_archaeostudies"
 	}
 	component_set = "SCAR_integrated_fire_control"
 	ai_weight = {
@@ -167,7 +167,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_shield_hardeners_2"
+		"tech_shield_hardeners_2" "tech_archaeostudies"
 	}
 	component_set = "SCAR_shield_optimizer"
 	ship_modifier = {
@@ -210,7 +210,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_armor_hardeners_2"
+		"tech_armor_hardeners_2" "tech_archaeostudies"
 	}
 	valid_for_country = {
 		#check if this still holds
@@ -257,7 +257,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_armor_hardeners_2"
+		"tech_armor_hardeners_2" "tech_archaeostudies"
 	}
 	valid_for_country = {
 		AND = {

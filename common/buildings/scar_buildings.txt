@@ -202,8 +202,9 @@ scar_building_outpost_forge_2 = {
 		potential = {
 			has_planet_flag = scar_relic_world_outpost_macomponent_cost
 			
-		}
+		}		
 		ships_minor_artifacts_cost_mult = -0.2
+		
 	}
 	triggered_country_modifier = {
 		potential = {

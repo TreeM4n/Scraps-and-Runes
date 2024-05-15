@@ -11,11 +11,11 @@ scar_runist = {
 	resources = {
 		category = pop_factions
 		produces = {
-			minor_artifacts = 0.2
+			minor_artifacts = 0.05
 		}
 	}
 	is_potential = {
-		is_faction_allowed = yes
+		#is_faction_allowed = yes
 		has_country_flag = scar_runist_faction_enabled
 	}
 	parameters = {
@@ -29,6 +29,7 @@ scar_runist = {
 	can_join_pre_triggers = {
 		is_enslaved = no
 		is_being_purged = no
+		
 	}
 	can_join_faction = {
 		can_think = yes

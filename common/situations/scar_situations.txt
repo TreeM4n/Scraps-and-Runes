@@ -86,7 +86,7 @@ scar_repair_forge = {
 	}
 	on_abort = {
 	}
-	start_value = 0	
+	start_value = 0
 	stages = {
 		scar_repair_forge_stage1 = {
 			icon = GFX_situation_stage_1
@@ -156,7 +156,7 @@ scar_repair_forge = {
 		hidden_effect = {
 			owner = {
 				country_event = {
-					id = scar.306 # faction
+					id = scar.306					# faction
 				}
 			}
 		}
@@ -167,28 +167,54 @@ scar_repair_forge = {
 			# if you dont own the forge you cant repair it
 			mult = 0
 			desc = situation_scar_situation_repair_no_forge_here
-
-			exists = event_target:scar_relic_world_outpost
-
-			event_target:scar_relic_world_outpost = {
-				owner = {
-					is_same_value = root.owner
+			owner = {
+				any_owned_planet = {
+					NOR = {
+						has_building = scar_building_outpost_forge
+						has_building = scar_building_outpost_forge_1
+						has_building = scar_building_outpost_forge_2
+					}
 				}
 			}
 		}
+		modifier = {
+			# boosted situation
+			mult = 1.2
+			desc = scar_repair_forge_approach_boost
+			current_situation_approach = scar_repair_forge_approach_boost
+		}
 	}
 	approach = {
-		name = trime_letswait_approach
-		icon = GFX_situation_approach_shrug
+		name = scar_repair_forge_approach_normal
+		icon = GFX_situation_approach_balance_sheet
 		icon_background = GFX_situation_approach_bg_yellow
 		#modifier = {
 		#}
-		on_select = {
-			custom_tooltip = trime_empty
-		}
+		#on_select = {
+		#	custom_tooltip = trime_empty
+		#}
 		ai_weight = {
 			base = 1
 		}
 		default = yes
+	}
+	approach = {
+		name = scar_repair_forge_approach_boost
+		icon = GFX_situation_approach_energy_credits
+		icon_background = GFX_situation_approach_bg_green
+		#modifier = {
+		#}
+		resources = {
+			category = situations
+			upkeep = {
+				minor_artifacts = -5
+			}
+		}
+		#on_select = {
+		#	custom_tooltip = trime_empty
+		#}
+		ai_weight = {
+			base = 10
+		}
 	}
 }
