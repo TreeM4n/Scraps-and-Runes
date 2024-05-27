@@ -15,3 +15,24 @@ trime_leader_lifespan2 = {
 	#min = 1
 	#mult = $PERCENT$
 }
+
+scar_miner_count = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_mining
+		}
+		mode = add
+		mult = 2
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_mining_uncapped
+		}
+		mode = add
+		mult = 2
+	}
+	
+}

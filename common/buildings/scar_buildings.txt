@@ -230,3 +230,90 @@ scar_building_outpost_forge_2 = {
 		}
 	}
 }
+
+
+scar_building_miner_base = {
+	base_buildtime = @b2_time
+	can_build = yes
+	category = resource
+	base_cap_amount = 1
+	allow = {
+		exists = owner
+		owner = {
+			has_tradition = tr_scar_austerity_3
+		}
+	}
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_scar_austerity_3
+		}
+	}
+	destroy_trigger = {
+		NOR = {
+			exists = owner
+			owner = {
+				has_tradition = tr_scar_austerity_3
+			}
+		}
+	}
+	planet_modifier = {
+		job_scrap_miner_add = 2
+		#planet_farmers_food_produces_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_relic
+		}
+		planet_miners_alloys_produces_mult = -0.5
+		planet_miners_minor_artifacts_produces_add = 0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					is_machine_empire = yes
+					is_hive_empire = yes
+				}
+				
+			}
+		}
+		job_scrap_miner_add = 1
+		job_miner_add = -1
+		mult = planet.value:scar_miner_count
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					is_hive_empire = yes
+				}
+				
+			}
+		}
+		job_scrap_miner_drone_add = 1		
+		job_mining_drone_add = -1
+		mult = planet.value:scar_miner_count
+	}
+	#
+	#inline_script = {
+	#	script = jobs/scrap_miners_add
+	#	MINER_AMOUNT = 2		
+	#}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			minor_artifacts = 100
+		}
+		upkeep = {
+			energy = 5
+		}
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+@base_agenda_cost = 7000
+# Remember to update initial progress for "agenda_infinite_opportunities" in game_start.60 if above is changed.
+agenda_scar_austerity = {
+	agenda_cost = @base_agenda_cost
+	potential = {
+		has_tradition = tr_scar_austerity_adopt
+	}
+	allow = {
+		always = yes
+	}
+	modifier = {
+		country_minor_artifacts_produces_mult = 0.1
+		
+	}
+	finish_modifier = agenda_scar_austerity_finish
+}
+

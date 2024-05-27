@@ -905,10 +905,12 @@ country_event = {
 		name = scar.301.a
 		event_target:scar_relic_world_outpost = {
 			add_building = scar_building_outpost_forge
+			set_name = "scar_NAME_relic_outpost"
 		}
 		start_situation = {
 			type = scar_repair_forge
 		}
+
 	}
 	option = {
 		#relic forge, ignore repairs, TODO: situation which deconstructs the forge and gives stuff for it
@@ -953,6 +955,12 @@ country_event = {
 		}
 		ai_chance = {
 			weight = 100
+		}
+	}
+	after = {
+		custom_tooltip = scar.302.after.tt
+		hidden_effect = {
+			set_country_flag = scar_repair_forge_stage1
 		}
 	}
 }
@@ -1010,7 +1018,12 @@ country_event = {
 				set_situation_locked = yes
 			}
 		}
+		custom_tooltip = scar.302.after.tt
+		hidden_effect = {
+			set_country_flag = scar_repair_forge_stage2
+		}
 	}
+
 }
 
 # unlock the situation if owner has archeostudies, only applies after entering stage 3
@@ -1093,6 +1106,80 @@ country_event = {
 				is_situation_type = scar_repair_forge
 			}
 			destroy_situation = this
+		}
+	}
+}
+
+
+##############################     tradition events ########################
+
+
+# Fired when a ship finishes researching an anomaly.
+# this = ship
+# from = planet
+ship_event = {
+	id = scar.401
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_tradition = tr_scar_austerity_adopt
+		}
+	}
+	immediate = {
+		owner = {
+			add_resource = {
+				minor_artifacts = 50
+			}
+		}
+	}
+}
+
+# Fired when a ship finishes researching an anomaly.
+# this = ship
+# from = planet
+country_event = {
+	id = scar.402
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_tradition = tr_scar_austerity_adopt
+		}
+	}
+	immediate = {
+		owner = {
+			add_resource = {
+				minor_artifacts = 150
+			}
+		}
+	}
+}
+
+# Fired when a science ship succesfully analyzed or scavenged debris
+# this = country
+# from = debris
+# fromfrom = controller of destroyed ship
+# fromfromfrom = science ship
+country_event = {
+	id = scar.403
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_tradition = tr_scar_austerity_adopt
+		}
+	}
+	immediate = {
+		owner = {
+			add_resource = {
+				minor_artifacts = 100
+				#mult = value:country_salvage_ships_from_debris_chance
+			}
+			add_resource = {
+				minor_artifacts = 500 #bonus for salvage modifier
+				mult = value:country_salvage_ships_from_debris_chance
+			}
 		}
 	}
 }

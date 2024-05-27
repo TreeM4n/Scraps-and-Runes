@@ -205,6 +205,10 @@
  scar_civic_archeo_obelisk_desc:0 "This civilization has adopted a rather unique use of archaeological artifacts, as building materials. They breath new life into ancient relics, transforming them into towering monuments that stand as a testament to both the past and the future."
  scar_civic_archeo_obelisk_tooltip_effects:0 "Can build unique £building£ §Y$scar_building_archeo_obelisks$§!\n£building£§Y$scar_building_archeo_obelisks$§! consume $r_minor_artifacts$ and produce $r_physics$, $r_society$ and $r_engineering$ based on £pop£ Pops."
 
+
+ ########################## origin ###################################
+
+ scar_NAME_relic_outpost:0 "Ancient Forgeworld"
  scar_building_outpost_forge:0 "Ruined $scar_building_outpost_forge_1$"
  scar_building_outpost_forge_desc:0 "Forgotten are the the times the $scar_building_outpost_forge$ worked flawlessly. Forgotten is the civilization that build it. Now, it only serves as a grim reminder."
  scar_building_outpost_forge_1:0 "Timeless Anvil"
@@ -245,15 +249,18 @@
  requires_no_shroud_needle:0 "REPLACE_ME"
  requires_less_than_x_shroud_needles:0 "REPLACE_ME" 
 
+
+ scar.the_anvil_provides:0 "§Y$scar_building_outpost_forge_1$§! provides:"
  scar.301.name:0 "Ancient Rubble"
- scar.301.desc:0 "Our Colonist have found a rather unique place on [scar_relic_world_outpost.GetName] "
- scar.301.a:0 "REPLACE_ME"
- scar.301.b:0 "REPLACE_ME"
- scar.302.name:0 "REPLACE_ME"
- scar.302.desc:0 "REPLACE_ME"
- scar.302.a:0 "REPLACE_ME"
- scar.302.b:0 "REPLACE_ME"
- scar.302.b.tt:0 "REPLACE_ME"
+ scar.301.desc:0 "Our Colonist have found a rather unique place on [scar_relic_world_outpost.GetName]. It appears in half ruined shape, but there is no doubt about its past pompourus days. Even in this brittled state we are sure, that this was the crowning jewel of [scar_relic_world_outpost.GetName]. Our excavation teams are already talking about bringing it back to its old glory. "
+ scar.301.a:0 "Try Repairing"
+ scar.301.b:0 "Scrap it"
+ scar.302.name:0 "Rubble Moved"
+ scar.302.desc:0 "Our Repair Teams have made the first steps to recover $scar_building_outpost_forge_1$ to peak performance. The leftovers and rubble of neighboring ruins have been moved to the scrapyard. The free space is now useable again. We could expand our colony and used it for various purposes or dedicate all to training of specialists."
+ scar.302.a:0 "Expand [scar_relic_world_outpost.GetName]"
+ scar.302.b:0 "Specialist Training"
+ scar.302.after.tt:0 "$scar_building_outpost_forge$ Upgrade availible"
+ scar.302.b.tt:0 "$scar.the_anvil_provides$ §G+10%§! $mod_planet_jobs_specialist_produces_mult$"
  scar.303.name:0 "REPLACE_ME"
  scar.303.desc:0 "REPLACE_ME"
  scar.303.a:0 "REPLACE_ME"
@@ -310,3 +317,9 @@
  tr_scar_austerity_4_desc:0 "REPLACE_ME"
  tr_scar_austerity_5:0 "REPLACE_ME"
  tr_scar_austerity_5_delayed:0 "REPLACE_ME"
+
+ scar_building_miner_base:0 "REPLACE_ME"
+ scar_building_miner_base_desc:0 "REPLACE_ME"
+ council_agenda_agenda_scar_austerity_name:0 "REPLACE_ME"
+ council_agenda_agenda_scar_austerity_desc:0 "REPLACE_ME"
+ agenda_scar_austerity_finish:0 "REPLACE_ME"

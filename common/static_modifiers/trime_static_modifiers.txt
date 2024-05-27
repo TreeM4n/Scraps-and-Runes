@@ -6,6 +6,21 @@
 ###########
 
 
+################### scar #################################
+
+agenda_scar_austerity_finish = {
+	country_minor_artifacts_produces_mult = 0.4
+}
+
+scar_no_runist_faction = {
+	faction_approval = 0.05
+}
+
+
+
+
+
+#################### trime modifiers ###########################
 
 trime_cursedworld = {
 	planet_pops_upkeep_mult =  -0.5
@@ -61,10 +76,5 @@ trime_ship_frozen = {
 	ship_speed_reduction = 0.9
 	ship_fire_rate_mult = -0.5
 	
-}
-
-scar_no_runist_faction = {
-
-	faction_approval = 0.05
 }
 
