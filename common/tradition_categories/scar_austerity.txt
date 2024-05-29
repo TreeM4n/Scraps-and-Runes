@@ -4,12 +4,14 @@ tradition_scar_austerity = {
 	finish_bonus = "tr_scar_austerity_finish"
 
 	potential = {
-		has_ascension_perk = ap_archaeoengineers
+		#has_ascension_perk = ap_archaeoengineers
 		NOR = {
-			has_origin = origin_fallen_empire	#TODO Replace with our origin
+			has_origin = scar_origin_runesmiths	
 			has_tradition = tr_scar_avarice_adopt
 		}
+
 	}
+	
 
 	traditions = {
 		"tr_scar_austerity_1"

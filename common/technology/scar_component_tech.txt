@@ -11,7 +11,8 @@ scar_tech_plasma_sputtershot = {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
+		has_ascension_perk = ap_engineered_evolution
 	}
 
 	weight_modifier = {
@@ -52,7 +53,12 @@ scar_tech_emp_beam = {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
+		OR = {
+			has_ascension_perk = ap_synthetic_age
+			has_ascension_perk = ap_synthetic_evolution
+			
+		}
 	}
 
 	weight_modifier = {
@@ -93,7 +99,7 @@ scar_tech_asteroid_shoota= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
 	}
 
 	weight_modifier = {
@@ -126,7 +132,8 @@ scar_tech_psionic_missile= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
+		has_ascension_perk = ap_mind_over_matter
 	}
 
 	weight_modifier = {
@@ -165,7 +172,8 @@ scar_tech_disintegration_ray= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
+		has_ascension_perk = ap_the_flesh_is_weak
 	}
 
 	weight_modifier = {
@@ -205,7 +213,7 @@ scar_tech_point_defence= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
 	}
 
 	weight_modifier = {
@@ -238,7 +246,7 @@ scar_tech_mega_nuke= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
 	}
 
 	weight_modifier = {
@@ -272,7 +280,8 @@ scar_tech_nanite_swarm= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
+		has_tradition = tr_nanotech_adopt
 	}
 
 	weight_modifier = {
@@ -289,7 +298,8 @@ scar_tech_nanite_swarm= {
 		modifier = {
 			factor = 0
 			#TODO: nanite ascension
-			NOT = {
+			NAND = {				
+				has_tradition = tr_nanotech_adopt
 				has_ascension_perk = ap_archaeoengineers
 			}
 		}			
@@ -312,7 +322,7 @@ scar_tech_boarding_torpedo= {
 	weight = @tier4weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
 	}
 
 	weight_modifier = {

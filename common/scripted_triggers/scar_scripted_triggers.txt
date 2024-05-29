@@ -23,3 +23,16 @@ scar_is_obelisk_empire = {
 		#has_valid_civic = scar_civic_archeo_obelisk_hive
 	}
 }
+
+
+scar_has_access_to_archeotech_content = {
+	AND = {
+		has_ancrel = yes
+		OR = {
+			has_tradition = tr_scar_austerity_finish
+			has_tradition = tr_scar_avarice_finish
+			has_origin = scar_origin_runesmiths			
+		}
+		
+	}
+}

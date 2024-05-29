@@ -17,7 +17,8 @@
 
 ############################
 
- mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ Energy Credits"
+ scar_ma:0 "£minor_artifacts£ Minor Artifacts"
+ mod_country_base_minor_artifacts_produces_add:0 "Monthly £minor_artifacts£ Minor Artifacts"
  mod_starbase_shipyard_build_alloys_cost_mult:0 "£alloys£ $alloys$ Ship Build Cost"
  mod_planet_miners_unity_produces_add:0 "£unity£ $unity$ from £job_miner£ [GetMinerPlural]"
  mod_planet_miners_minor_artifacts_produces_add:0 "£minor_artifacts£ $minor_artifacts$ from £job_miner£ [GetMinerPlural]"
@@ -47,7 +48,9 @@
  SCAR_shield_booster:0 "Ancient Shield Overclocker"
 
  SCAR_manned_fire_control:0 "Ancient Turrets" 
- #SCAR_MANNED_FIRE_CONTROL:0 "$SCAR_manned_fire_control$"
+
+ SCAR_MANNED_FIRE_CONTROL:0 "Ancient Turrets"
+ SCAR_INTEGRATED_FIRE_CONTROL:0 "REPLACE_ME"
 
  SCAR_shield_optimizer:0 "$SCAR_SHIELD_OPTIMIZER_1$"
  SCAR_supercharged_armor:0 "$SCAR_SUPERCHARGED_ARMOR_1$"
@@ -200,7 +203,7 @@
  scar_civic_ancient_automata_tooltip_effects:0 "-Starting Species Traits: §Y$scar_trait_robot_ancient_design$§!"
 
  scar_building_archeo_obelisks:0 "Artefact Obelisk"
- scar_building_archeo_obelisks_desc:0 "Considered a waste of Ancient Artefacts by many, this building will be the scientific highlight of every colony. By strategically stacking many small artefacts on top of each other we can build a giant obelisk out of them." #TODO: better description something like research without knowlogde about it
+ scar_building_archeo_obelisks_desc:0 "Considered a waste of Ancient Artifacts by many, this building will be the scientific highlight of every colony. By strategically stacking many small Artifacts on top of each other we can build a giant obelisk out of them." #TODO: better description something like research without knowlogde about it
  scar_civic_archeo_obelisk:0 "Artefact-Obelisk Builder"
  scar_civic_archeo_obelisk_desc:0 "This civilization has adopted a rather unique use of archaeological artifacts, as building materials. They breath new life into ancient relics, transforming them into towering monuments that stand as a testament to both the past and the future."
  scar_civic_archeo_obelisk_tooltip_effects:0 "Can build unique £building£ §Y$scar_building_archeo_obelisks$§!\n£building£§Y$scar_building_archeo_obelisks$§! consume $r_minor_artifacts$ and produce $r_physics$, $r_society$ and $r_engineering$ based on £pop£ Pops."
@@ -214,7 +217,7 @@
  scar_building_outpost_forge_1:0 "Timeless Anvil"
  scar_building_outpost_forge_1_desc:0 "The $scar_building_outpost_forge_1$, once ruined, now restored to its old capacities. Its leave to be seen if we can improve the $scar_building_outpost_forge_1$ with modern technolgy any further."
  scar_building_outpost_forge_2:0 "Timeless Foundry"
- scar_building_outpost_forge_2_desc:0 "Restored and fully operational the $scar_building_outpost_forge_2$ provides us with a steady flow of Minor Artefacts. Its former glorious days are back and so are ours."
+ scar_building_outpost_forge_2_desc:0 "Restored and fully operational the $scar_building_outpost_forge_2$ provides us with a steady flow of Minor Artifacts. Its former glorious days are back and so are ours."
 
  scar_origin_runesmiths:0 "Children of the Timeless Anvil"
  scar_origin_runesmiths_desc:0 "REPLACE_ME"
@@ -223,7 +226,7 @@
  pft_scar_runist_desc:0 "They are the sacred keepers of the $scar_building_outpost_forge_1$."
  SCAR_RUNIST_WANT_RELICS:0 "Ancient Duty"
  SCAR_RUNIST_WANT_RELICS_UNFULLFILLED:0 "Lacking Relics"
- SCAR_RUNIST_WANT_RELICS_UNFULLFILLED_DESC:0 "$pft_scar_runist$ demand that their curiousity in ancient artefacts is satisfied"
+ SCAR_RUNIST_WANT_RELICS_UNFULLFILLED_DESC:0 "$pft_scar_runist$ demand that their curiousity in ancient Artifacts is satisfied"
  SCAR_RUNIST_WANT_RELIC_WORLD:0 "Sacred Places"
  SCAR_RUNIST_WANT_RELIC_WORLD_UNFULLFILLED:0 "No Retreat"
  SCAR_RUNIST_WANT_RELIC_WORLD_DESC:0 "The $pft_scar_runist$ require a Relic World for recreational purposes"
@@ -302,24 +305,32 @@
  tradition_scar_austerity:0 "Austerity"
  tradition_scar_austerity_desc:0 "Not blessed by abundance, efficiency with what little we got will become our creed."
  tr_scar_austerity_adopt:0 "Austerity Traditions"
- tr_scar_austerity_adopt_tooltip:0 "REPLACE_ME"
+ tr_scar_austerity_adopt_tooltip:0 "§YUnlocks Agenda:§! $council_agenda_agenda_scar_austerity_name$\nWhenever we research an§YAnomaly§!, capture a§YPlanet§! or research§YDebris§!:\n    Gain 10-200 §Y$scar_ma$§!"
  tr_scar_austerity_finish:0 "Austerity Traditions Finished"
- tr_scar_austerity_finish_tooltip:0 "REPLACE_ME"
+ tr_scar_austerity_finish_tooltip:0 "§YUnlock:§! Ascension-related §!Archeotech Research§!"
  tr_scar_austerity_1:0 "Rationalized Workflows"
  tr_scar_austerity_1_delayed:0 "By carefully managing workflows, material losses during production can be minimized."
- tr_scar_austerity_2:0 "REPLACE_ME"
- tr_scar_austerity_2_delayed:0 "REPLACE_ME"
- tr_scar_austerity_3:0 "REPLACE_ME"
- tr_scar_austerity_3_delayed:0 "REPLACE_ME"
- tr_scar_austerity_3_desc:0 "REPLACE_ME"
- tr_scar_austerity_4:0 "REPLACE_ME"
- tr_scar_austerity_4_delayed:0 "REPLACE_ME"
- tr_scar_austerity_4_desc:0 "REPLACE_ME"
- tr_scar_austerity_5:0 "REPLACE_ME"
- tr_scar_austerity_5_delayed:0 "REPLACE_ME"
+ tr_scar_austerity_2:0 "Ancient Shipyards"
+ tr_scar_austerity_2_delayed:0 "Adopting new .. or rather old concepts of shipyard, we can cut costs of Minor Artifacts."
+ tr_scar_austerity_3:0 "Mining Branches"
+ tr_scar_austerity_3_delayed:0 "Specialized Mining sectors improve their overall usefullness. "
+ tr_scar_austerity_3_desc:0 "§YUnlocks Building:§! $scar_building_miner_base$"
+ tr_scar_austerity_4:0 "Artefact Applications"
+ tr_scar_austerity_4_delayed:0 "Studies reveal advanteges of having old Artifacts at the workplace and on the battlefield."
+ tr_scar_austerity_4_desc:0 "§YUnlocks:§! §Y$edict_scar_austerity_miner$§! and §Y$edict_scar_austerity_weapons$§! Edicts"
+ tr_scar_austerity_5:0 "Bounty Chests"
+ tr_scar_austerity_5_delayed:0 "What better way is there, than to store all Artifacts in a giant chest?"
 
- scar_building_miner_base:0 "REPLACE_ME"
- scar_building_miner_base_desc:0 "REPLACE_ME"
- council_agenda_agenda_scar_austerity_name:0 "REPLACE_ME"
- council_agenda_agenda_scar_austerity_desc:0 "REPLACE_ME"
+ scar_building_miner_base:0 "Scrapper Headquarters"
+ scar_building_miner_base_desc:0 "Replacing Miners with Scrappers will help our alloy production immensely"
+ council_agenda_agenda_scar_austerity_name:0 "Ancient Acquisitions"
+ council_agenda_agenda_scar_austerity_desc:0 "Improved production and trading routs will open up new possibility for our Minor Artefact income."
+ council_agenda_agenda_scar_avarice_name:0 "REPLACE_ME"
+ council_agenda_agenda_scar_avarice_desc:0 "REPLACE_ME"
  agenda_scar_austerity_finish:0 "REPLACE_ME"
+
+ edict_scar_austerity_miner:0 "Artefact Mineral Scanners"
+ edict_scar_austerity_miner_desc:0 "A simple yet effective way to apply Minor Artifacts."
+ edict_scar_austerity_weapons:0 "Artefact Weapon Polish"
+ edict_scar_austerity_weapons_desc:0 "Why not add some of the found Minor Artifacts to our arsenal?"
+

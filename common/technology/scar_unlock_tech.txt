@@ -5,11 +5,11 @@ scar_tech_unlock_archeoguild= {
 	tier = 3
 	prerequisites = { "tech_space_science_5" }
 	is_rare = yes
-	ai_update_type = all
+	#ai_update_type = all
 	weight = @tier3weight3
 
 	potential = {
-		has_ancrel = yes
+		scar_has_access_to_archeotech_content = yes
 	}
 
 	

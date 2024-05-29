@@ -1,0 +1,88 @@
+
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+@EdictSpecialCost = 1
+
+@EdictPerpetual = -1
+
+
+
+#2 new edicts: +% miner output for relic upkeep, -% minor artifact ship build cost
+
+scar_austerity_miner = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			minor_artifacts = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			minor_artifacts = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {		
+		planet_miners_minerals_produces_add = 2
+		planet_miners_minor_artifacts_upkeep_add = 0.2
+	}
+	
+
+
+	potential = {
+		has_tradition = tr_scar_austerity_4
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+scar_austerity_weapons = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			minor_artifacts = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			minor_artifacts = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {		
+		weapon_archaeotech_weapon_damage_mult = 0.3
+		starbase_shipyard_build_minor_artifacts_cost_mult = -0.10		
+		planet_structures_minor_artifacts_cost_mult = -0.1
+	}
+	
+
+
+	potential = {
+		has_tradition = tr_scar_austerity_4
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+

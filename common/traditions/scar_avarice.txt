@@ -8,9 +8,50 @@ tr_scar_avarice_adopt = {
 	possible = {
 		has_ascension_perk = ap_archaeoengineers
 	}
-	unlocks_agenda = agenda_pioneer_politics			#TODO New Agenda
+	unlocks_agenda = agenda_scar_austerity			#TODO New Agenda
 	modifier = {
 		planet_jobs_minor_artifacts_produces_mult = 0.5
+	}
+	on_enabled = {
+		if = {
+			limit = { has_ascension_perk = ap_engineered_evolution}
+			add_tech_progress = {
+				tech = scar_tech_plasma_sputtershot
+				progress = 10
+			}
+		}
+		if = {
+			limit = { OR = {
+				has_ascension_perk = ap_synthetic_age
+				has_ascension_perk = ap_synthetic_evolution
+				
+			}}
+			add_tech_progress = {
+				tech = scar_tech_emp_beam
+				progress = 10
+			}
+		}
+		if = {
+			limit = { has_ascension_perk = ap_mind_over_matter}
+			add_tech_progress = {
+				tech = scar_tech_psionic_missile
+				progress = 10
+			}
+		}
+		if = {
+			limit = { has_ascension_perk = ap_the_flesh_is_weak}
+			add_tech_progress = {
+				tech = scar_tech_disintegration_ray
+				progress = 10
+			}
+		}
+		if = {
+			limit = { has_tradition = tr_nanotech_adopt}
+			add_tech_progress = {
+				tech = scar_tech_nanite_swarm
+				progress = 10
+			}
+		}
 	}
 }
 

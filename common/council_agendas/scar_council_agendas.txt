@@ -15,3 +15,18 @@ agenda_scar_austerity = {
 	finish_modifier = agenda_scar_austerity_finish
 }
 
+agenda_scar_avarice = {
+	agenda_cost = @base_agenda_cost
+	potential = {
+		has_tradition = tr_scar_austerity_adopt
+	}
+	allow = {
+		always = yes
+	}
+	modifier = {
+		country_minor_artifacts_produces_mult = 0.1
+		
+	}
+	finish_modifier = agenda_scar_avarice_finish
+}
+

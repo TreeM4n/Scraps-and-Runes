@@ -9,4 +9,4 @@ tags={
 	"Military"
 }
 name="Scraps and Runes - Ancient Relics Expansion"
-supported_version="3.11.2"
+supported_version="3.12.*"
