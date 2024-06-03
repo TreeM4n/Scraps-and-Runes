@@ -18,7 +18,7 @@ tr_scar_austerity_adopt = {
 
 
 tr_scar_austerity_finish = {
-	#TODO 
+	#DONE 
 	#fix all techs related to this
 	#access to ascension specific content (don't know how to do this with the tooltip, refers to several components/buildings/megastructures and so on in the mod, most are already done and just need the right prerequisites)
 	custom_tooltip_with_modifiers = tr_scar_austerity_finish_tooltip

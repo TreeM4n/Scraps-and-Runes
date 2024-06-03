@@ -69,25 +69,30 @@ spriteTypes = {
 		}
 		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
 	}
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_scar_avarice"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_tree_icon.dds"
+	}	
 	spriteType = {
 		name = "GFX_tr_scar_avarice_1"
-		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_1.dds"
 	}
 	spriteType = {
 		name = "GFX_tr_scar_avarice_2"
-		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_2.dds"
 	}
 	spriteType = {
 		name = "GFX_tr_scar_avarice_3"
-		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_3.dds"
 	}
 	spriteType = {
 		name = "GFX_tr_scar_avarice_4"
-		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_4.dds"
 	}
 	spriteType = {
 		name = "GFX_tr_scar_avarice_5"
-		textureFile = "gfx/interface/icons/traditions/tradition_statecraft_5.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_avarice_5.dds"
 	}
 	spriteType = {
 		name = "GFX_tradition_category_bg_tradition_scar_austerity"
@@ -104,7 +109,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_tradition_category_icon_tradition_scar_austerity"
-		textureFile = "gfx/interface/icons/traditions/tr_scar_austerity_tree_icons.dds"
+		textureFile = "gfx/interface/icons/traditions/tr_scar_austerity_tree_icon.dds"
 	}	
 	spriteType = {
 		name = "GFX_tr_scar_austerity_1"

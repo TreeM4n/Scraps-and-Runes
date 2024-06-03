@@ -11,6 +11,9 @@ scar_tech_unlock_archeoguild= {
 	potential = {
 		scar_has_access_to_archeotech_content = yes
 	}
+	modifier = {
+		custom_tooltip = scar_tech_unlock_archeoguild_tt
+	}
 
 	
 

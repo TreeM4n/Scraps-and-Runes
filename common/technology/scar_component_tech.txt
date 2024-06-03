@@ -297,7 +297,7 @@ scar_tech_nanite_swarm= {
 		}	
 		modifier = {
 			factor = 0
-			#TODO: nanite ascension
+			
 			NAND = {				
 				has_tradition = tr_nanotech_adopt
 				has_ascension_perk = ap_archaeoengineers

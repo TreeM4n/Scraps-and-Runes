@@ -9,7 +9,7 @@ agenda_scar_austerity = {
 		always = yes
 	}
 	modifier = {
-		country_minor_artifacts_produces_mult = 0.1
+		starbase_shipyard_build_minor_artifacts_cost_mult = -0.10
 		
 	}
 	finish_modifier = agenda_scar_austerity_finish
@@ -27,6 +27,6 @@ agenda_scar_avarice = {
 		country_minor_artifacts_produces_mult = 0.1
 		
 	}
+	
 	finish_modifier = agenda_scar_avarice_finish
 }
-

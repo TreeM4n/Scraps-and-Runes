@@ -1,81 +1,90 @@
 tr_scar_avarice_adopt = {
-	#TODO
-		#new agenda (not sure, maybe get 3? archeotech research option(I have a scripted effect for that)
 	#DONE
-		#Blocks Austerity tradition tree
-		#requires archeoengineering AP
-		#+% minor artifacts from jobs (can be around 50%)
+	#new agenda (not sure, maybe get 3? archeotech research option(I have a scripted effect for that)
+	#DONE
+	#Blocks Austerity tradition tree
+	#requires archeoengineering AP
+	#+% minor artifacts from jobs (can be around 50%)
 	possible = {
 		has_ascension_perk = ap_archaeoengineers
 	}
-	unlocks_agenda = agenda_scar_austerity			#TODO New Agenda
+	unlocks_agenda = agenda_scar_avarice
+	custom_tooltip_with_modifiers = tr_scar_avarice_adopt_tooltip	
 	modifier = {
-		planet_jobs_minor_artifacts_produces_mult = 0.5
+		planet_jobs_minor_artifacts_produces_mult = 0.33
 	}
-	on_enabled = {
-		if = {
-			limit = { has_ascension_perk = ap_engineered_evolution}
-			add_tech_progress = {
-				tech = scar_tech_plasma_sputtershot
-				progress = 10
-			}
-		}
-		if = {
-			limit = { OR = {
-				has_ascension_perk = ap_synthetic_age
-				has_ascension_perk = ap_synthetic_evolution
-				
-			}}
-			add_tech_progress = {
-				tech = scar_tech_emp_beam
-				progress = 10
-			}
-		}
-		if = {
-			limit = { has_ascension_perk = ap_mind_over_matter}
-			add_tech_progress = {
-				tech = scar_tech_psionic_missile
-				progress = 10
-			}
-		}
-		if = {
-			limit = { has_ascension_perk = ap_the_flesh_is_weak}
-			add_tech_progress = {
-				tech = scar_tech_disintegration_ray
-				progress = 10
-			}
-		}
-		if = {
-			limit = { has_tradition = tr_nanotech_adopt}
-			add_tech_progress = {
-				tech = scar_tech_nanite_swarm
-				progress = 10
-			}
-		}
-	}
+	
 }
 
 tr_scar_avarice_finish = {
-	#TODO		
-		#access to ascension specific content (don't know how to do this with the tooltip, refers to several components/buildings/megastructures and so on in the mod, most are already done and just need the right prerequisites)
+	#DONE		
+	#access to ascension specific content (don't know how to do this with the tooltip, refers to several components/buildings/megastructures and so on in the mod, most are already done and just need the right prerequisites)
 	#DONE
-		#some archeotech research speed)
+	#some archeotech research speed)
 	modifier = {
-		custom_tooltip = tr_scar_avarice_finish_desc
-		category_archaeostudies_research_speed_mult = 0.1
-		ascension_perks_add = 1		
+		
+		ascension_perks_add = 1
+	}
+	custom_tooltip_with_modifiers = tr_scar_austerity_finish_tooltip
+	on_enabled = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_engineered_evolution
+			}
+			add_tech_progress = {
+				tech = scar_tech_plasma_sputtershot
+				progress = 0.1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ascension_perk = ap_synthetic_age
+					has_ascension_perk = ap_synthetic_evolution
+				}
+			}
+			add_tech_progress = {
+				tech = scar_tech_emp_beam
+				progress = 0.1
+			}
+		}
+		if = {
+			limit = {
+				has_ascension_perk = ap_mind_over_matter
+			}
+			add_tech_progress = {
+				tech = scar_tech_psionic_missile
+				progress = 0.1
+			}
+		}
+		if = {
+			limit = {
+				has_ascension_perk = ap_the_flesh_is_weak
+			}
+			add_tech_progress = {
+				tech = scar_tech_disintegration_ray
+				progress = 0.1
+			}
+		}
+		if = {
+			limit = {
+				has_tradition = tr_nanotech_adopt
+			}
+			add_tech_progress = {
+				tech = scar_tech_nanite_swarm
+				progress = 0.1
+			}
+		}
 	}
 }
 
 tr_scar_avarice_1 = {
 	#DONE
-		#+specialist output, + monthly minor artifact output ?,
-
+	#+specialist output, + monthly minor artifact output ?,
 	modifier = {
-		planet_jobs_specialist_produces_mult = 0.025
-		country_minor_artifacts_produces_add = 2
+		planet_jobs_specialist_produces_mult = 0.025		
+		country_base_minor_artifacts_produces_add = 10
 	}
-
 	ai_weight = {
 		factor = 10000
 	}
@@ -83,41 +92,39 @@ tr_scar_avarice_1 = {
 
 tr_scar_avarice_2 = {
 	#DONE
-		#+starbase/platform hp bonus
+	#+starbase/platform hp bonus
 	modifier = {
-		shipclass_starbase_hull_mult = 0.1
-		shipclass_military_station_hull_mult = 0.1
+		shipclass_starbase_hull_mult = 0.2
+		shipclass_military_station_hull_mult = 0.2
+		shipclass_starbase_build_cost_mult = -0.2
 	}
-
 	ai_weight = {
 		factor = 10000
 	}
 }
 
 tr_scar_avarice_3 = {
-	#TODO MAKE THE BUILDING
-		#Unlocks special building
-	
+	#DONE
+	#Unlocks special building
 	custom_tooltip = tr_scar_avarice_3_desc
-
 	possible = {
 		has_tradition = tr_scar_avarice_1
 	}
-
 	ai_weight = {
 		factor = 5000
 	}
 }
 
 tr_scar_avarice_4 = {
-	#TODO
-		#2 new edicts: +% archeotech weapons damage for artifact upkeep, +research from scientist for minor artifact upkeep
+	#DONE
+	#2 new edicts: +% archeotech weapons damage for artifact upkeep, +research from scientist for minor artifact upkeep
 	possible = {
 		has_tradition = tr_scar_avarice_2
 	}
-
-	custom_tooltip = tr_scar_avarice_4_desc
-
+	modifier = {
+		edicts_upkeep_mult = -0.1
+	}
+	custom_tooltip_with_modifiers = tr_scar_avarice_4_desc
 	ai_weight = {
 		factor = 5000
 	}
@@ -125,16 +132,15 @@ tr_scar_avarice_4 = {
 
 tr_scar_avarice_5 = {
 	#DONE
-		#+stockpiles for everything
+	#+stockpiles for everything
 	possible = {
 		has_tradition = tr_scar_avarice_3
 		has_tradition = tr_scar_avarice_4
 	}
-
 	modifier = {
 		country_resource_max_add = 20000
+		category_archaeostudies_research_speed_mult = 0.3
 	}
-
 	ai_weight = {
 		factor = 5000
 	}

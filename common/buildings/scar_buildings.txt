@@ -115,7 +115,6 @@ scar_building_outpost_forge_1 = {
 			has_country_flag = scar_repair_forge_stage1
 		}
 	}
-
 	planet_modifier = {
 		planet_max_buildings_add = 1
 	}
@@ -159,7 +158,6 @@ scar_building_outpost_forge_1 = {
 	}
 }
 
-
 # 2. tier of the forge
 scar_building_outpost_forge_2 = {
 	base_buildtime = @b2_time
@@ -201,19 +199,15 @@ scar_building_outpost_forge_2 = {
 	triggered_country_modifier = {
 		potential = {
 			has_planet_flag = scar_relic_world_outpost_macomponent_cost
-			
-		}		
+		}
 		ships_minor_artifacts_cost_mult = -0.2
-		
 	}
 	triggered_country_modifier = {
 		potential = {
 			has_planet_flag = scar_relic_world_outpost_research_speed
-			
 		}
 		all_technology_research_speed = 0.05
 	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -230,7 +224,6 @@ scar_building_outpost_forge_2 = {
 		}
 	}
 }
-
 
 scar_building_miner_base = {
 	base_buildtime = @b2_time
@@ -257,15 +250,18 @@ scar_building_miner_base = {
 			}
 		}
 	}
+	
+	
 	planet_modifier = {
-		job_scrap_miner_add = 2
+		#job_scrap_miner_add = 2
 		#planet_farmers_food_produces_add = 2
+		planet_miners_minerals_produces_add = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			is_planet_class = pc_relic
 		}
-		planet_miners_alloys_produces_mult = -0.5
+		#planet_miners_alloys_produces_mult = -0.5
 		planet_miners_minor_artifacts_produces_add = 0.2
 	}
 
@@ -276,14 +272,15 @@ scar_building_miner_base = {
 					is_machine_empire = yes
 					is_hive_empire = yes
 				}
-				
 			}
 		}
+
 		job_scrap_miner_add = 1
 		job_miner_add = -1
 		mult = planet.value:scar_miner_count
-	}
 
+		custom_tooltip = job_scrap_miner_effect_desc
+	}
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
@@ -291,19 +288,23 @@ scar_building_miner_base = {
 					is_machine_empire = yes
 					is_hive_empire = yes
 				}
-				
 			}
 		}
-		job_scrap_miner_drone_add = 1		
+		job_scrap_miner_drone_add = 1
 		job_mining_drone_add = -1
 		mult = planet.value:scar_miner_count
+
+		custom_tooltip = job_scrap_miner_drone_desc
+	}
+
+	triggered_desc = {
+		text = scar_building_miner_base_replaces_miners_tt
 	}
 	#
 	#inline_script = {
 	#	script = jobs/scrap_miners_add
 	#	MINER_AMOUNT = 2		
 	#}
-	
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -313,7 +314,101 @@ scar_building_miner_base = {
 		upkeep = {
 			energy = 5
 		}
-		
+	}
+}
+
+
+scar_building_relicsmith_base = {
+	base_buildtime = @b2_time
+	can_build = yes
+	category = manufacturing
+	base_cap_amount = 1
+	allow = {
+		exists = owner
+		owner = {
+			has_tradition = tr_scar_avarice_3
+		}
+	}
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_scar_avarice_3
+		}
+	}
+	destroy_trigger = {
+		NOR = {
+			exists = owner
+			owner = {
+				has_tradition = tr_scar_avarice_3
+			}
+		}
 	}
 	
+	
+	planet_modifier = {
+		#job_scrap_miner_add = 2
+		#planet_farmers_food_produces_add = 2
+		#planet_miners_minerals_produces_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_relic
+		}
+		#planet_miners_alloys_produces_mult = -0.5
+		#planet_miners_minor_artifacts_produces_add = 0.2
+		planet_metallurgists_minor_artifacts_produces_mult = 1
+	}
+	
+	# dotn replace metallurgist, way too many edge cases. e.g catalytic, planet designation, empire type
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					is_machine_empire = yes
+					is_hive_empire = yes
+				}
+			}
+		}
+
+		job_scar_relicsmith_add = 1
+		#job_foundry_add = -1
+		mult = planet.value:toxic_attendant_growth
+
+		#custom_tooltip = job_scrap_miner_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				AND = {
+					is_machine_empire = yes					
+					is_hive_empire = yes
+				}
+			}
+		}
+		job_scar_relicsmith_drone_add = 1
+		#job_alloy_drone_add = -1
+		mult = planet.value:toxic_attendant_growth
+
+		#custom_tooltip = job_scrap_miner_drone_desc
+	}
+
+	triggered_desc = {
+		text = scar_building_relicsmith_base_add_smiths_tt
+	}
+	#
+	#inline_script = {
+	#	script = jobs/scrap_miners_add
+	#	MINER_AMOUNT = 2		
+	#}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			minor_artifacts = 100
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
 }

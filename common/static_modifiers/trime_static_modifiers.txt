@@ -9,15 +9,16 @@
 ################### scar #################################
 
 agenda_scar_austerity_finish = {
+	starbase_shipyard_build_minor_artifacts_cost_mult = -0.2
+}
+
+agenda_scar_avarice_finish = {
 	country_minor_artifacts_produces_mult = 0.4
 }
 
 scar_no_runist_faction = {
 	faction_approval = 0.05
 }
-
-
-
 
 
 #################### trime modifiers ###########################

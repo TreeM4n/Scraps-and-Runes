@@ -1,0 +1,144 @@
+scar_relicsmith = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = scar_building_outpost_forge_1
+	clothes_texture_index = 1
+	icon = artificer
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			trigger = {
+				exists = owner
+			}
+			alloys = 3.5
+			minor_artifacts = 0.5
+			#mult = value:job_total_output_modifier|JOB|foundry|
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+			}
+			consumer_goods = 1
+			#alloys = 1
+			minerals = 4
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+				}
+			}
+			consumer_goods = 1
+			#alloys = 1
+			food = 5
+			
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		trade_value_mult = 0.03
+		trade_value_add = 2
+	}
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		mult = value:job_weights_modifier|JOB|foundry|RESOURCE|alloys|
+		modifier = {
+			factor = 2
+			is_enslaved = yes
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 5
+			has_job = scar_relicsmith
+		}
+		modifier = {
+			factor = 5
+			has_trait = trait_cyborg_creed_of_construction
+		}
+	}
+}
+
+
+scar_relicsmith_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = scar_building_outpost_forge_1
+	icon = artificer
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	resources = {
+		category = planet_metallurgists
+		produces = {
+			trigger = {
+				exists = owner
+			}
+			alloys = 4
+			minor_artifacts = 0.5
+			#mult = value:job_total_output_modifier|JOB|foundry|
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = no
+				}
+			}
+			#consumer_goods = 1
+			#alloys = 1
+			minerals = 10
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_catalytic_empire = yes
+				}
+			}
+			#consumer_goods = 1
+			#alloys = 1
+			food = 12
+			energy = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner			
+		}
+		planet_jobs_minor_artifacts_produces_mult = 0.02
+	}
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|fabricator|RESOURCE|alloys|
+		modifier = {
+			factor = 0.9
+			exists = owner
+			#years_passed < 1
+			#owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+
