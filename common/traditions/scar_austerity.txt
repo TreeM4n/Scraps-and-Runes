@@ -8,15 +8,12 @@ tr_scar_austerity_adopt = {
 	possible = {
 		has_ascension_perk = ap_archaeoengineers
 	}
-	unlocks_agenda = agenda_scar_austerity	
-	custom_tooltip_with_modifiers =  tr_scar_austerity_adopt_tooltip
-	
+	unlocks_agenda = agenda_scar_austerity
+	custom_tooltip_with_modifiers = tr_scar_austerity_adopt_tooltip
 }
 
 #icons
 # 1 builder, 2 fleet, 3 building tech icon, 4 pirate cannon, 5 chest
-
-
 tr_scar_austerity_finish = {
 	#DONE 
 	#fix all techs related to this
@@ -26,45 +23,7 @@ tr_scar_austerity_finish = {
 		ascension_perks_add = 1
 	}
 	on_enabled = {
-		if = {
-			limit = { has_ascension_perk = ap_engineered_evolution}
-			add_tech_progress = {
-				tech = scar_tech_plasma_sputtershot
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = { OR = {
-				has_ascension_perk = ap_synthetic_age
-				has_ascension_perk = ap_synthetic_evolution
-				
-			}}
-			add_tech_progress = {
-				tech = scar_tech_emp_beam
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = { has_ascension_perk = ap_mind_over_matter}
-			add_tech_progress = {
-				tech = scar_tech_psionic_missile
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = { has_ascension_perk = ap_the_flesh_is_weak}
-			add_tech_progress = {
-				tech = scar_tech_disintegration_ray
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = { has_tradition = tr_nanotech_adopt}
-			add_tech_progress = {
-				tech = scar_tech_nanite_swarm
-				progress = 0.1
-			}
-		}
+		scar_give_ascension_techs = yes
 	}
 }
 
@@ -74,14 +33,13 @@ tr_scar_austerity_1 = {
 	modifier = {
 		planet_jobs_upkeep_mult = -0.05
 	}
-	
 }
 
 tr_scar_austerity_2 = {
 	#DONE
 	# -% minor artifact cost of buildings and ships
 	modifier = {
-		starbase_shipyard_build_minor_artifacts_cost_mult = -0.10
+		starbase_shipyard_build_minor_artifacts_cost_mult = -0.1
 		#country_minor_artifacts_cost_mult = -0.1
 		#planet_buildings_minor_artifacts_cost_mult = -0.1
 	}
@@ -109,7 +67,7 @@ tr_scar_austerity_4 = {
 	modifier = {
 		edicts_upkeep_mult = -0.1
 	}
-	custom_tooltip_with_modifiers =  tr_scar_austerity_4_desc
+	custom_tooltip_with_modifiers = tr_scar_austerity_4_desc
 }
 
 tr_scar_austerity_5 = {

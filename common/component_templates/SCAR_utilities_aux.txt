@@ -113,7 +113,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "SCAR_INTEGRATED_FIRE_CONTROL"
+	key = "SCAR_INTEGRATED_FIRE_CONTROL_2"
 	size = aux
 	icon = "GFX_scar_integrated_fire_control"
 	icon_frame = 1

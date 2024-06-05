@@ -276,9 +276,10 @@ scar_mega_archeological_guild = {
 		}
 	}
 	country_modifier = {
-		station_researchers_produces_mult = 0.4
-		category_archaeostudies_research_speed_mult = 0.2
+		#station_researchers_produces_mult = 0.4
+		#category_archaeostudies_research_speed_mult = 0.2
 		#stations_astral_threads_produces_add = 1
+		custom_tooltip = scar_mega_archeological_guild_tt #TODO: make a second stage where the actual country modifiers are
 	}
 	on_build_start = {
 	}
@@ -317,8 +318,9 @@ scar_mega_archeological_guild = {
 	}
 }
 
+#shroud needle
 scar_mega_shroud_needle = {
-	entity = ""	# dunno what to put here
+	entity = "SCAR_psi_core_entity_stage_0"	# thx, WanM
 	#portrait = "" #TODO
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
@@ -328,8 +330,9 @@ scar_mega_shroud_needle = {
 		y = -27
 	}
 	#show_in_outliner = yes
+	use_planet_resource = yes
 	scales_with_planet = no
-	build_time = 720
+	build_time = 1080
 	resources = {
 		category = megastructures
 		cost = {
@@ -350,6 +353,9 @@ scar_mega_shroud_needle = {
 	}
 	potential = {
 		host_has_dlc = "Ancient Relics Story Pack"
+		NOT = {
+			has_country_flag = scar_build_scar_mega_shroud_needle
+		}
 	}
 	possible = {
 		exists = starbase
@@ -369,19 +375,6 @@ scar_mega_shroud_needle = {
 						who = prev.from
 						status = no
 					}
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "requires_no_shroud_needle"
-			system_has_shroud_needle = no
-		}
-		custom_tooltip = {
-			fail_text = "requires_less_than_x_shroud_needles"
-			from = {
-				check_variable = {
-					which = shroud_needle_counter
-					value < value:shroud_needle_limit
 				}
 			}
 		}
@@ -413,40 +406,26 @@ scar_mega_shroud_needle = {
 				NOT = {
 					has_anomaly = yes
 				}
-			}
+			}			
 			custom_tooltip = {
-				fail_text = "scar_requires_archaeological_site"
-				OR = {
-					has_deposit = d_artifacts_research_1
-					has_deposit = d_artifacts_research_2
-					has_deposit = d_artifacts_research_3
-					has_deposit = d_artifacts_mining_1
-					has_deposit = d_artifacts_mining_2
-					has_deposit = d_artifacts_mining_3
-					has_deposit = d_artifacts_planet_1
-					has_deposit = d_artifacts_planet_2
-					has_deposit = d_artifacts_planet_3
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
 				}
 			}
-			#custom_tooltip = {
-			#	fail_text = "requires_not_minor_planetary_body"
-			#	NOR = {
-			#		is_asteroid = yes
-			#		is_moon = yes
-			#	}
-			#}
-			#custom_tooltip = {
-			#	fail_text = "requires_not_star"
-			#	is_star = no
-			#}
-			#custom_tooltip = {
-			#	fail_text = "requires_not_astral_scar"
-			#	is_astral_scar = no
-			#}
-			#custom_tooltip = {
-			#	fail_text = "requires_not_ring_world"
-			#	is_ringworld = no
-			#}	
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
 		}
 	}
 	# root = system
@@ -470,9 +449,7 @@ scar_mega_shroud_needle = {
 		}
 	}
 	country_modifier = {
-		custom_tooltip_with_modifiers = SCAR_shroud_needle_3_mod_tooltip # needs loc
-		shroud_delve_cost = -0.5
-		shroud_delve_cooldown = -0.25
+		custom_tooltip = SCAR_shroud_needle_3_mod_tooltip
 	}
 	on_build_start = {
 	}
@@ -481,7 +458,7 @@ scar_mega_shroud_needle = {
 	on_build_complete = {
 		solar_system = {
 			while = {
-				count = 3
+				count = 7
 				random_system_planet = {
 					limit = {
 						colonizable_planet = no
@@ -493,20 +470,71 @@ scar_mega_shroud_needle = {
 					}
 					random_list = {
 						4 = {
-							add_deposit = d_artifacts_research_1
+							add_deposit = d_zro_deposit_1
 						}
 						2 = {
-							add_deposit = d_artifacts_research_2
+							add_deposit = d_zro_deposit_2
 						}
 						1 = {
-							add_deposit = d_artifacts_research_3
+							add_deposit = d_zro_deposit_3
 						}
 					}
 				}
 			}
 			owner = {
-				set_country_flag = scar_mega_shroud_needle_build
+				set_country_flag = scar_build_scar_mega_shroud_needle
 			}
 		}
+	}
+}
+
+scar_mega_shroud_needle_2 = {
+	entity = "SCAR_psi_core_entity_stage_1"
+	construction_entity = "SCAR_psi_core_entity_stage_1"
+	#construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_construction_background"
+	entity_offset = {
+		x = -27
+		y = -27
+	}	
+	#show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = no
+	build_time = 1080	# 3 years
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 2500
+			#unity = 2500
+			influence = 200
+			sr_zro = 500
+		}
+		upkeep = {
+			energy = 40
+		}
+	}
+	construction_blocks_and_blocked_by = none
+	upgrade_from = {
+		scar_mega_shroud_needle
+	}
+	prerequisites = {
+		"scar_tech_unlock_shroud_needle"
+	}
+	potential = {
+		always = yes
+	}
+	country_modifier = {
+		shroud_delve_cost = -0.3
+		shroud_delve_cooldown = -0.2
+	}
+	on_build_start = {
+		#set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		#remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		#remove_star_flag = arc_furnace_construction
+		
 	}
 }

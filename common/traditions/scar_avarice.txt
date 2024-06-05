@@ -27,54 +27,7 @@ tr_scar_avarice_finish = {
 	}
 	custom_tooltip_with_modifiers = tr_scar_austerity_finish_tooltip
 	on_enabled = {
-		if = {
-			limit = {
-				has_ascension_perk = ap_engineered_evolution
-			}
-			add_tech_progress = {
-				tech = scar_tech_plasma_sputtershot
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_ascension_perk = ap_synthetic_age
-					has_ascension_perk = ap_synthetic_evolution
-				}
-			}
-			add_tech_progress = {
-				tech = scar_tech_emp_beam
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = {
-				has_ascension_perk = ap_mind_over_matter
-			}
-			add_tech_progress = {
-				tech = scar_tech_psionic_missile
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = {
-				has_ascension_perk = ap_the_flesh_is_weak
-			}
-			add_tech_progress = {
-				tech = scar_tech_disintegration_ray
-				progress = 0.1
-			}
-		}
-		if = {
-			limit = {
-				has_tradition = tr_nanotech_adopt
-			}
-			add_tech_progress = {
-				tech = scar_tech_nanite_swarm
-				progress = 0.1
-			}
-		}
+		scar_give_ascension_techs = yes
 	}
 }
 

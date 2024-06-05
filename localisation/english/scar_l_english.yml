@@ -7,7 +7,7 @@
  START_SCREEN_MEM_FAINTHEARTED:0 "REPLACE_ME"
  START_SCREEN_MEM_CEASELESS_GAZE:0 "REPLACE_ME"
  station_medium_aura_components:0 "REPLACE_ME"
- PSIONIC_SWARMER_MISSILE_1:0 "REPLACE_ME"
+
  d_artifacts_research_1_desc:0 "REPLACE_ME"
  d_artifacts_research_2_desc:0 "REPLACE_ME"
  d_artifacts_research_3_desc:0 "REPLACE_ME"
@@ -40,6 +40,8 @@
 
  SCAR_PSIONIC_SWARMER_MISSILE:0 "Ancient Psionic Swarmer Missiles"
  SCAR_PSIONIC_SWARMER_MISSILE_DESC:0 "Causes disruptions not just at armor and shields this missile also terrorizes the crew with unpleasant thoughts."
+ PSIONIC_SWARMER_MISSILE_1:0 "$SCAR_PSIONIC_SWARMER_MISSILE$"
+ PSIONIC_SWARMER_MISSILE_1_DESC:0 "$SCAR_PSIONIC_SWARMER_MISSILE_DESC$"
 
  SCAR_boarding_torps:0 "Ancient Kamikazi Strikecraft" #TODO change icon to actual striekcraft
  SCAR_boarding_torps_DESC:0 "This ancient weapon, considered unethical by many, has actual use cases over conventional missiles. While modern missiles and torpedos can be gammed, this weapon does not care for such counter-measures. A simple yet effective tool ... as long as the pilots agree to fly."
@@ -53,7 +55,7 @@
  SCAR_manned_fire_control:0 "Ancient Turrets" 
 
  SCAR_MANNED_FIRE_CONTROL:0 "Ancient Turrets"
- SCAR_INTEGRATED_FIRE_CONTROL:0 "REPLACE_ME"
+ SCAR_INTEGRATED_FIRE_CONTROL_2:0 "$SCAR_integrated_fire_control$"
 
  SCAR_shield_optimizer:0 "$SCAR_SHIELD_OPTIMIZER_1$"
  SCAR_supercharged_armor:0 "$SCAR_SUPERCHARGED_ARMOR_1$"
@@ -181,9 +183,10 @@
  scar_councilor_archeotech_guild:0 "Archeotech Guild Master"
  scar_councilor_archeotech_guild_desc:0 "Leading scientist of the archeological guild."
  scar_mega_archeological_guild:0 "Archeological Guild"
- scar_mega_archeological_guild_DESC:0 "A place to study Archeotech and potential applications."
+ scar_mega_archeological_guild_DESC:0 "A place to study Archeotech and potential applications.$NEW_LINE$Requires a finished Digsite underneath."
  scar_mega_archeological_guild_MEGASTRUCTURE_DETAILS:0 "$scar_mega_archeological_guild_DESC$"
  scar_requires_archaeological_site:1 "Requires an §Y$scar_Archaeological_site$§!"
+scar_mega_archeological_guild_tt:0 "Uncovers 3 £minor_artifacts£ deposits on random Planets, Moons and Asteroids in the System"
 
  scar.201.name:0 "The Holy Grail?"
  scar.201.desc:0 "We have found an ancient artifact. Our knights begin to discuss among each other, if this is indeed the fabled Holy Grail or not. It is up to us to decide."
@@ -194,7 +197,7 @@
 
  scar_tech_unlock_archeoguild:0 "Archeological Obsession"
  scar_tech_unlock_archeoguild_desc:0 "The vast expanse of the universe is rich of ruins and remains of others. None should turn a blind eye towards history."
- scar_tech_unlock_archeoguild_tt:0 "§Unlocks Megastructure$!: $scar_mega_archeological_guild$"
+ scar_tech_unlock_archeoguild_tt:0 "§KUnlocks Megastructure§!: $scar_mega_archeological_guild$" #TODO: let this be auto generated somewhow
  scar_civic_archeotech_guild_machine:0 "Excavation Protocols"
  scar_civic_archeotech_guild_machine_desc:0 "The Machine Intelligence has started early to construct a giant station in there homesystem. This station is dedicated for archeological studies."
  scar_civic_archeotech_guild_hive:0 "Paleontological Instincts"
@@ -250,12 +253,9 @@
  scar_repair_forge_approach_boost:0 "Increased Efforts"
  scar_no_runist_faction:0 "Unity Above All"
 
- scar_mega_shroud_needle:0 "REPLACE_ME"
- scar_mega_shroud_needle_DESC:0 "REPLACE_ME"
- scar_mega_shroud_needle_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
- requires_no_shroud_needle:0 "REPLACE_ME"
- requires_less_than_x_shroud_needles:0 "REPLACE_ME" 
-
+ scar_mega_shroud_needle:0 "Ancient Shroud Tunneler"
+ scar_mega_shroud_needle_DESC:0 "The theory of an alternate universe is already scary enough, but what about a stacked universe? One where dimensions are above and below each other. Well, $scar_mega_shroud_needle$ will elp test that theory. Maintaining a single point where dimension can freely interact with each other."
+ scar_mega_shroud_needle_MEGASTRUCTURE_DETAILS:0 "Kind of, digs up ancient Zro Deposits hidden in the current system dimensionality."
 
  scar.the_anvil_provides:0 "§Y$scar_building_outpost_forge_1$§! provides:"
  scar.301.name:0 "Ancient Rubble"
@@ -303,12 +303,11 @@
  tr_scar_avarice_3_desc:0 "§YUnlocks Building:§! $scar_building_relicsmith_base$"
  tr_scar_avarice_4:0 "Acquisition Practices"
  tr_scar_avarice_4_delayed:0 "Sometimes acquiring assets takes a more involved approach. In the end the outcome only has to justify the investment."
- tr_scar_avarice_4_desc:0 "§YUnlocks Edict:§! §Y$edict_scar_avarice_science$§!\n§YUnlocks Edict:§! §Y$edict_scar_austerity_weapons$§!"
+ tr_scar_avarice_4_desc:0 "§YUnlocks Edict:§! $edict_scar_avarice_science$\n§YUnlocks Edict:§! $edict_scar_austerity_weapons$"
  tr_scar_avarice_5:0 "Excessive Hoarding"
  tr_scar_avarice_5_delayed:0 "The only limit to our aspirations is our ability to store our assets."
 
 
- agenda_scar_avarice_finish:0 "REPLACE_ME"
  edict_scar_avarice_science:0 "Artefact Scientific Application"
  edict_scar_avarice_science_desc:0 "Why let greedy hoarders keep all the good stuff? Give something to the scientist too!"
 
@@ -327,7 +326,7 @@
  tr_scar_austerity_3_desc:0 "§YUnlocks Building:§! $scar_building_miner_base$"
  tr_scar_austerity_4:0 "Artefact Applications"
  tr_scar_austerity_4_delayed:0 "Studies reveal advanteges of having old Artifacts at the workplace and on the battlefield."
- tr_scar_austerity_4_desc:0 "§YUnlocks Edict:§! §Y$edict_scar_austerity_miner$§!\n§YUnlocks Edict:§! §Y$edict_scar_austerity_weapons$§!"
+ tr_scar_austerity_4_desc:0 "§YUnlocks Edict:§! $edict_scar_austerity_miner$\n§YUnlocks Edict:§! $edict_scar_austerity_weapons$"
  tr_scar_austerity_5:0 "Bounty Chests"
  tr_scar_austerity_5_delayed:0 "What better way is there, than to store all Artifacts in a giant chest?"
 
@@ -341,8 +340,9 @@
  council_agenda_agenda_scar_austerity_name:0 "Ancient Acquisitions"
  council_agenda_agenda_scar_austerity_desc:0 "Improved production and trading routes will open up new possibility for our Minor Artefact income."
  council_agenda_agenda_scar_avarice_name:0 "Ancient Recomposition"
- council_agenda_agenda_scar_avarice_desc:0 "REPLACE_ME"
- agenda_scar_austerity_finish:0 "REPLACE_ME"
+ council_agenda_agenda_scar_avarice_desc:0 "It is not a question of how many Minor Artefacts we can produce, but how we value them."
+ agenda_scar_austerity_finish:0 "$council_agenda_agenda_scar_austerity_name$"
+ agenda_scar_avarice_finish:0 "$council_agenda_agenda_scar_avarice_name$"
 
  edict_scar_austerity_miner:0 "Artefact Mineral Scanners"
  edict_scar_austerity_miner_desc:0 "A simple yet effective way to apply Minor Artifacts."
@@ -357,4 +357,11 @@
  job_scar_relicsmith_drone_plural:0 "$job_scar_relicsmith_drone$s"
  job_scar_relicsmith_drone_desc:0 "REPLACE_ME"
  mod_job_scar_relicsmith_drone_add:0 "$job_scar_relicsmith_drone$ Jobs"
+
+ scar_tech_unlock_shroud_needle:0 "Dimensional Thesis"
+ scar_tech_unlock_shroud_needle_desc:0 "$scar_mega_shroud_needle_desc$"
+ SCAR_shroud_needle_3_mod_tooltip:0 "Uncovers 6 £zro£ deposits on random Planets, Moons and Asteroids in the System"
+ scar_mega_shroud_needle_2:0 "$scar_mega_shroud_needle$ Intensified"
+ scar_mega_shroud_needle_2_DESC:0 "$scar_mega_shroud_needle_desc$"
+ scar_tech_unlock_schroud_needle_tt:0 "§KUnlocks Megastructure§!: $scar_mega_shroud_needle$" #TODO: let this be auto generated somewhow
 

@@ -18,7 +18,10 @@ Planned components
 
 - archeotech cloaking U, common
 
-Components
+TODOs:
 
-- Make and add proper GFX, some locs and ai weights, missing GFX: asteorid shoota,
-- Utilies miss an effect for archeoengineer AP
+- Icons for Techs
+- Origin finish up
+- Building and starbase buildings, later
+- Tech balancing, tech category
+- Museum megastructure

@@ -96,6 +96,7 @@ scar_relicsmith_drone = {
 			}
 			alloys = 4
 			minor_artifacts = 0.5
+			society_research = 2
 			#mult = value:job_total_output_modifier|JOB|foundry|
 		}
 		upkeep = {
@@ -107,7 +108,7 @@ scar_relicsmith_drone = {
 			}
 			#consumer_goods = 1
 			#alloys = 1
-			minerals = 10
+			minerals = 8
 			energy = 2
 		}
 		upkeep = {
@@ -119,7 +120,7 @@ scar_relicsmith_drone = {
 			}
 			#consumer_goods = 1
 			#alloys = 1
-			food = 12
+			food = 9
 			energy = 2
 		}
 	}
