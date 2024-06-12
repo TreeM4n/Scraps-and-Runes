@@ -20,7 +20,6 @@ Planned components
 
 TODOs:
 
-- Icons for Techs
 - Origin finish up
 - Building and starbase buildings, later
 - Tech balancing, tech category

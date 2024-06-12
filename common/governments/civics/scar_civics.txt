@@ -73,8 +73,7 @@ scar_civic_happy_grail_knights = {
 	}
 	random_weight = {
 		base = @ai_civic_default_base_weight
-	}
-	#description = "scar_civic_grail_knights_tooltip_effects_cash_out"
+	}	
 	#custom_tooltip_with_modifiers = "scar_civic_archeotech_guild"
 	#negative_description = "BLOCKS_COUNCILOR_STATE"
 	modifier = {

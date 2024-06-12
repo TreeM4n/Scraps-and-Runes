@@ -1,3 +1,5 @@
+
+#missing icons and prob more: mega nuke, asteroid shhota and boarding torpedo
 ### components
 
 scar_tech_plasma_sputtershot = {
